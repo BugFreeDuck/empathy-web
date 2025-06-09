@@ -1,7 +1,12 @@
-<script lang="ts">
-	import '../app.css';
+<script>
+    import '../app.css';
+    import Navbar from "../atomic/organisms/Navbar.svelte";
 
-	let { children } = $props();
+    let {children} = $props();
 </script>
 
-{@render children()}
+<Navbar></Navbar>
+
+<main>
+    {@render children()}
+</main>
