@@ -1,8 +1,8 @@
 ﻿<style>
     div.logo {
-        height: 66px;
-        aspect-ratio: 37.55/66;
-        background-image: url("/logo.svg");
+        height: 90px;
+        width: 210px;
+        background-image: url("/logo-full.svg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;

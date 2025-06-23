@@ -1,12 +1,24 @@
 ﻿<script>
     import Logo from "../atoms/Logo.svelte";
-    import Text from "../atoms/Text.svelte";
-    import RegisterButton from "../atoms/RegisterButton.svelte";
+    import Sandwich from "../atoms/Sandwich.svelte";
+    import NavbarOverlay from "../molecules/NavbarOverlay.svelte";
+
+    let isOpen = $state(false);
+
+    function toggleMenu() {
+        isOpen = !isOpen;
+        console.log(isOpen);
+    }
 </script>
 
 <style>
-    nav{
-        height: 200px;
+    nav {
+        position: relative;
+        height: auto;
+    }
+
+    div#header {
+        height: 13vh;
         background-image: url("/wave.svg");
         background-position: center;
         background-repeat: no-repeat;
@@ -14,13 +26,12 @@
     }
 </style>
 
-<nav class="w-auto flex flex-row space justify-between p-8">
-    <div class="flex flex-col items-center m-auto">
+<nav>
+    <div id="header" class="w-full h-auto flex flex-col items-center">
         <Logo></Logo>
-        <Text type="logo-text">empathy</Text>
-        <Text type="logo-subtext">PLACE FOR MOVEMENT, DANCE & GROWTH</Text>
+        <Sandwich onclick={toggleMenu}></Sandwich>
     </div>
-    <div class="absolute right-20 top-10">
-        <RegisterButton/>
-    </div>
+
+    <NavbarOverlay isOpen={isOpen}/>
 </nav>
+
