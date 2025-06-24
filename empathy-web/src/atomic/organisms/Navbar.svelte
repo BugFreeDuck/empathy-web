@@ -3,12 +3,7 @@
     import Sandwich from "../atoms/Sandwich.svelte";
     import NavbarOverlay from "../molecules/NavbarOverlay.svelte";
 
-    let isOpen = $state(false);
-
-    function toggleMenu() {
-        isOpen = !isOpen;
-        console.log(isOpen);
-    }
+    let isOpen = $state(true);
 </script>
 
 <style>
@@ -29,7 +24,7 @@
 <nav>
     <div id="header" class="w-full h-auto flex flex-col items-center">
         <Logo></Logo>
-        <Sandwich onclick={toggleMenu}></Sandwich>
+        <Sandwich bind:isOpen></Sandwich>
     </div>
 
     <NavbarOverlay isOpen={isOpen}/>

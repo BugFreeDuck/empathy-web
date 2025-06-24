@@ -25,6 +25,6 @@
     }
 </style>
 
-<div class:visible={isOpen}>
-    This text will hide.
+<div class:visible={isOpen} class="flex">
+
 </div>
