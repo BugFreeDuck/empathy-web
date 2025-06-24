@@ -1,4 +1,6 @@
 ﻿<script lang="ts">
+    import NavbarButton from "../atoms/NavbarButton.svelte";
+
     interface Props {
         isOpen: boolean,
     }
@@ -25,6 +27,11 @@
     }
 </style>
 
-<div class:visible={isOpen} class="flex">
-
+<div class:visible={isOpen} class="flex flex-col items-center justify-center">
+    <NavbarButton text="registration"/>
+    <NavbarButton text="about us"/>
+    <NavbarButton text="schedule"/>
+    <NavbarButton text="prices"/>
+    <NavbarButton text="services"/>
+    <NavbarButton text="contacts"/>
 </div>
