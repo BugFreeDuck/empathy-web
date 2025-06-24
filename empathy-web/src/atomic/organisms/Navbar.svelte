@@ -3,7 +3,7 @@
     import Sandwich from "../atoms/Sandwich.svelte";
     import NavbarOverlay from "../molecules/NavbarOverlay.svelte";
 
-    let isOpen = $state(true);
+    let isOpen = $state(false);
 </script>
 
 <style>

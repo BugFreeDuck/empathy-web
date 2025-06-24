@@ -7,8 +7,9 @@
 </script>
 
 <style>
-    :global(body) {
+    :global(body), :global(html) {
         overflow: hidden;
+        height: 100%;
     }
 </style>
 

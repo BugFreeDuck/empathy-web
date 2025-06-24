@@ -21,7 +21,7 @@
     }
 </style>
 
-<div class="flex items-center justify-center pt-5">
-    <Text type="logo-subtext">© empathy, 2025</Text>
+<div class="flex items-center justify-center pt-2">
+    <Text size={10} font='arsenal'>© empathy, 2025</Text>
 </div>
 
