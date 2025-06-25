@@ -8,8 +8,9 @@
 
 <style>
     nav {
-        position: relative;
-        height: auto;
+        position: absolute;
+        top: 0;
+        width: 100%;
     }
 
     div#header {

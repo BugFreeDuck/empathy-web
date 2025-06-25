@@ -1,5 +1,5 @@
 ﻿<style>
-    div.logo {
+    a.logo {
         height: 90px;
         width: 210px;
         background-image: url("/logo-full.svg");
@@ -10,4 +10,4 @@
 
 </style>
 
-<div class="logo"></div>
+<a class="logo" href="/" aria-label="logo"></a>

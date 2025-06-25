@@ -8,8 +8,14 @@
 
 <style>
     :global(body), :global(html) {
+        position: relative;
         overflow: hidden;
-        height: 100%;
+    }
+
+    main{
+        margin-top: 10vh;
+        height: 88vh;
+        margin-bottom: 2vh;
     }
 </style>
 

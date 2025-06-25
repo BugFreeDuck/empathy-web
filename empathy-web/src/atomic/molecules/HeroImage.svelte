@@ -28,13 +28,17 @@
 
 <style>
     div {
-        max-width: 100%;
-        height: 25vh;
         aspect-ratio: 402/204;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        margin-top: -5.5vh;
+        overflow: hidden;
+
+        flex-grow: 1;
+    }
+
+    div:not(:first-of-type){
+        margin-top: -4vh;
     }
 
 </style>
