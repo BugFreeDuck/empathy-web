@@ -3,7 +3,10 @@
     import Sandwich from "../atoms/Sandwich.svelte";
     import NavbarOverlay from "../molecules/NavbarOverlay.svelte";
 
+    import {beforeNavigate} from "$app/navigation";
+
     let isOpen = $state(false);
+    beforeNavigate(() => isOpen = false);
 </script>
 
 <style>
@@ -11,6 +14,7 @@
         position: absolute;
         top: 0;
         width: 100%;
+        z-index: 10;
     }
 
     div#header {

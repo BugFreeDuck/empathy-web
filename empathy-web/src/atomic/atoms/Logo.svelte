@@ -1,6 +1,6 @@
 ﻿<style>
     a.logo {
-        height: 90px;
+        height: 80px;
         width: 210px;
         background-image: url("/logo.svg");
         background-position: center;

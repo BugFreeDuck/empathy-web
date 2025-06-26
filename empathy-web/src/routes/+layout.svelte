@@ -10,6 +10,7 @@
     :global(body), :global(html) {
         position: relative;
         overflow: hidden;
+        background-color: #F3EEEA;
     }
 
     main{
