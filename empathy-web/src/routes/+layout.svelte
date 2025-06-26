@@ -13,9 +13,9 @@
     }
 
     main{
-        margin-top: 10vh;
-        height: 88vh;
-        margin-bottom: 2vh;
+        margin-top: 14dvh;
+        height: 84dvh;
+        margin-bottom: 2dvh;
     }
 </style>
 

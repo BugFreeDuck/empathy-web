@@ -26,11 +26,11 @@
     }
 
     button.sandwich {
-        background-image: url("/sandwich.svg");
+        background-image: url("/icons/sandwich.svg");
     }
 
     button.cross {
-        background-image: url("/cross.svg");
+        background-image: url("/icons/cross.svg");
     }
 
 </style>

@@ -2,7 +2,7 @@
     a.logo {
         height: 90px;
         width: 210px;
-        background-image: url("/logo-full.svg");
+        background-image: url("/logo.svg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;

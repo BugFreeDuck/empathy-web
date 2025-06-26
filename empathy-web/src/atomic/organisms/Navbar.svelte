@@ -15,7 +15,7 @@
 
     div#header {
         height: 13vh;
-        background-image: url("/wave.svg");
+        background-image: url("/wave-header.svg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
