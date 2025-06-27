@@ -1,6 +1,5 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import {process} from 'node/process'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -17,7 +16,7 @@ const config = {
 			strict: true
 		}),
 		paths: {
-			base: import.meta.env.argv.includes('dev') ? '' : import.meta.env.BASE_URL
+			base: import.meta.env.DEV ? '' : 'https://github.com/BugFreeDuck/empathy-web'
 		}
 	}
 };
