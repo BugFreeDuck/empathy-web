@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: 22.16
           cache: npm
-          cache-dependency-path: './empathy-web/package-lock.json'
+          cache-dependency-path: './empathy-web/package.json'
 
       - name: Install dependencies
         run: npm install
