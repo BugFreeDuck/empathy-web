@@ -22,7 +22,7 @@
         margin-bottom: 6dvh;
     }
 
-    main.landing{
+    main.no-scroll{
         height: 84dvh;
         margin-bottom: 2dvh;
     }
@@ -30,7 +30,7 @@
 
 <Navbar/>
 
-<main class:landing={page.url.pathname === '/'}>
+<main class:no-scroll="{['/', '/prices'].includes(page.url.pathname)}">
     {@render children()}
 </main>
 
