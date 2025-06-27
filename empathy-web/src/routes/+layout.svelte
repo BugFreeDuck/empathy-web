@@ -5,7 +5,6 @@
     import { page } from '$app/state';
 
     let {children} = $props();
-
 </script>
 
 <style>
