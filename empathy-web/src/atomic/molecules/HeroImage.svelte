@@ -59,7 +59,7 @@
         <a href="{href}" aria-label="{name}"></a>
     {/if}
     {#if title}
-        <Label font="arsenal" size={24}>{title}</Label>
+        <Label font="arsenal" color="white" size={24}>{title}</Label>
     {/if}
 </div>
 

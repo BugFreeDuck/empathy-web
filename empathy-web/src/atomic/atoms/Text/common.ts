@@ -2,7 +2,7 @@
 
 export type Font = 'arsenal' | 'cormorant';
 export type Weight = 'normal' | 'bold';
-export type Color = 'white' | 'gray'
+export type Color = 'black' | 'white' | 'gray';
 
 export interface TextProps {
     size?: number,
@@ -21,7 +21,7 @@ export interface RenderParameters {
 
 export function parseRenderParameters(props: TextProps): RenderParameters {
     let size = props.size ?? 12;
-    let color = props.color ?? 'white';
+    let color = props.color ?? 'black';
     let font = props.font ?? 'arsenal';
     let weight = props.weight ?? 'normal';
 
@@ -35,7 +35,8 @@ export function parseRenderParameters(props: TextProps): RenderParameters {
 
 const colors: Record<Color, string> = {
     'white': '#FFFFFF',
-    'gray': '#5F5B5B'
+    'gray': '#5F5B5B',
+    'black': '#5D4B3D'
 }
 
 const fonts: Record<Font, string> = {

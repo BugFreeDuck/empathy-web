@@ -2,19 +2,27 @@
     import '../app.css';
     import Navbar from "../atomic/organisms/Navbar.svelte";
     import Footer from "../atomic/organisms/Footer.svelte";
+    import { page } from '$app/state';
 
     let {children} = $props();
+
 </script>
 
 <style>
     :global(body), :global(html) {
         position: relative;
-        overflow: hidden;
+        overflow-y: visible;
+        overflow-x: hidden;
         background-color: #F3EEEA;
     }
 
     main{
+        height: auto;
         margin-top: 14dvh;
+        margin-bottom: 6dvh;
+    }
+
+    main.landing{
         height: 84dvh;
         margin-bottom: 2dvh;
     }
@@ -22,7 +30,7 @@
 
 <Navbar/>
 
-<main>
+<main class:landing={page.url.pathname === '/'}>
     {@render children()}
 </main>
 
