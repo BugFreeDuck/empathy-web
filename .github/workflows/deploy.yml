@@ -8,6 +8,9 @@ on:
 jobs:
   build_site:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./empathy-web
     steps:
       - name: Checkout
         uses: actions/checkout@v4
