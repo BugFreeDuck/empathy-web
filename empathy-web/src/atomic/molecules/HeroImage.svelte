@@ -54,7 +54,7 @@
     }
 </style>
 
-<div style="background-image: url({imageUrl});" class:separator={separator}>
+<div style="background-image: url(./{imageUrl});" class:separator={separator}>
     {#if href}
         <a href="{href}" aria-label="{name}"></a>
     {/if}

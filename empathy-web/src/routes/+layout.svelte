@@ -5,6 +5,13 @@
     import { page } from '$app/state';
 
     let {children} = $props();
+
+    const noScrollPages = [
+        import.meta.env.BASE_URL,
+        import.meta.env.BASE_URL + 'prices'
+    ]
+
+    console.log(import.meta.env.BASE_URL)
 </script>
 
 <style>
@@ -29,7 +36,7 @@
 
 <Navbar/>
 
-<main class:no-scroll="{['./', './prices'].includes(page.url.pathname)}">
+<main class:no-scroll="{noScrollPages.includes(page.url.pathname)}">
     {@render children()}
 </main>
 
