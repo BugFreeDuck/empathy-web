@@ -29,7 +29,7 @@
 
 <Navbar/>
 
-<main class:no-scroll="{['/', '/prices'].includes(page.url.pathname)}">
+<main class:no-scroll="{['./', './prices'].includes(page.url.pathname)}">
     {@render children()}
 </main>
 
