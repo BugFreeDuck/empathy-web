@@ -14,10 +14,9 @@
 
     console.log(base)
     console.log(import.meta.env)
-    console.log(import.meta.env.BASE)
-    console.log(import.meta.env.VITE_BASE_URL)
 
     console.log(noScrollPages);
+    console.log(page)
 </script>
 
 <style>
