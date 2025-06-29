@@ -11,7 +11,7 @@
         base,
         base + '/prices'
     ]
-    const currentPage = page.url.pathname.trim('/')
+    const currentPage = page.url.pathname.replace(/\/$/, "");
     const noScroll = noScrollPages.includes(currentPage);
 
     console.log(noScrollPages);
