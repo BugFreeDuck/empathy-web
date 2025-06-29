@@ -11,12 +11,11 @@
         base,
         base + '/prices'
     ]
-
-    console.log(base)
-    console.log(import.meta.env)
+    const currentPage = page.url.pathname.trim('/')
+    const noScroll = noScrollPages.includes(currentPage);
 
     console.log(noScrollPages);
-    console.log(page)
+    console.log(currentPage);
 </script>
 
 <style>
@@ -41,7 +40,7 @@
 
 <Navbar/>
 
-<main class:no-scroll="{noScrollPages.includes(page.url.pathname)}">
+<main class:no-scroll="{noScroll}">
     {@render children()}
 </main>
 
