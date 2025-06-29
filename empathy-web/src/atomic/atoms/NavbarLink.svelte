@@ -20,6 +20,6 @@
     }
 </style>
 
-<a href="/{route}">
+<a href="./{route}">
     {text}
 </a>

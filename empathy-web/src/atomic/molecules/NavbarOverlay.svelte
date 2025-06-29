@@ -28,10 +28,10 @@
 </style>
 
 <div class:visible={isOpen} class="flex flex-col items-center gap-7">
-    <NavbarLink text="registration" route="register"/>
-    <NavbarLink text="about us" route="about"/>
-    <NavbarLink text="schedule" route="schedule"/>
-    <NavbarLink text="prices" route="prices"/>
-    <NavbarLink text="services" route="services"/>
-    <NavbarLink text="contacts" route="contacts"/>
+    <NavbarLink text="registration" route="./register"/>
+    <NavbarLink text="about us" route="./about"/>
+    <NavbarLink text="schedule" route="./schedule"/>
+    <NavbarLink text="prices" route="./prices"/>
+    <NavbarLink text="services" route="./services"/>
+    <NavbarLink text="contacts" route="./contacts"/>
 </div>

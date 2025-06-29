@@ -12,16 +12,12 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			pages: 'build',
-			assets: 'build',
-			fallback: 'fallback.html',
-			precompress: false,
-			strict: true
+			fallback: '404.html',
 		}),
 		paths: {
 			base: process.env.NODE_ENV === 'production'
-				?  process.env.VITE_BASE_URL
-				: '/',
+				?  process.env.BASE_URL
+				: '',
 		}
 	}
 };

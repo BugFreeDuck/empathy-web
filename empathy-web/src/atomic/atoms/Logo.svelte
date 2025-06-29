@@ -10,4 +10,4 @@
 
 </style>
 
-<a class="logo" href="/" aria-label="logo"></a>
+<a class="logo" href="./" aria-label="logo"></a>
