@@ -2,16 +2,15 @@
     import '../app.css';
     import Navbar from "../atomic/organisms/Navbar.svelte";
     import Footer from "../atomic/organisms/Footer.svelte";
-    import { page } from '$app/state';
+    import {page} from '$app/state';
+    import {base} from '$app/paths'
 
     let {children} = $props();
 
     const noScrollPages = [
-        import.meta.env.BASE_URL,
-        import.meta.env.BASE_URL + 'prices'
+        base,
+        base + '/prices'
     ]
-
-    console.log(import.meta.env.BASE_URL)
 </script>
 
 <style>
@@ -22,13 +21,13 @@
         background-color: #F3EEEA;
     }
 
-    main{
+    main {
         height: auto;
         margin-top: 14dvh;
         margin-bottom: 6dvh;
     }
 
-    main.no-scroll{
+    main.no-scroll {
         height: 84dvh;
         margin-bottom: 2dvh;
     }
