@@ -13,9 +13,6 @@
     ]
     const currentPage = page.url.pathname.replace(/\/$/, "");
     const noScroll = noScrollPages.includes(currentPage);
-
-    console.log(noScrollPages);
-    console.log(currentPage);
 </script>
 
 <style>
