@@ -16,7 +16,7 @@ const config = {
 		}),
 		paths: {
 			base: process.env.NODE_ENV === 'production'
-				?  process.env.BASE_URL
+				?  process.env.VITE_BASE_URL
 				: '',
 		}
 	}

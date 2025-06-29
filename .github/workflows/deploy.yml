@@ -31,14 +31,6 @@ jobs:
           BASE_PATH: '/${{ github.event.repository.name }}'
         run: npm run build
 
-      - name: debug
-        run: |
-          pwd
-          ls ./build
-          ls ./empathy-web/build
-          ls ../
-        continue-on-error: true
-
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
