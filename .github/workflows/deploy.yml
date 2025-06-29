@@ -5,12 +5,13 @@ on:
     branches:
       - 'main'
 
+defaults:
+  run:
+    working-directory: ./empathy-web
+
 jobs:
   build_site:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./empathy-web
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,18 +31,21 @@ jobs:
           BASE_PATH: '/${{ github.event.repository.name }}'
         run: npm run build
 
+      - name: debug
+        run: |
+          pwd
+          ls ./build
+          ls ./empathy-web/build
+
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
       # this should match the `pages` option in your adapter-static options
-          path: 'build/'
+          path: './empathy-web/build/'
 
   deploy:
     needs: build_site
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./empathy-web
 
     permissions:
       pages: write
