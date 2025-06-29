@@ -36,6 +36,8 @@ jobs:
           pwd
           ls ./build
           ls ./empathy-web/build
+          ls ../
+        continue-on-error: true
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
