@@ -10,12 +10,12 @@
         font-optical-sizing: auto;
         font-weight: 400;
         font-style: normal;
-        letter-spacing: 0.2em;
+        letter-spacing: 0;
     }
 </style>
 
 <label style="
-    font-size: {size}pt;
+    font-size: {size}px;
     font-family: {font};
     font-weight: {weight};
     color: {color};">

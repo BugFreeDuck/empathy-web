@@ -12,7 +12,7 @@
 <div class="flex flex-col w-full">
     <HeroImage name="About us"
                title="we are empathy"
-               imageUrl="/about/we-are.png"
+               imageUrl="about/we-are.png"
                separator/>
 
     <TextContainer>
@@ -27,7 +27,7 @@
     </TextContainer>
 
     <HeroImage name="Dancer circle"
-               imageUrl="/about/circle.png"
+               imageUrl="about/circle.png"
                separator/>
 
     <TextContainer>
@@ -40,7 +40,7 @@
     </TextContainer>
 
     <HeroImage name="Dancer circle"
-               imageUrl="/about/teacher.png"
+               imageUrl="about/teacher.png"
                separator/>
 
     <TextContainer>

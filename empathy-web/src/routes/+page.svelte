@@ -9,8 +9,8 @@
 </style>
 
 <div class="flex flex-col w-full">
-    <HeroImage name="About us" imageUrl="./home/about.png" href="./about"/>
-    <HeroImage name="Schedule" imageUrl="./home/schedule.png" href="./schedule"/>
-    <HeroImage name="Prices" imageUrl="./home/prices.png" href="./prices"/>
-    <HeroImage name="Services" imageUrl="./home/services.png" href="./services"/>
+    <HeroImage name="ABOUT US" imageUrl="./home/about.png" href="./about" animationDelay={100}/>
+    <HeroImage name="SCHEDULE" imageUrl="./home/schedule.png" href="./schedule" animationDelay={200}/>
+    <HeroImage name="PRICES" imageUrl="./home/prices.png" href="./prices" animationDelay={300}/>
+    <HeroImage name="SERVICES" imageUrl="./home/services.png" href="./services" animationDelay={400}/>
 </div>
