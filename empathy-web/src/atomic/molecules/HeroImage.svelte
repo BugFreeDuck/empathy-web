@@ -1,5 +1,4 @@
 ﻿<script lang="ts">
-
     import Label from "../atoms/Text/Label.svelte";
 
     interface Props {
