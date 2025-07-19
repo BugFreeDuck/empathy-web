@@ -37,8 +37,8 @@
     <NavbarLink text="contacts" route="contacts"/>
 
     <div class="flex flex-row gap-5 mt-15">
-        <SocialButton type="Facebook" route="google.com"/>
-<!--        <SocialButton type="YouTube"/>-->
+        <SocialButton type="Facebook"/>
+        <SocialButton type="YouTube"/>
         <SocialButton type="Instagram"/>
 <!--        <SocialButton type="TikTok"/>-->
     </div>

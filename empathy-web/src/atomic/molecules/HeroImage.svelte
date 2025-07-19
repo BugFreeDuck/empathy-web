@@ -21,16 +21,20 @@
 
 <style>
     @keyframes fly-in {
-        0%   {transform: translateX(-100%);}
-        100% {transform: translateX(0%)}
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(0%)
+        }
     }
 
     @keyframes unblur {
-        0%   {
+        0% {
             filter: blur(10px);
             /*opacity: 0;*/
         }
-        100%   {
+        100% {
             filter: blur(0px);
             /*opacity: 1;*/
         }
@@ -52,7 +56,7 @@
         justify-content: center;
     }
 
-    div.animate{
+    div.animate {
         /*transform: translateX(-100%);*/
         filter: blur(10px);
         /*opacity: 0;*/
@@ -60,7 +64,7 @@
         animation-fill-mode: forwards;
     }
 
-    div.separator:after{
+    div.separator:after {
         content: "";
         position: absolute;
         bottom: 0;
@@ -79,16 +83,19 @@
 </style>
 
 <div
-    style="
+        style="
         background-image: url(./{imageUrl});
         animation-delay: {animationDelay}ms;
     "
-    class:separator={separator}
-    class:animate="{animationDelay}">
+        class:separator={separator}
+        class:animate="{animationDelay}">
     {#if href}
         <a href="{href}" aria-label="{name}">
             <Label font="arsenal" color="white" size={42}>{name}</Label>
         </a>
+    {:else}
+        <Label font="arsenal" color="white" size={42}>{name}</Label>
     {/if}
+
 </div>
 

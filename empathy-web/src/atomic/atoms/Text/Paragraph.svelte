@@ -10,7 +10,7 @@
         font-optical-sizing: auto;
         font-weight: 400;
         font-style: normal;
-        letter-spacing: 0.2em;
+        letter-spacing: 0;
         margin-top: 1em;
         text-align: justify;
     }

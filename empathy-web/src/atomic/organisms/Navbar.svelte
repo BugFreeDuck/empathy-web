@@ -5,8 +5,7 @@
 
     import {beforeNavigate} from "$app/navigation";
 
-    let isOpen = $state(true);
-    //let isOpen = $state(false);
+    let isOpen = $state(false);
     beforeNavigate(() => isOpen = false);
 </script>
 

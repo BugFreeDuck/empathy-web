@@ -22,6 +22,7 @@
     }
     if (type === "YouTube") {
         imageUrl = '/icons/social-yt.png'
+        route = 'https://www.youtube.com/@vdohdance'
     }
 
 </script>
