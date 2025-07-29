@@ -6,7 +6,7 @@
     import FeedbackCarousel from "../../atomic/molecules/FeedbackCarousel.svelte";
 
     let headingSize = 28;
-    let paragraphSize = 16;
+    let paragraphSize = 14;
 </script>
 
 <style>
@@ -31,18 +31,8 @@
         </Paragraph>
     </TextContainer>
 
-    <HeroImage imageUrl="about/circle.png" separator/>
-
-    <TextContainer>
-        <Heading size={headingSize}>
-            teacher
-        </Heading>
-        <Paragraph size={paragraphSize}>
-            Olivija Kazakevičienė
-        </Paragraph>
-    </TextContainer>
-
-    <HeroImage imageUrl="about/teacher.png" separator/>
+    <HeroImage imageUrl="about/circle.png"/>
+<!--    <HeroImage imageUrl="about/teacher.png"/>-->
 
     <TextContainer>
         <Paragraph size="{paragraphSize}">
@@ -57,5 +47,5 @@
         </Paragraph>
     </TextContainer>
 
-    <FeedbackCarousel></FeedbackCarousel>
+    <FeedbackCarousel/>
 </div>

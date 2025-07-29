@@ -2,8 +2,7 @@
     import Label from "../atoms/Text/Label.svelte";
 
     interface Props {
-        name: string
-        title?: string,
+        name?: string
         imageUrl: string,
         href?: string,
         separator?: boolean
