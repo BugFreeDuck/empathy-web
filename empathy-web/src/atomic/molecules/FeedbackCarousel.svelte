@@ -50,6 +50,7 @@
 
     :global(.custom-carousel) {
         aspect-ratio: 402/261;
+        margin-bottom: 2em;
         width: 100%;
         background-image: url("/about/feedback-bg.png");
         background-size: cover;
@@ -91,7 +92,7 @@
                     <Label size={16}>{item.text}</Label>
 
                     <div class="flex flex-col items-center">
-                        <img src="/icons/heart.png" alt=""/>
+                        <img src="icons/heart.png" alt=""/>
                         <Label size={20}>{item.name}</Label>
                         <Label size={18}>{item.personTitle}</Label>
                     </div>
