@@ -10,6 +10,9 @@
         separator?: boolean
         animationDelay?: number
         marginTop?: number
+        marginBot?: number
+        aspectRatio?: string
+        grow?: number
     }
 
     let {
@@ -21,6 +24,9 @@
         separator,
         animationDelay,
         marginTop,
+        marginBot,
+        aspectRatio,
+        grow,
     }: Props = $props();
 </script>
 
@@ -53,8 +59,7 @@
         background-size: cover;
         overflow: hidden;
 
-        flex-grow: 1;
-        margin-top: -4vh;
+        margin-top: -3vh;
 
         display: flex;
         align-items: center;
@@ -79,7 +84,7 @@
         /*transform: translateX(-100%);*/
         filter: blur(10px);
         /*opacity: 0;*/
-        animation: unblur 1s;
+        animation: unblur 0.5s;
         animation-fill-mode: forwards;
     }
 
@@ -108,7 +113,10 @@
         background-image: url(./{imageUrl});
         animation-delay: {animationDelay}ms;
         margin-top: {marginTop}em;
-    "
+        margin-bot: {marginBot}em;
+        aspect-ratio: {aspectRatio};
+        flex-grow: {grow}"
+
         class:separator={separator}
         class:animate="{animationDelay}"
         class:side-text={sideText}>

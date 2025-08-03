@@ -12,10 +12,7 @@
 </style>
 
 <div class="flex flex-col w-full">
-    <HeroImage title="Viena Pamoka"
-               imageUrl="/prices/one-lesson.png"/>
-    <HeroImage title="Month"
-               imageUrl="/prices/month.png"/>
-    <HeroImage title="Individual"
-               imageUrl="/prices/individual.png"/>
+    <HeroImage grow={1} imageUrl="prices/one-lesson.png"/>
+    <HeroImage grow={1} imageUrl="prices/month.png"/>
+    <HeroImage grow={1} imageUrl="prices/individual.png"/>
 </div>

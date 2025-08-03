@@ -12,7 +12,9 @@
     const noScrollPages = [
         base,
         base + '/prices',
-        base + '/schedule'
+        base + '/schedule',
+        base + '/services',
+        base + '/contacts',
     ];
 
     afterNavigate(() => {
@@ -31,7 +33,7 @@
 
     main {
         height: auto;
-        margin-top: 14dvh;
+        margin-top: 13dvh;
         margin-bottom: -3dvh;
     }
 
