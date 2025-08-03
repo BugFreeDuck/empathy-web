@@ -5,8 +5,8 @@
     import Paragraph from "../../atomic/atoms/Text/Paragraph.svelte";
     import FeedbackCarousel from "../../atomic/molecules/FeedbackCarousel.svelte";
 
-    let headingSize = 26;
-    let paragraphSize = 14;
+    let headingSize = 24;
+    let paragraphSize = 18;
 </script>
 
 <style>

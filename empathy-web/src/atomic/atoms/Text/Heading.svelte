@@ -15,7 +15,7 @@
 </style>
 
 <h1 style="
-    font-size: {size}pt;
+    font-size: {size}px;
     font-family: {font};
     font-weight: {weight};
     text-align: {alignment};

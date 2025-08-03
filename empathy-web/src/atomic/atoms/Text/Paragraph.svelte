@@ -17,7 +17,7 @@
 </style>
 
 <p style="
-    font-size: {size}pt;
+    font-size: {size}px;
     font-family: {font};
     font-weight: {weight};
     color: {color};">

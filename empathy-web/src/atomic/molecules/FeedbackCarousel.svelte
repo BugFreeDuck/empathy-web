@@ -105,7 +105,7 @@
         hasTrack={false}
 >
     <div class="mt-5">
-        <Heading alignment="center" color="white" size={20}>atsiliepimai</Heading>
+        <Heading alignment="center" color="white" size={28}>atsiliepimai</Heading>
     </div>
     <SplideTrack>
         {#each items as item}
