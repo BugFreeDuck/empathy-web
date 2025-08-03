@@ -2,7 +2,7 @@
     import {parseRenderParameters, type TextProps} from "./common";
 
     let props: TextProps = $props();
-    let {size, font, weight, color} = parseRenderParameters(props);
+    let {size, font, weight, color, alignment} = parseRenderParameters(props);
 </script>
 
 <style>
@@ -18,6 +18,7 @@
     font-size: {size}pt;
     font-family: {font};
     font-weight: {weight};
+    text-align: {alignment};
     color: {color};">
     {@render props.children?.()}
 </h1>

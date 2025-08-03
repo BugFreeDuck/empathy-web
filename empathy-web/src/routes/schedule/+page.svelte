@@ -12,7 +12,7 @@
 </style>
 
 <div class="flex flex-col w-full">
-    <HeroImage title="schedule" imageUrl="schedule/schedule.png" separator/>
+    <HeroImage title="tvarkaraštis" imageUrl="schedule/schedule.png" separator/>
 
     <ScheduleTable address="EITMINŲ G. 20"/>
 

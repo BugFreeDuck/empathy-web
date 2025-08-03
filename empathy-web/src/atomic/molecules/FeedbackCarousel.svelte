@@ -3,6 +3,7 @@
     import '@splidejs/svelte-splide/css';
 
     import Label from "../atoms/Text/Label.svelte";
+    import Heading from "../atoms/Text/Heading.svelte";
 
     type CarouselItem = {
         id: number;
@@ -58,11 +59,11 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        gap: 2em;
+        gap: 1em;
         align-items: center;
 
         height: 100%;
-        padding: 2em 3em 0;
+        padding: 0em 3em 0em;
 
         text-align: center;
     }
@@ -103,6 +104,9 @@
         options={{type: "loop"}}
         hasTrack={false}
 >
+    <div class="mt-4">
+        <Heading alignment="center" color="white" size={20}>atsiliepimai</Heading>
+    </div>
     <SplideTrack>
         {#each items as item}
             <SplideSlide>

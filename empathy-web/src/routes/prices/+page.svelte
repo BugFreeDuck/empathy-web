@@ -12,7 +12,7 @@
 </style>
 
 <div class="flex flex-col w-full">
-    <HeroImage title="One lesson"
+    <HeroImage title="Viena Pamoka"
                imageUrl="/prices/one-lesson.png"/>
     <HeroImage title="Month"
                imageUrl="/prices/month.png"/>
