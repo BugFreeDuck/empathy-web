@@ -14,7 +14,7 @@
 </style>
 
 <div class="flex flex-col w-full">
-    <HeroImage name="we are empathy" imageUrl="about/we-are.png" separator/>
+    <HeroImage title="we are empathy" imageUrl="about/we-are.png" separator/>
 
     <TextContainer>
         <Heading size={headingSize}>

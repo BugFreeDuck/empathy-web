@@ -6,8 +6,6 @@
     }
 
     let {isFixed}: Props = $props();
-
-    console.log(isFixed);
 </script>
 
 <style>

@@ -12,10 +12,10 @@
 </style>
 
 <div class="flex flex-col w-full">
-    <HeroImage name="One lesson"
+    <HeroImage title="One lesson"
                imageUrl="/prices/one-lesson.png"/>
-    <HeroImage name="Month"
+    <HeroImage title="Month"
                imageUrl="/prices/month.png"/>
-    <HeroImage name="Individual"
+    <HeroImage title="Individual"
                imageUrl="/prices/individual.png"/>
 </div>

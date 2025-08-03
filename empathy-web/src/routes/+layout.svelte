@@ -11,7 +11,8 @@
 
     const noScrollPages = [
         base,
-        base + '/prices'
+        base + '/prices',
+        base + '/schedule'
     ];
 
     afterNavigate(() => {

@@ -107,7 +107,9 @@
         {#each items as item}
             <SplideSlide>
                 <div class="carousel-item">
-                    <Label size={16}>{item.text}</Label>
+                    <div class="h-full flex flex-col items-center justify-center">
+                        <Label alignment="center" size={16}>{item.text}</Label>
+                    </div>
 
                     <div class="flex flex-col items-center">
                         <img src="icons/heart.png" alt=""/>

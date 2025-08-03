@@ -3,12 +3,14 @@
 export type Font = 'arsenal' | 'cormorant';
 export type Weight = 'normal' | 'bold';
 export type Color = 'black' | 'white' | 'gray';
+export type Alignment = 'left' | 'right' | 'center' | 'justify';
 
 export interface TextProps {
     size?: number,
     font?: Font,
     weight?: Weight,
     color?: Color,
+    alignment?: Alignment,
     children?: Snippet
 }
 
@@ -17,19 +19,22 @@ export interface RenderParameters {
     font: string;
     weight: number;
     color: string;
+    alignment: string;
 }
 
 export function parseRenderParameters(props: TextProps): RenderParameters {
     let size = props.size ?? 12;
-    let color = props.color ?? 'black';
+    let color = props.color ?? 'gray';
     let font = props.font ?? 'arsenal';
     let weight = props.weight ?? 'normal';
+    let alignment = props.alignment ?? 'justify';
 
     return {
         size: size,
         color: colors[color],
         font: fonts[font],
         weight: weights[weight],
+        alignment: alignment
     }
 }
 
