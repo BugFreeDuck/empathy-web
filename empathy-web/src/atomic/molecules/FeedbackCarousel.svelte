@@ -63,7 +63,7 @@
         align-items: center;
 
         height: 100%;
-        padding: 0em 3em 0em;
+        padding: 0 3em;
 
         text-align: center;
     }
@@ -104,7 +104,7 @@
         options={{type: "loop"}}
         hasTrack={false}
 >
-    <div class="mt-4">
+    <div class="mt-5">
         <Heading alignment="center" color="white" size={20}>atsiliepimai</Heading>
     </div>
     <SplideTrack>
