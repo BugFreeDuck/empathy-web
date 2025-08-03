@@ -15,8 +15,9 @@
     }
 
     div {
+        aspect-ratio: 402/57;
+        height: auto;
         width: 100%;
-        height: 60px;
         background-image: url("/wave-footer.svg");
         background-position: center;
         background-repeat: no-repeat;

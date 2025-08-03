@@ -18,7 +18,9 @@
     }
 
     div#header {
-        height: 13vh;
+        aspect-ratio: 402/110;
+        height: auto;
+        width: 100%;
         background-image: url("/wave-header.svg");
         background-position: center;
         background-repeat: no-repeat;
@@ -27,7 +29,7 @@
 </style>
 
 <nav>
-    <div id="header" class="w-full h-auto flex flex-col items-center">
+    <div id="header" class="w-full h-auto flex flex-col items-center pt-3">
         <Logo></Logo>
         <Sandwich bind:isOpen></Sandwich>
     </div>

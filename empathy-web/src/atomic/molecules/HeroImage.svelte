@@ -54,16 +54,19 @@
     div {
         position: relative;
         aspect-ratio: 402/204;
+
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         overflow: hidden;
 
-        margin-top: -3vh;
-
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    div:not(:first-of-type){
+        margin-top: -3vh;
     }
 
     div.side-text{
