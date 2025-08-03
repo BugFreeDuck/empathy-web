@@ -4,15 +4,20 @@
     import Footer from "../atomic/organisms/Footer.svelte";
     import {page} from '$app/state';
     import {base} from '$app/paths'
+    import {afterNavigate} from "$app/navigation";
 
     let {children} = $props();
+    let noScroll = $state(true);
 
     const noScrollPages = [
         base,
         base + '/prices'
-    ]
-    const currentPage = page.url.pathname.replace(/\/$/, "");
-    const noScroll = noScrollPages.includes(currentPage);
+    ];
+
+    afterNavigate(() => {
+        const currentPage = page.url.pathname.replace(/\/$/, "");
+        noScroll = noScrollPages.includes(currentPage);
+    });
 </script>
 
 <style>
@@ -26,7 +31,7 @@
     main {
         height: auto;
         margin-top: 14dvh;
-        margin-bottom: 6dvh;
+        margin-bottom: -3dvh;
     }
 
     main.no-scroll {
@@ -41,4 +46,4 @@
     {@render children()}
 </main>
 
-<Footer/>
+<Footer isFixed={noScroll}/>

@@ -29,6 +29,24 @@
             text: 'Labai nuoširdi, darbšti ir kūrybinga šokių mokytoja Olivija, kurią labai pamilome. Šokiai dukrai lyg terapija, visada grįžta pilna įspūdžių ir gerai pasitreniravusi. Labai motyvuojantis būrelis vaikams, puiki vieta. ',
             name: 'JOANA',
             personTitle: 'mokinės mama'
+        },
+        {
+            id: 4,
+            text: 'Nuostabi mokytoja, nuostabi atmosfera, nuostabi bendruomenė. Vaikas visuomet noriai laukia treniruotės bei grįžta su šypsena bei motyvacija tobulėjimui.',
+            name: 'AUGUSTĖ',
+            personTitle: 'mokinės mama'
+        },
+        {
+            id: 5,
+            text: 'Nuostabi mokytoja kuri moka sudominti ir įkvėpti vaikus. Didelis Jums Ačiu!',
+            name: 'ELMYRA',
+            personTitle: 'mokinės mama'
+        },
+        {
+            id: 6,
+            text: 'Puikūs šokiai moterims! Įkvepia moteriškumo ir pasitikėjimo!',
+            name: 'AISTĖ',
+            personTitle: 'LADY mokinė'
         }
     ];
 
@@ -40,27 +58,27 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        gap: 2em;
         align-items: center;
 
         height: 100%;
-        padding: 2em 3em;
+        padding: 2em 3em 0;
 
         text-align: center;
     }
 
     :global(.custom-carousel) {
         aspect-ratio: 402/261;
-        margin-bottom: 2em;
         width: 100%;
         background-image: url("/about/feedback-bg.png");
         background-size: cover;
     }
 
-    :global(.splide__pagination) {
-        display: none;
-    }
+    /*:global(.splide__pagination) {*/
+    /*    display: none;*/
+    /*}*/
 
-    button.splide__arrow{
+    button.splide__arrow {
         height: 22px;
         aspect-ratio: 12 / 22;
         background: none no-repeat center;
@@ -82,7 +100,7 @@
 
 <Splide class="custom-carousel"
         aria-label="Svelte Splide Example"
-        options={ {            type: "loop",}}
+        options={{type: "loop"}}
         hasTrack={false}
 >
     <SplideTrack>
@@ -93,8 +111,7 @@
 
                     <div class="flex flex-col items-center">
                         <img src="icons/heart.png" alt=""/>
-                        <Label size={20}>{item.name}</Label>
-                        <Label size={18}>{item.personTitle}</Label>
+                        <Label size={18}>{item.name} / {item.personTitle}</Label>
                     </div>
                 </div>
             </SplideSlide>

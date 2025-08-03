@@ -5,7 +5,7 @@
     import Paragraph from "../../atomic/atoms/Text/Paragraph.svelte";
     import FeedbackCarousel from "../../atomic/molecules/FeedbackCarousel.svelte";
 
-    let headingSize = 28;
+    let headingSize = 26;
     let paragraphSize = 14;
 </script>
 
@@ -32,7 +32,10 @@
     </TextContainer>
 
     <HeroImage imageUrl="about/circle.png"/>
-<!--    <HeroImage imageUrl="about/teacher.png"/>-->
+
+    <HeroImage imageUrl="about/teacher.png"
+               sideTextHeader="m o k y t o j a"
+               sideText="Olivija Kazakevičienė"/>
 
     <TextContainer>
         <Paragraph size="{paragraphSize}">
@@ -48,4 +51,6 @@
     </TextContainer>
 
     <FeedbackCarousel/>
+
+    <HeroImage imageUrl="about/group-hug.png" marginTop={-1.2} separator/>
 </div>

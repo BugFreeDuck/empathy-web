@@ -2,19 +2,25 @@
     import Label from "../atoms/Text/Label.svelte";
 
     interface Props {
-        name?: string
+        title?: string
+        sideTextHeader?: string
+        sideText?: string
         imageUrl: string,
         href?: string,
         separator?: boolean
         animationDelay?: number
+        marginTop?: number
     }
 
     let {
-        name,
+        title,
+        sideTextHeader,
+        sideText,
         imageUrl,
         href,
         separator,
-        animationDelay
+        animationDelay,
+        marginTop,
     }: Props = $props();
 </script>
 
@@ -55,6 +61,20 @@
         justify-content: center;
     }
 
+    div.side-text{
+        flex-direction: column;
+        align-items: end;
+        padding-right: 2em;
+    }
+
+    span{
+        display: flex;
+        flex-direction: column;
+
+        text-align: left;
+        width: 170px;
+    }
+
     div.animate {
         /*transform: translateX(-100%);*/
         filter: blur(10px);
@@ -70,7 +90,9 @@
         width: 100%;
 
         background-image: url("/wave-separator.svg");
-        aspect-ratio: 403/30;
+        background-repeat: no-repeat;
+        background-size: cover;
+        aspect-ratio: 402/31;
         z-index: 2;
     }
 
@@ -85,15 +107,24 @@
         style="
         background-image: url(./{imageUrl});
         animation-delay: {animationDelay}ms;
+        margin-top: {marginTop}em;
     "
         class:separator={separator}
-        class:animate="{animationDelay}">
+        class:animate="{animationDelay}"
+        class:side-text={sideText}>
     {#if href}
-        <a href="{href}" aria-label="{name}">
-            <Label font="arsenal" color="white" size={42}>{name}</Label>
+        <a href="{href}" aria-label="{title}">
+            <Label font="arsenal" color="white" size={42}>{title}</Label>
         </a>
     {:else}
-        <Label font="arsenal" color="white" size={42}>{name}</Label>
+        <Label font="arsenal" color="white" size={42}>{title}</Label>
+    {/if}
+
+    {#if sideText}
+        <span class="side-container">
+            <Label font="arsenal" color="black" size={20}>{sideTextHeader}</Label>
+            <Label font="arsenal" color="black" size={20}>{sideText}</Label>
+        </span>
     {/if}
 
 </div>

@@ -1,16 +1,22 @@
-﻿<script>
-    import Logo from "../atoms/Logo.svelte";
-    import Sandwich from "../atoms/Sandwich.svelte";
-    import NavbarOverlay from "../molecules/NavbarOverlay.svelte";
+﻿<script lang="ts">
     import Label from "../atoms/Text/Label.svelte";
 
+    interface Props {
+        isFixed: boolean
+    }
 
+    let {isFixed}: Props = $props();
+
+    console.log(isFixed);
 </script>
 
 <style>
-    div {
+    div.fixed{
         position: fixed;
         bottom: 0;
+    }
+
+    div {
         width: 100%;
         height: 60px;
         background-image: url("/wave-footer.svg");
@@ -21,7 +27,8 @@
     }
 </style>
 
-<div class="flex items-center justify-center pt-5">
+<div class="flex items-center justify-center pt-5"
+     class:fixed={isFixed}>
     <Label size={10} font="arsenal" color="gray">© empathy, 2025</Label>
 </div>
 
