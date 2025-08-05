@@ -3,8 +3,8 @@
 </script>
 
 <style>
-    button {
-        font-family: "Arsenal", serif;
+    a {
+        font-family: "Marcellus", serif;
         color: #626262;
         font-size: 16pt;
         border: 1px solid #5F5B5B;
@@ -15,8 +15,8 @@
 </style>
 
 <div class="mb-10 flex justify-center">
-    <button class="py-2 px-6 rounded-full"
-            on:click={() => alert('register')}>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScEL6M-bLxUNIufIX8MuHm9402mSsuWmaiHDPRR94OV89lQ2w/viewform"
+       class="py-2 px-6 rounded-full">
         REGISTRACIJA
-    </button>
+    </a>
 </div>

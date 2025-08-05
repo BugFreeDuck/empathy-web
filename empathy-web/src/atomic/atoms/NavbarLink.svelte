@@ -12,7 +12,7 @@
     a{
         font-size: 36pt;
         line-height: 36pt;
-        font-family: "Arsenal", serif;
+        font-family: "Marcellus", serif;
         font-optical-sizing: auto;
         font-weight: 400;
         font-style: normal;
@@ -20,6 +20,6 @@
     }
 </style>
 
-<a href="./{route}">
+<a href="{route}">
     {text}
 </a>

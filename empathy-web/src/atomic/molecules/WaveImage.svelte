@@ -1,6 +1,6 @@
 ﻿<script lang="ts">
     import Label from "../atoms/Text/Label.svelte";
-
+    import type {Snippet} from "svelte";
     interface Props {
         title?: string
         sideTextHeader?: string
@@ -13,6 +13,7 @@
         marginBot?: number
         aspectRatio?: string
         grow?: number
+        children?: Snippet
     }
 
     let {
@@ -27,6 +28,7 @@
         marginBot,
         aspectRatio,
         grow,
+        children,
     }: Props = $props();
 </script>
 
@@ -111,7 +113,10 @@
         class:separator={separator}
         class:animate="{animationDelay}"
         class:side-text={sideText}>
-    {#if href}
+
+    {#if children}
+        {@render children?.()}
+    {:else if href}
         <a href="{href}" aria-label="{title}">
             <Label font="marcellus" color="white" size={42}>{title}</Label>
         </a>

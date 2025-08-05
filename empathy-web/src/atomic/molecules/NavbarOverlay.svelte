@@ -29,12 +29,12 @@
 </style>
 
 <div class:visible={isOpen} class="container flex flex-col items-center gap-7">
-    <NavbarLink text="registration" route="register"/>
-    <NavbarLink text="about us" route="about"/>
-    <NavbarLink text="schedule" route="schedule"/>
-    <NavbarLink text="prices" route="prices"/>
-    <NavbarLink text="services" route="services"/>
-    <NavbarLink text="contacts" route="contacts"/>
+    <NavbarLink text="registracija" route="https://docs.google.com/forms/d/e/1FAIpQLScEL6M-bLxUNIufIX8MuHm9402mSsuWmaiHDPRR94OV89lQ2w/viewform"/>
+    <NavbarLink text="apie mus" route="./about"/>
+    <NavbarLink text="tvarkaraštis" route="./schedule"/>
+    <NavbarLink text="kainos" route="./prices"/>
+<!--    <NavbarLink text="paslaugos" route="services"/>-->
+    <NavbarLink text="kontaktai" route="./contacts"/>
 
     <div class="flex flex-row gap-5 mt-15">
         <SocialButton type="Facebook"/>

@@ -28,6 +28,6 @@
 
 <div class="flex items-center justify-center pt-5"
      class:fixed={isFixed}>
-    <Label size={10} font="marcellus" color="gray">© empathy, 2025</Label>
+    <Label size={10} font="redhat" color="gray">© empathy, 2025</Label>
 </div>
 
