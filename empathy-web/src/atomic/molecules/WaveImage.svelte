@@ -31,15 +31,6 @@
 </script>
 
 <style>
-    @keyframes fly-in {
-        0% {
-            transform: translateX(-100%);
-        }
-        100% {
-            transform: translateX(0%)
-        }
-    }
-
     @keyframes unblur {
         0% {
             filter: blur(10px);
@@ -53,7 +44,7 @@
 
     div {
         position: relative;
-        aspect-ratio: 402/186;
+        aspect-ratio: 402/204;
 
         background-position: center;
         background-repeat: no-repeat;
@@ -72,7 +63,7 @@
     div.side-text{
         flex-direction: column;
         align-items: end;
-        padding-right: 2em;
+        padding-right: 12lvw;
     }
 
     span{
@@ -80,13 +71,10 @@
         flex-direction: column;
 
         text-align: left;
-        width: 170px;
     }
 
     div.animate {
-        /*transform: translateX(-100%);*/
         filter: blur(10px);
-        /*opacity: 0;*/
         animation: unblur 0.5s;
         animation-fill-mode: forwards;
     }
@@ -115,8 +103,8 @@
         style="
         background-image: url(./{imageUrl});
         animation-delay: {animationDelay}ms;
-        margin-top: {marginTop}em;
-        margin-bot: {marginBot}em;
+        margin-top: {marginTop}lvw;
+        margin-bot: {marginBot}lvw;
         aspect-ratio: {aspectRatio};
         flex-grow: {grow}"
 
@@ -125,16 +113,16 @@
         class:side-text={sideText}>
     {#if href}
         <a href="{href}" aria-label="{title}">
-            <Label font="arsenal" color="sand" size={42}>{title}</Label>
+            <Label font="marcellus" color="white" size={42}>{title}</Label>
         </a>
     {:else}
-        <Label font="arsenal" color="sand" size={42}>{title}</Label>
+        <Label font="marcellus" color="white" size={42}>{title}</Label>
     {/if}
 
     {#if sideText}
         <span class="side-container">
-            <Label font="arsenal" color="black" size={20}>{sideTextHeader}</Label>
-            <Label font="arsenal" color="black" size={20}>{sideText}</Label>
+            <Label font="marcellus" color="black" size={20}>{sideTextHeader}</Label>
+            <Label font="marcellus" color="black" size={20}>{sideText}</Label>
         </span>
     {/if}
 

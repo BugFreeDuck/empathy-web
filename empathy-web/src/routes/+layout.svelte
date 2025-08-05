@@ -32,7 +32,7 @@
     }
 
     main {
-        height: 87lvh;
+        height: auto;
         margin-top: 10lvh;
         margin-bottom: -3dvh;
     }

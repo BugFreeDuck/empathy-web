@@ -1,5 +1,5 @@
 ﻿<script>
-    import HeroImage from "../../atomic/molecules/HeroImage.svelte";
+    import WaveImage from "../../atomic/molecules/WaveImage.svelte";
     import Heading from "../../atomic/atoms/Text/Heading.svelte";
     import TextContainer from "../../atomic/molecules/TextContainer.svelte";
     import Paragraph from "../../atomic/atoms/Text/Paragraph.svelte";
@@ -12,7 +12,7 @@
 </style>
 
 <div class="flex flex-col w-full">
-    <HeroImage title="tvarkaraštis" imageUrl="schedule/schedule.png" separator/>
+    <WaveImage title="tvarkaraštis" imageUrl="schedule/schedule.png" separator/>
 
     <ScheduleTable address="EITMINŲ G. 20"/>
 

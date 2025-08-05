@@ -6,7 +6,7 @@
     div.text-container{
         margin-left: 2em;
         margin-right: 2em;
-        margin-bottom: 4em;
+        margin-bottom: 2em;
     }
 </style>
 

@@ -1,5 +1,5 @@
 ﻿<script>
-    import HeroImage from "../../atomic/molecules/HeroImage.svelte";
+    import WaveImage from "../../atomic/molecules/WaveImage.svelte";
     import Heading from "../../atomic/atoms/Text/Heading.svelte";
     import TextContainer from "../../atomic/molecules/TextContainer.svelte";
     import Paragraph from "../../atomic/atoms/Text/Paragraph.svelte";
@@ -14,7 +14,7 @@
 </style>
 
 <div class="flex flex-col w-full justify-between">
-    <HeroImage
+    <WaveImage
             imageUrl="contacts/map.png"
             aspectRatio="395 / 261"
             marginTop={-4}
@@ -24,7 +24,7 @@
     <ContactsList/>
     <TextSocialLinks/>
 
-    <HeroImage
+    <WaveImage
             imageUrl="contacts/enterance.png"
             aspectRatio="402 / 265"/>
 </div>

@@ -59,10 +59,9 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        gap: 1em;
         align-items: center;
 
-        height: 100%;
+        height: 95%;
         padding: 0 3em;
 
         text-align: center;
@@ -101,23 +100,23 @@
 
 <Splide class="custom-carousel"
         aria-label="Svelte Splide Example"
-        options={{type: "loop"}}
+        options={{type: "loop", autoHeight: true, }}
         hasTrack={false}
 >
     <div class="mt-5">
-        <Heading alignment="center" color="white" size={28}>atsiliepimai</Heading>
+        <Heading alignment="center" font="marcellus" color="white" size={28}>atsiliepimai</Heading>
     </div>
     <SplideTrack>
         {#each items as item}
             <SplideSlide>
                 <div class="carousel-item">
-                    <div class="h-full flex flex-col items-center justify-center">
+                    <div class="flex flex-col items-center justify-center">
                         <Label alignment="center" size={16}>{item.text}</Label>
                     </div>
 
                     <div class="flex flex-col items-center">
                         <img src="icons/heart.png" alt=""/>
-                        <Label size={18}>{item.name} / {item.personTitle}</Label>
+                        <Label size={12}>{item.name} / {item.personTitle}</Label>
                     </div>
                 </div>
             </SplideSlide>

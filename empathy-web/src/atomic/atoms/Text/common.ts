@@ -1,6 +1,6 @@
 ﻿import type {Snippet} from "svelte";
 
-export type Font = 'arsenal' | 'cormorant';
+export type Font = 'marcellus' | 'redhat';
 export type Weight = 'normal' | 'bold';
 export type Color = 'black' | 'white' | 'gray' | 'sand';
 export type Alignment = 'left' | 'right' | 'center' | 'justify';
@@ -25,7 +25,7 @@ export interface RenderParameters {
 export function parseRenderParameters(props: TextProps): RenderParameters {
     let size = props.size ?? 12;
     let color = props.color ?? 'gray';
-    let font = props.font ?? 'arsenal';
+    let font = props.font ?? 'redhat';
     let weight = props.weight ?? 'normal';
     let alignment = props.alignment ?? 'justify';
 
@@ -39,15 +39,15 @@ export function parseRenderParameters(props: TextProps): RenderParameters {
 }
 
 const colors: Record<Color, string> = {
-    'white': '#FFFFFF',
+    'white': '#F3EEEA',
     'gray': '#5F5B5B',
     'black': '#5D4B3D',
     'sand': '#E5DACF'
 }
 
 const fonts: Record<Font, string> = {
-    'arsenal': 'Arsenal, serif',
-    'cormorant': 'Cormorant Garamond, serif'
+    'marcellus': 'Marcellus, serif',
+    'redhat': 'Red Hat Display, sans-serif'
 }
 
 const weights: Record<Weight, number> = {

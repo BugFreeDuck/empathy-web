@@ -1,12 +1,12 @@
 ﻿<script>
-    import HeroImage from "../../atomic/molecules/HeroImage.svelte";
+    import WaveImage from "../../atomic/molecules/WaveImage.svelte";
     import Heading from "../../atomic/atoms/Text/Heading.svelte";
     import TextContainer from "../../atomic/molecules/TextContainer.svelte";
     import Paragraph from "../../atomic/atoms/Text/Paragraph.svelte";
     import FeedbackCarousel from "../../atomic/molecules/FeedbackCarousel.svelte";
 
     let headingSize = 24;
-    let paragraphSize = 18;
+    let paragraphSize = 16;
 </script>
 
 <style>
@@ -14,10 +14,10 @@
 </style>
 
 <div class="flex flex-col w-full">
-    <HeroImage title="we are empathy" imageUrl="about/we-are.png" separator/>
+    <WaveImage title="we are empathy" imageUrl="about/we-are.png" separator/>
 
     <TextContainer>
-        <Heading size={headingSize}>
+        <Heading size={headingSize} font="marcellus">
             apie mus
         </Heading>
         <Paragraph size={paragraphSize}>
@@ -31,11 +31,12 @@
         </Paragraph>
     </TextContainer>
 
-    <HeroImage imageUrl="about/circle.png"/>
+    <WaveImage imageUrl="about/circle.png"/>
 
-    <HeroImage imageUrl="about/teacher.png"
+    <WaveImage imageUrl="about/teacher.png"
                sideTextHeader="m o k y t o j a"
-               sideText="Olivija Kazakevičienė"/>
+               sideText="Olivija Kazakevičienė"
+               marginTop={-6}/>
 
     <TextContainer>
         <Paragraph size="{paragraphSize}">
@@ -52,5 +53,5 @@
 
     <FeedbackCarousel/>
 
-    <HeroImage imageUrl="about/group-hug.png" marginTop={-1.2} separator/>
+    <WaveImage imageUrl="about/group-hug.png" marginTop={-5} separator/>
 </div>
