@@ -9,11 +9,11 @@
 
 <style>
     div{
-        height: 105%;
+        height: 100%;
     }
 </style>
 
-<div class="flex flex-col w-full justify-between">
+<div class="flex flex-col w-full gap-15">
     <WaveImage
             imageUrl="contacts/map.png"
             aspectRatio="395 / 261"
@@ -23,8 +23,4 @@
 
     <ContactsList/>
     <TextSocialLinks/>
-
-    <WaveImage
-            imageUrl="contacts/enterance.png"
-            aspectRatio="402 / 265"/>
 </div>
