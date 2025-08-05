@@ -32,14 +32,14 @@
     }
 
     main {
-        height: auto;
-        margin-top: 10dvh;
+        height: 87lvh;
+        margin-top: 10lvh;
         margin-bottom: -3dvh;
     }
 
     main.no-scroll {
-        height: 90dvh;
-        margin-bottom: 3dvh;
+        height: 87lvh;
+        margin-bottom: 3lvh;
         overflow-y: hidden;
     }
 </style>

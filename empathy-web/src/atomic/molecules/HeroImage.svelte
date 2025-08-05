@@ -53,7 +53,7 @@
 
     div {
         position: relative;
-        aspect-ratio: 402/204;
+        aspect-ratio: 402/186;
 
         background-position: center;
         background-repeat: no-repeat;
@@ -66,7 +66,7 @@
     }
 
     div:not(:first-of-type){
-        margin-top: -3vh;
+        margin-top: -0.2lvh;
     }
 
     div.side-text{
@@ -125,10 +125,10 @@
         class:side-text={sideText}>
     {#if href}
         <a href="{href}" aria-label="{title}">
-            <Label font="arsenal" color="white" size={42}>{title}</Label>
+            <Label font="arsenal" color="sand" size={42}>{title}</Label>
         </a>
     {:else}
-        <Label font="arsenal" color="white" size={42}>{title}</Label>
+        <Label font="arsenal" color="sand" size={42}>{title}</Label>
     {/if}
 
     {#if sideText}

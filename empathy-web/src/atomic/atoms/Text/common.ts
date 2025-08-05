@@ -2,7 +2,7 @@
 
 export type Font = 'arsenal' | 'cormorant';
 export type Weight = 'normal' | 'bold';
-export type Color = 'black' | 'white' | 'gray';
+export type Color = 'black' | 'white' | 'gray' | 'sand';
 export type Alignment = 'left' | 'right' | 'center' | 'justify';
 
 export interface TextProps {
@@ -41,7 +41,8 @@ export function parseRenderParameters(props: TextProps): RenderParameters {
 const colors: Record<Color, string> = {
     'white': '#FFFFFF',
     'gray': '#5F5B5B',
-    'black': '#5D4B3D'
+    'black': '#5D4B3D',
+    'sand': '#E5DACF'
 }
 
 const fonts: Record<Font, string> = {
