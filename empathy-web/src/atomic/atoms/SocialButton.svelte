@@ -7,8 +7,8 @@
 
     let {type}: Props = $props();
 
-    let imageUrl = '';
-    let route = '';
+    let imageUrl = $state('');
+    let route = $state('');
     if (type === "Facebook") {
         imageUrl = '/icons/social-fb.png'
         route = 'https://www.facebook.com/vdoh.dance'
