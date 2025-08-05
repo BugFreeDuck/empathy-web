@@ -33,12 +33,13 @@
 
     main {
         height: auto;
-        margin-top: 10dvh;
+        margin-top: 9dvh;
         margin-bottom: -3dvh;
     }
 
     main.no-scroll {
         height: 87dvh;
+        margin-top: 10dvh;
         margin-bottom: 3dvh;
         overflow-y: hidden;
     }
