@@ -4,6 +4,7 @@
     import TextContainer from "../../atomic/molecules/TextContainer.svelte";
     import Paragraph from "../../atomic/atoms/Text/Paragraph.svelte";
     import FeedbackCarousel from "../../atomic/molecules/FeedbackCarousel.svelte";
+    import RegisterButton from "../../atomic/atoms/RegisterButton.svelte";
 
     let headingSize = 24;
     let paragraphSize = 16;
@@ -50,6 +51,8 @@
             kai augi kartu su bendraminčiais, saugioje aplionkoje šis procesas tampa ypač malonus.
         </Paragraph>
     </TextContainer>
+
+    <RegisterButton/>
 
     <FeedbackCarousel/>
 

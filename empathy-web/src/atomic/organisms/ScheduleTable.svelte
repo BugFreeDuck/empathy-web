@@ -11,7 +11,7 @@
         address,
     }: Props = $props();
 
-    const bigTextSize = 18;
+    const bigTextSize = 16;
     const smallTextSize = 14;
 </script>
 
@@ -19,8 +19,8 @@
     div.schedule-table {
         width: 100%;
 
-        padding-left: 1em;
-        padding-right: 1em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
         padding-bottom: 2em;
 
         display: flex;
@@ -28,21 +28,24 @@
     }
 
     div.schedule-table > :global(label){
-        margin-left: 2em;
-
+        margin-left: 2.5em;
     }
 
     table {
         width: 100%;
-        margin-top: 0.5em;
+        margin-top: 1em;
     }
 
     table > thead {
         text-align: left;
     }
 
+    table > thead > tr > th:first-of-type {
+        width: 20%;
+    }
+
     table > thead > tr > th {
-        width: 25%;
+        width: 26.6%;
     }
 
     table > tbody {
@@ -68,13 +71,13 @@
     table > tbody > tr > td > div {
         display: flex;
         flex-direction: column;
-        margin-top: 0.4em;
+        margin-top: 0.6em;
     }
 
 </style>
 
 <div class="schedule-table">
-    <Label weight="bold" size={bigTextSize}>{address}</Label>
+    <Label font="marcellus" size={bigTextSize}>{address}</Label>
     <table>
         <thead>
         <tr>

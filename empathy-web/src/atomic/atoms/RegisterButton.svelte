@@ -14,7 +14,9 @@
 
 </style>
 
-<button class="py-2 px-6 rounded-full"
-        on:click={() => alert('register')}>
-    REGISTRACIJA
-</button>
+<div class="mb-10 flex justify-center">
+    <button class="py-2 px-6 rounded-full"
+            on:click={() => alert('register')}>
+        REGISTRACIJA
+    </button>
+</div>

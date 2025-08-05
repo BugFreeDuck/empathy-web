@@ -38,8 +38,8 @@
     }
 
     main.no-scroll {
-        height: 87lvh;
-        margin-bottom: 3lvh;
+        height: 87dvh;
+        margin-bottom: 3dvh;
         overflow-y: hidden;
     }
 </style>

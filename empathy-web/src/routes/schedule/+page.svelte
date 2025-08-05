@@ -16,7 +16,5 @@
 
     <ScheduleTable address="EITMINŲ G. 20"/>
 
-    <div class="mb-10 flex justify-center">
-        <RegisterButton/>
-    </div>
+    <RegisterButton/>
 </div>

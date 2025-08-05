@@ -52,5 +52,5 @@ const fonts: Record<Font, string> = {
 
 const weights: Record<Weight, number> = {
     'normal': 400,
-    'bold': 800
+    'bold': 600
 }
