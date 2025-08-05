@@ -33,7 +33,7 @@
 
     main {
         height: auto;
-        margin-top: 10lvh;
+        margin-top: 10dvh;
         margin-bottom: -3dvh;
     }
 
