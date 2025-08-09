@@ -10,18 +10,18 @@
     let imageUrl = $state('');
     let route = $state('');
     if (type === "Facebook") {
-        imageUrl = '/icons/social-fb.png'
+        imageUrl = './icons/social-fb.png'
         route = 'https://www.facebook.com/vdoh.dance'
     }
     if (type === "Instagram") {
-        imageUrl = '/icons/social-instagram.png'
+        imageUrl = './icons/social-instagram.png'
         route = 'https://www.instagram.com/vdoh.dance/'
     }
     if (type === "TikTok") {
-        imageUrl = '/icons/social-tiktok.png'
+        imageUrl = './icons/social-tiktok.png'
     }
     if (type === "YouTube") {
-        imageUrl = '/icons/social-yt.png'
+        imageUrl = './icons/social-yt.png'
         route = 'https://www.youtube.com/@vdohdance'
     }
 

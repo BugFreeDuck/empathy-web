@@ -29,10 +29,10 @@
 </style>
 
 <div class:visible={isOpen} class="container flex flex-col items-center gap-7">
-    <NavbarLink text="registracija" route="https://docs.google.com/forms/d/e/1FAIpQLScEL6M-bLxUNIufIX8MuHm9402mSsuWmaiHDPRR94OV89lQ2w/viewform"/>
-    <NavbarLink text="apie mus" route="./about"/>
-    <NavbarLink text="tvarkaraštis" route="./schedule"/>
-    <NavbarLink text="kainos" route="./prices"/>
+    <NavbarLink text="Registracija" route="https://docs.google.com/forms/d/e/1FAIpQLScEL6M-bLxUNIufIX8MuHm9402mSsuWmaiHDPRR94OV89lQ2w/viewform"/>
+    <NavbarLink text="Apie mus" route="./about"/>
+    <NavbarLink text="Tvarkaraštis" route="./schedule"/>
+    <NavbarLink text="Kainos" route="./prices"/>
 <!--    <NavbarLink text="paslaugos" route="services"/>-->
     <NavbarLink text="kontaktai" route="./contacts"/>
 

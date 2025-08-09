@@ -12,7 +12,7 @@
 </style>
 
 <div class="flex flex-col w-full">
-    <WaveImage title="tvarkaraštis" imageUrl="schedule/schedule.png" separator/>
+    <WaveImage title="Tvarkaraštis" imageUrl="schedule/schedule.png" separator/>
 
     <ScheduleTable address="EITMINŲ G. 20"/>
 

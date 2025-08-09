@@ -20,7 +20,6 @@
             marginTop={-4}
             href="https://maps.app.goo.gl/7QxLv15fd9TiXfL66"/>
 
-
     <ContactsList/>
     <TextSocialLinks/>
 </div>

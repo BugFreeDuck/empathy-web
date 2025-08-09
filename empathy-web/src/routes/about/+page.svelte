@@ -15,11 +15,11 @@
 </style>
 
 <div class="flex flex-col w-full">
-    <WaveImage title="we are empathy" imageUrl="about/we-are.png" separator/>
+    <WaveImage title="We are empathy" imageUrl="about/we-are.png" separator/>
 
     <TextContainer>
         <Heading size={headingSize} font="marcellus">
-            apie mus
+            Apie mus
         </Heading>
         <Paragraph size={paragraphSize}>
             Tai erdvė, kurioje pagrindiniai atspirties taškai yra <b>judesys, ryšys ir sąmoningumas.</b>
@@ -35,7 +35,7 @@
     <WaveImage imageUrl="about/circle.png"/>
 
     <WaveImage imageUrl="about/teacher.png"
-               sideTextHeader="m o k y t o j a"
+               sideTextHeader="M o k y t o j a"
                sideText="Olivija Kazakevičienė"
                marginTop={-6}/>
 
