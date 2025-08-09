@@ -1,11 +1,14 @@
-<script>
+<script lang="ts">
     import '../app.css';
     import Navbar from "../atomic/organisms/Navbar.svelte";
+    import DesktopNavbar from "../atomic/organisms/DesktopNavbar.svelte";
     import Footer from "../atomic/organisms/Footer.svelte";
     import {page} from '$app/state';
     import {base} from '$app/paths'
     import {afterNavigate} from "$app/navigation";
+    import MediaQuery from "svelte-media-queries";
 
+    let isMobile = $state(false);
     let {children} = $props();
     let noScroll = $state(true);
 
@@ -45,10 +48,19 @@
     }
 </style>
 
-<Navbar/>
+<MediaQuery query='(max-width: 600px)' bind:matches={isMobile}/>
 
-<main class:no-scroll="{noScroll}">
-    {@render children()}
-</main>
 
-<Footer isFixed={noScroll}/>
+{#if isMobile}
+        <Navbar/>
+
+        <main class:no-scroll="{noScroll}">
+            {@render children()}
+        </main>
+
+        <Footer isFixed={noScroll}/>
+{:else}
+        <DesktopNavbar/>
+{/if}
+
+
