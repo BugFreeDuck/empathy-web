@@ -49,7 +49,7 @@
     }
 
     main.desktop{
-        height: 88dvh;
+        height: 90dvh;
         margin-top: 100px;
         margin-bottom: 55px;
     }

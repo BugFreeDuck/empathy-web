@@ -29,7 +29,7 @@
         position: relative;
         height: 100%;
         width: 100%;
-        max-width: 1200px;
+        max-width: 1440px;
         padding-bottom: 1em;
 
         display: grid;
