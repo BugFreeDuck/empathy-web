@@ -1,9 +1,7 @@
 ﻿<script>
-    import Logo from "../atoms/Logo.svelte";
-    import Sandwich from "../atoms/Sandwich.svelte";
-    import NavbarOverlay from "../molecules/NavbarOverlay.svelte";
-
     import {beforeNavigate} from "$app/navigation";
+    import DesktopLogo from "../atoms/DesktopLogo.svelte";
+    import RegisterButton from "../atoms/RegisterButton.svelte";
 
     let isOpen = $state(false);
     beforeNavigate(() => isOpen = false);
@@ -18,27 +16,41 @@
     }
 
     div#header {
-        aspect-ratio: 402/110;
-        height: auto;
+        height: 170px;
+
         width: 100%;
 
         display: flex;
         align-items: center;
         justify-content: center;
 
-        background-image: url("/wave-header.svg");
+        background-image: url("/desktop/wave-header.svg");
         background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        background-repeat: repeat-x;
+    }
+
+    div.header-container {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    div.register-container{
+        position: absolute;
+        top: 20px;
+        right: 20px;
     }
 </style>
 
 <nav>
     <div id="header" class="w-full h-auto flex flex-col items-center">
-        <Logo></Logo>
-        <Sandwich bind:isOpen></Sandwich>
+        <div class="header-container flex flex-col items-center justify-center">
+            <DesktopLogo/>
+            <div class="register-container">
+                <RegisterButton/>
+            </div>
+        </div>
     </div>
-
-    <NavbarOverlay isOpen={isOpen}/>
 </nav>
 

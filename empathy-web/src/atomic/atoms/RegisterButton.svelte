@@ -6,7 +6,7 @@
     a {
         font-family: "Marcellus", serif;
         color: #626262;
-        font-size: 16pt;
+        font-size: 16px;
         border: 1px solid #5F5B5B;
         transition: background-color 0.2s ease-in-out;
         cursor: pointer;

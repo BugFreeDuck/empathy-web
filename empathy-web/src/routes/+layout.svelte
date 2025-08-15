@@ -7,8 +7,9 @@
     import {base} from '$app/paths'
     import {afterNavigate} from "$app/navigation";
     import MediaQuery from "svelte-media-queries";
+    import {mobileQueryState} from "$lib/mobileQuery.svelte";
+    import DesktopFooter from "../atomic/organisms/DesktopFooter.svelte";
 
-    let isMobile = $state(false);
     let {children} = $props();
     let noScroll = $state(true);
 
@@ -34,33 +35,50 @@
         background-color: #F3EEEA;
     }
 
-    main {
+    main.mobile {
         height: auto;
         margin-top: 9dvh;
         margin-bottom: -3dvh;
     }
 
-    main.no-scroll {
+    main.mobile.no-scroll {
         height: 87dvh;
         margin-top: 10dvh;
         margin-bottom: 3dvh;
         overflow-y: hidden;
     }
+
+    main.desktop{
+        height: 88dvh;
+        margin-top: 100px;
+        margin-bottom: 55px;
+    }
 </style>
 
-<MediaQuery query='(max-width: 600px)' bind:matches={isMobile}/>
+<MediaQuery query='(max-width: 600px)' bind:matches={mobileQueryState.isMobile}/>
 
+{#if mobileQueryState.isMobile}
+    <Navbar/>
 
-{#if isMobile}
-        <Navbar/>
+    <main
+            class:mobile="{mobileQueryState.isMobile}"
+            class:desktop="{!mobileQueryState.isMobile}"
+            class:no-scroll="{noScroll}">
+        {@render children()}
+    </main>
 
-        <main class:no-scroll="{noScroll}">
-            {@render children()}
-        </main>
-
-        <Footer isFixed={noScroll}/>
+    <Footer isFixed={noScroll}/>
 {:else}
-        <DesktopNavbar/>
+    <DesktopNavbar/>
+
+    <main
+            class:mobile="{mobileQueryState.isMobile}"
+            class:desktop="{!mobileQueryState.isMobile}"
+            class:no-scroll="{noScroll}">
+        {@render children()}
+    </main>
+
+    <DesktopFooter/>
 {/if}
 
 

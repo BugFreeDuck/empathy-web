@@ -1,0 +1,1 @@
+﻿export const mobileQueryState = $state({isMobile: false});
