@@ -7,6 +7,7 @@
         href?: string,
         imageUrl: string,
         animationDelay?: number
+        marginTop?: number
         children?: Snippet
     }
 
@@ -15,17 +16,16 @@
         imageUrl,
         href,
         animationDelay,
-        children,
+        marginTop,
+        children
     }: Props = $props();
 </script>
 
 <style>
     div {
         position: relative;
-        aspect-ratio: var(--aspect-ratio);
-        max-height: var(--max-height);
-        height: var(--height);
-        margin-top: var(--margin-top);
+        aspect-ratio: 1440/664;
+        max-height: 664px;
 
         background-position: center;
         background-repeat: no-repeat;
@@ -37,22 +37,22 @@
         justify-content: center;
 
         flex-grow: 1;
+        z-index: 2;
     }
 </style>
 
 <div
         style="
         background-image: url(./{imageUrl});
-        animation-delay: {animationDelay}ms;"
+        animation-delay: {animationDelay}ms;
+        margin-top: {marginTop}em;"
         class:animate="{animationDelay}">
-    {#if children}
-        {@render children?.()}
-    {:else if href}
+    {#if href}
         <a href="{href}" aria-label="{title}">
-            <Label font="marcellus" color="white" size={76}>{title}</Label>
+            <Label font="marcellus" color="sand" size={42}>{title}</Label>
         </a>
     {:else}
-        <Label font="marcellus" color="white" size={76}>{title}</Label>
+        <Label font="marcellus" color="sand" size={42}>{title}</Label>
     {/if}
 
 

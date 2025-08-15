@@ -16,6 +16,7 @@
     }
 
     div#footer {
+        position: relative;
         aspect-ratio: 402/57;
         height: 123px;
 
@@ -28,6 +29,8 @@
         background-image: url("/desktop/wave-footer.svg");
         background-position: center;
         background-repeat: repeat-x;
+
+        z-index: 10;
     }
 
     div.footer-grid {

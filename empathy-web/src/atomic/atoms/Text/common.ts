@@ -23,11 +23,11 @@ export interface RenderParameters {
 }
 
 export function parseRenderParameters(props: TextProps): RenderParameters {
-    let size = props.size ?? 12;
-    let color = props.color ?? 'gray';
-    let font = props.font ?? 'redhat';
-    let weight = props.weight ?? 'normal';
-    let alignment = props.alignment ?? 'justify';
+    const size = props.size ?? 12;
+    const color = props.color ?? 'gray';
+    const font = props.font ?? 'redhat';
+    const weight = props.weight ?? 'normal';
+    const alignment = props.alignment ?? 'justify';
 
     return {
         size: size,

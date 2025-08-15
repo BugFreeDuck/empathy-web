@@ -11,6 +11,7 @@
         font-weight: 400;
         font-style: normal;
         letter-spacing: 0.2em;
+        text-wrap: var(--text-wrap);
     }
 </style>
 

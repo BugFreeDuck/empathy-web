@@ -44,7 +44,7 @@
     main.desktop {
         height: auto;
         margin-top: 8dvh;
-        margin-bottom: -3dvh;
+        margin-bottom: -70px;
     }
 
     main.mobile.no-scroll {

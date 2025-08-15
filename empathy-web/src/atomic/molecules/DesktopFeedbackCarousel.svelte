@@ -3,7 +3,6 @@
     import '@splidejs/svelte-splide/css';
 
     import Label from "../atoms/Text/Label.svelte";
-    import Heading from "../atoms/Text/Heading.svelte";
 
     type CarouselItem = {
         id: number;
@@ -68,15 +67,24 @@
     }
 
     :global(.custom-carousel) {
-        aspect-ratio: 402/261;
-        width: 100%;
-        background-image: url("/about/feedback-bg.png");
-        background-size: cover;
+        aspect-ratio: 1083/764;
+        width: 1000px;
+        overflow: visible;
+
+        background-image: url("/desktop/about/feedback-bg.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        padding-top: 200px;
+        padding-bottom: 250px;
+        padding-right: 210px;
+        padding-left: 80px;
     }
 
-    /*:global(.splide__pagination) {*/
-    /*    display: none;*/
-    /*}*/
+    :global(.splide__pagination) {
+        position: relative;
+        margin-top: 1em;
+    }
 
     button.splide__arrow {
         height: 22px;
@@ -100,23 +108,20 @@
 
 <Splide class="custom-carousel"
         aria-label="Svelte Splide Example"
-        options={{type: "loop", autoHeight: true, }}
+        options={{type: "loop"}}
         hasTrack={false}
 >
-    <div class="mt-5">
-        <Heading alignment="center" font="marcellus" color="white" size={28}>atsiliepimai</Heading>
-    </div>
     <SplideTrack>
         {#each items as item (item.id)}
             <SplideSlide>
                 <div class="carousel-item">
                     <div class="flex flex-col items-center justify-center">
-                        <Label alignment="center" size={16}>{item.text}</Label>
+                        <Label alignment="center" size={32}>{item.text}</Label>
                     </div>
 
                     <div class="flex flex-col items-center">
                         <img src="icons/heart.png" alt=""/>
-                        <Label size={12}>{item.name} / {item.personTitle}</Label>
+                        <Label size={24}>{item.name} / {item.personTitle}</Label>
                     </div>
                 </div>
             </SplideSlide>
