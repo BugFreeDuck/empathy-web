@@ -1,19 +1,24 @@
 ﻿<script lang="ts">
     import Label from "../atoms/Text/Label.svelte";
-    import RegisterButton from "../atoms/RegisterButton.svelte";
-    import DesktopLogo from "../atoms/DesktopLogo.svelte";
-    import SocialButton from "../atoms/SocialButton.svelte";
     import TextSocialLinks from "../molecules/TextSocialLinks.svelte";
 
+    interface Props {
+        isFixed: boolean
+    }
+
+    let {isFixed}: Props = $props();
 </script>
 
 <style>
+    div#footer.fixed{
+        position: fixed;
+        bottom: 0;
+    }
+
     div#footer {
         aspect-ratio: 402/57;
         height: 123px;
 
-        position: fixed;
-        bottom: 0;
         width: 100%;
 
         display: flex;
@@ -43,7 +48,7 @@
     }
 </style>
 
-<div id="footer">
+<div id="footer" class:fixed={isFixed}>
     <div class="footer-grid">
         <div class="grid-item">
             <TextSocialLinks fontSize={16}/>

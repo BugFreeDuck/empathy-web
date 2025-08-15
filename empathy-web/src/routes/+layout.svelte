@@ -41,6 +41,12 @@
         margin-bottom: -3dvh;
     }
 
+    main.desktop {
+        height: auto;
+        margin-top: 8dvh;
+        margin-bottom: -3dvh;
+    }
+
     main.mobile.no-scroll {
         height: 87dvh;
         margin-top: 10dvh;
@@ -48,7 +54,7 @@
         overflow-y: hidden;
     }
 
-    main.desktop{
+    main.desktop.no-scroll{
         height: 90dvh;
         margin-top: 100px;
         margin-bottom: 55px;
@@ -78,7 +84,7 @@
         {@render children()}
     </main>
 
-    <DesktopFooter/>
+    <DesktopFooter isFixed={noScroll}/>
 {/if}
 
 
