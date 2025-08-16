@@ -72,6 +72,7 @@
         width: 100%;
         background-image: url("/about/feedback-bg.png");
         background-size: cover;
+        padding-bottom: 1em;
     }
 
     /*:global(.splide__pagination) {*/
@@ -100,7 +101,7 @@
 
 <Splide class="custom-carousel"
         aria-label="Svelte Splide Example"
-        options={{type: "loop", autoHeight: true, }}
+        options={{type: "loop", height: 180}}
         hasTrack={false}
 >
     <div class="mt-5">

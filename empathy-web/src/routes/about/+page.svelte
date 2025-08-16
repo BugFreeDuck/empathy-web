@@ -133,9 +133,9 @@
         </DesktopRectangleImage>
     </div>
 
-    <div class="flex flex-col w-full h-full items-center" style="height: 500px;">
-        <div class="w-full h-full flex flex-row items-center justify-around" style="max-width: 1440px; z-index:2">
-            <div class="pt-20">
+    <div class="flex flex-col w-full h-full items-center">
+        <div class="w-full h-full flex flex-row items-center justify-around" style="max-width: 1600px; z-index:2">
+            <div>
                 <DesktopFeedbackCarousel/>
             </div>
             <div class="">
@@ -149,7 +149,6 @@
     <div class="flex flex-col w-full">
         <DesktopRectangleImage imageUrl="desktop/about/group-hug.png"
                                --aspect-ratio="1440 / 680"
-                               --max-height="680px"
-                                --margin-top="2em"/>
+                               --max-height="680px"/>
     </div>
 {/if}
