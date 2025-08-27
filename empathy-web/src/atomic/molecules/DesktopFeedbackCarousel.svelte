@@ -12,6 +12,8 @@
         personTitle: string
     }
 
+    let carousel: Splide;
+
     let items: CarouselItem[] = [
         {
             id: 1,
@@ -70,8 +72,7 @@
 
     :global(.custom-carousel-desktop) {
         aspect-ratio: 1083/764;
-        width: 50vw;
-        min-width: 40vw;
+        width: clamp(500px, 50vw, 1000px);
         overflow: visible;
 
         background-image: url("/desktop/about/feedback-bg.png");
@@ -81,9 +82,9 @@
         margin-top: -5em;
         margin-bottom: -5em;
 
-        padding-top: 10vw;
-        padding-right: 13vw;
-        padding-left: 5vw;
+        padding-top: clamp(100px ,10vw, 200px);
+        padding-right: clamp(100px, 13vw, 200px);
+        padding-left: clamp(100px, 5vw, 200px);
     }
 
     :global(.splide__pagination) {
@@ -119,6 +120,7 @@
         aria-label="Svelte Splide Example"
         options={{type: "loop", autoHeight: true}}
         hasTrack={false}
+        bind:this={carousel}
 >
     <SplideTrack>
         {#each items as item (item.id)}

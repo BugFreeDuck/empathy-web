@@ -41,12 +41,6 @@
         margin-bottom: -3dvh;
     }
 
-    main.desktop {
-        height: auto;
-        margin-top: 8dvh;
-        margin-bottom: -70px;
-    }
-
     main.mobile.no-scroll {
         height: 87dvh;
         margin-top: 10dvh;
@@ -54,10 +48,16 @@
         overflow-y: hidden;
     }
 
+    main.desktop {
+        height: auto;
+        margin-top: 60px;
+        margin-bottom: -60px;
+    }
+
     main.desktop.no-scroll{
-        height: 90dvh;
-        margin-top: 100px;
-        margin-bottom: 55px;
+        height: 93dvh;
+        margin-top: 4dvh;
+        margin-bottom: 3dvh;
     }
 </style>
 

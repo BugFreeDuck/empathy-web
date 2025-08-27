@@ -17,8 +17,8 @@
 
     div#footer {
         position: relative;
-        aspect-ratio: 402/57;
-        height: 123px;
+        aspect-ratio: 1833/83;
+        height: 83px;
 
         width: 100%;
 
@@ -38,7 +38,7 @@
         height: 100%;
         width: 100%;
         max-width: 1440px;
-        padding-bottom: 1em;
+        padding-bottom: 0.5em;
 
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;

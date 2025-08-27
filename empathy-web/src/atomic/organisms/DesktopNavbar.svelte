@@ -1,10 +1,6 @@
-﻿<script>
-    import {beforeNavigate} from "$app/navigation";
+﻿<script lang="ts">
     import DesktopLogo from "../atoms/DesktopLogo.svelte";
     import RegisterButton from "../atoms/RegisterButton.svelte";
-
-    let isOpen = $state(false);
-    beforeNavigate(() => isOpen = false);
 </script>
 
 <style>
@@ -16,7 +12,7 @@
     }
 
     div#header {
-        height: 170px;
+        height: 106px;
 
         width: 100%;
 
@@ -38,7 +34,7 @@
 
     div.register-container{
         position: absolute;
-        top: 20px;
+        top: 10px;
         right: 20px;
     }
 </style>
