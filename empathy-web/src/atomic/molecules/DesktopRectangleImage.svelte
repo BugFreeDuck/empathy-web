@@ -49,10 +49,10 @@
         {@render children?.()}
     {:else if href}
         <a href="{href}" aria-label="{title}">
-            <Label font="marcellus" color="white" size={76}>{title}</Label>
+            <Label font="marcellus" color="white" size={76} --letter-spacing="0.4em">{title}</Label>
         </a>
     {:else}
-        <Label font="marcellus" color="white" size={76}>{title}</Label>
+        <Label font="marcellus" color="white" size={76} --letter-spacing="0.4em">{title}</Label>
     {/if}
 
 

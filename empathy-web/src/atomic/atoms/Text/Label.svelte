@@ -10,7 +10,7 @@
         font-optical-sizing: auto;
         font-weight: 400;
         font-style: normal;
-        letter-spacing: 0;
+        letter-spacing: var(--letter-spacing);
     }
 </style>
 

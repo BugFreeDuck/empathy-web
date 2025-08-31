@@ -2,7 +2,6 @@
     import {Splide, SplideSlide, SplideTrack} from '@splidejs/svelte-splide';
     import '@splidejs/svelte-splide/css';
 
-    import Label from "../atoms/Text/Label.svelte";
     import DynamicSizeLabel from "../atoms/Text/DynamicSizeLabel.svelte";
 
     type CarouselItem = {
@@ -127,12 +126,12 @@
             <SplideSlide>
                 <div class="carousel-item">
                     <div class="flex flex-col items-center justify-center">
-                        <DynamicSizeLabel alignment="center">{item.text}</DynamicSizeLabel>
+                        <DynamicSizeLabel alignment="center" --min-size="10" --max-size="20">{item.text}</DynamicSizeLabel>
                     </div>
 
                     <div class="flex flex-col items-center">
                         <img src="icons/heart.png" alt=""/>
-                        <DynamicSizeLabel>{item.name} / {item.personTitle}</DynamicSizeLabel>
+                        <DynamicSizeLabel --min-size="10" --max-size="20">{item.name} / {item.personTitle}</DynamicSizeLabel>
                     </div>
                 </div>
             </SplideSlide>

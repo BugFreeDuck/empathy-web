@@ -1,7 +1,5 @@
 ﻿<script lang="ts">
     import Label from "../atoms/Text/Label.svelte";
-    import type {Color} from "../atoms/Text/common";
-
 
     interface Props {
         address?: string
