@@ -18,6 +18,7 @@
         font-size: calc(1px * var(--min-size));
         font-style: normal;
         letter-spacing: var(--letter-spacing);
+        cursor: var(--cursor);
     }
 
     @media screen and (min-width: 1000px) {

@@ -1,11 +1,14 @@
 ﻿<script lang="ts">
     import Label from "../atoms/Text/Label.svelte";
+    import type {Snippet} from "svelte";
 
     interface Props {
         title?: string
         href?: string,
         imageUrl: string,
-        animationDelay?: number
+        animationDelay?: number,
+        noGreyscale?: boolean,
+        children?: Snippet
     }
 
     let {
@@ -13,10 +16,14 @@
         imageUrl,
         href,
         animationDelay,
+        noGreyscale,
+        children
     }: Props = $props();
 
     function navigate(href: string) {
-        window.location.href = href;
+        if (href) {
+            window.location.href = href;
+        }
     }
 </script>
 
@@ -50,9 +57,17 @@
         align-items: center;
         justify-content: center;
 
-        cursor: pointer;
-
         flex-grow: 1;
+
+    }
+
+    div.clickable {
+        cursor: pointer;
+    }
+
+    div.no-greyscale {
+        background-blend-mode: initial;
+        background-color: rgba(255, 255, 255, 0);
     }
 
     div:hover {
@@ -65,9 +80,16 @@
         background-image: url(./{imageUrl});
         animation-delay: {animationDelay}ms;"
         class:animate="{animationDelay}"
+        class:no-greyscale="{noGreyscale}"
+        class:clickable={href}
         on:click={() => navigate(href)}
-        role="button">
+        role="button"
+        tabindex="0">
 
+    {#if children}
+        {@render children?.()}
+    {:else}
         <Label font="marcellus" color="sand" size={42}>{title}</Label>
+    {/if}
 </div>
 

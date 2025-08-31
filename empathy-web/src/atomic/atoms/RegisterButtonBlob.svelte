@@ -19,6 +19,10 @@
         padding-right: 6em;
     }
 
+    a {
+        cursor: pointer;
+        padding: 2em;
+    }
 </style>
 
 <div class="mb-10 flex justify-center items-center">

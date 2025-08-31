@@ -11,6 +11,7 @@
         font-weight: 400;
         font-style: normal;
         letter-spacing: var(--letter-spacing);
+        cursor: var(--cursor);
     }
 </style>
 
