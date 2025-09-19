@@ -65,6 +65,7 @@
         height: 100%;
 
         padding: 0 2em;
+        gap: 1em;
 
         text-align: center;
     }
@@ -72,7 +73,12 @@
     :global(.custom-carousel-desktop) {
         aspect-ratio: 1083/764;
         width: clamp(500px, 50vw, 1000px);
+        height: 100%;
         overflow: visible;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
 
         background-image: url("/desktop/about/feedback-bg.png");
         background-size: contain;
@@ -81,10 +87,16 @@
         margin-top: -5em;
         margin-bottom: -5em;
 
-        padding-top: clamp(100px ,10vw, 200px);
+        padding-top: clamp(100px ,10vw, 300px);
+        padding-bottom: clamp(120px, 5vw, 220px);
         padding-right: clamp(100px, 13vw, 200px);
         padding-left: clamp(100px, 5vw, 200px);
     }
+
+    /*:global(.custom-splide-track) {*/
+    /*    height: 80%;*/
+    /*    margin-bottom: 1em;*/
+    /*}*/
 
     :global(.splide__pagination) {
         position: relative;
@@ -121,7 +133,7 @@
         hasTrack={false}
         bind:this={carousel}
 >
-    <SplideTrack>
+    <SplideTrack class="custom-splide-track">
         {#each items as item (item.id)}
             <SplideSlide>
                 <div class="carousel-item">
@@ -129,7 +141,7 @@
                         <DynamicSizeLabel alignment="center" --min-size="10" --max-size="20">{item.text}</DynamicSizeLabel>
                     </div>
 
-                    <div class="flex flex-col items-center">
+                    <div class="flex flex-col items-center gap-5">
                         <img src="icons/heart.png" alt=""/>
                         <DynamicSizeLabel --min-size="10" --max-size="20">{item.name} / {item.personTitle}</DynamicSizeLabel>
                     </div>

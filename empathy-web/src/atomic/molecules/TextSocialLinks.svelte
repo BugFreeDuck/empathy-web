@@ -21,13 +21,13 @@
 </style>
 
 <div>
-    <a href="https://www.instagram.com/vdoh.dance/">
+    <a href="https://www.instagram.com/empathy.movement/">
         <Label size={fontSize}>INSTAGRAM</Label>
     </a>
-    <a href="https://www.facebook.com/vdoh.dance">
+    <a href="https://www.facebook.com/empathyvilnius">
         <Label size={fontSize}>FACEBOOK</Label>
     </a>
-    <a href="https://www.youtube.com/@vdohdance">
+    <a href="https://www.youtube.com/@empathyvilnius">
         <Label size={fontSize}>YOUTUBE</Label>
     </a>
 </div>
