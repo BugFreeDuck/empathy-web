@@ -18,7 +18,7 @@
     div#footer {
         position: relative;
         aspect-ratio: 1833/83;
-        height: 83px;
+        height: 65px;
 
         width: 100%;
 

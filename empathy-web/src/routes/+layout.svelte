@@ -50,7 +50,7 @@
 
     main.desktop {
         height: auto;
-        margin-top: 60px;
+        margin-top: 55px;
         margin-bottom: -60px;
     }
 

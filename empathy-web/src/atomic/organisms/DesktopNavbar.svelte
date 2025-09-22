@@ -12,7 +12,7 @@
     }
 
     div#header {
-        height: 106px;
+        height: 89px;
 
         width: 100%;
 
@@ -29,7 +29,7 @@
         position: relative;
         height: 100%;
         width: 100%;
-        max-width: 1440px;
+        max-width: 2000px;
     }
 
     div.register-container{
