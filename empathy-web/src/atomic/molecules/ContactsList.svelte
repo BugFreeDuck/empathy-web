@@ -52,10 +52,10 @@
             <Label size={fontSize}>Eitminų g. 20</Label>
         </span>
     </a>
-    <a href="tel:(0-628) 19 320">
+    <a href="tel:+370 689 25525">
         <span>
             <img src="icons/phone.svg" alt="location" class:large={large}/>
-            <Label size={fontSize}>(0-628) 19 320</Label>
+            <Label size={fontSize}>+370 689 25525</Label>
         </span>
     </a>
     <a href="mailto:empathy.vilnius@gmail.com">
