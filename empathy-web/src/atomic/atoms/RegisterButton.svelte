@@ -17,6 +17,6 @@
 <div class="mb-10 flex justify-center">
     <a href="https://docs.google.com/forms/d/e/1FAIpQLScEL6M-bLxUNIufIX8MuHm9402mSsuWmaiHDPRR94OV89lQ2w/viewform"
        class="py-2 px-6 rounded-full">
-        REGISTRACIJA
+        REGISTRACIJA!
     </a>
 </div>
