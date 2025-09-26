@@ -46,7 +46,7 @@
 </style>
 
 <div class:full-width={props.fullWidth}>
-    <a href="https://maps.app.goo.gl/7QxLv15fd9TiXfL66">
+    <a href="https://share.google/8YHeWJ66zBIraIynH">
         <span>
             <img src="icons/location.svg" alt="location" class:large={large}/>
             <Label size={fontSize}>Eitminų g. 20</Label>
