@@ -18,18 +18,20 @@
     }
 
     div#header {
-        aspect-ratio: 402/110;
-        height: auto;
+        aspect-ratio: 784/94;
+        height: 94px;
         width: 100%;
+
+        padding-top: 1em;
 
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: start;
 
-        background-image: url("/wave-header.svg");
+        background-image: url("/wawe-header.svg");
         background-position: center;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: inherit;
     }
 </style>
 

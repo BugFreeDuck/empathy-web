@@ -1,7 +1,7 @@
 ﻿<style>
     a.logo {
-        height: 45px;
-        width: 154px;
+        height: 30px;
+        width: 103px;
         background-image: url("/logo.svg");
         background-position: center;
         background-repeat: no-repeat;

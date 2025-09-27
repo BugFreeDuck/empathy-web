@@ -15,8 +15,8 @@
     }
 
     div {
-        aspect-ratio: 402/57;
-        height: auto;
+        aspect-ratio: 781/59;
+        height: 59px;
         width: 100%;
         background-image: url("/wave-footer.svg");
         background-position: center;
@@ -26,8 +26,8 @@
     }
 </style>
 
-<div class="flex items-center justify-center pt-5"
+<div class="flex items-center justify-center pt-7"
      class:fixed={isFixed}>
-    <Label size={10} font="redhat" color="gray">© empathy, 2025</Label>
+    <Label size={12} font="redhat" color="gray">© empathy, 2025</Label>
 </div>
 

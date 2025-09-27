@@ -15,7 +15,7 @@
     button{
         position: absolute;
 
-        top: 2em;
+        top: 0.6em;
         right: 2em;
 
         width: 24px;

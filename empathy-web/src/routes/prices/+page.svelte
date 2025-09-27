@@ -1,4 +1,8 @@
-﻿<script>
+﻿<svelte:head>
+    <title>Empathy | Kainos</title>
+</svelte:head>
+
+<script>
     import WaveImage from "../../atomic/molecules/WaveImage.svelte";
     import Label from "../../atomic/atoms/Text/Label.svelte";
     import {mobileQueryState} from "$lib/mobileQuery.svelte.js";
