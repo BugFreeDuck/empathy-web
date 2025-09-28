@@ -1,4 +1,8 @@
-﻿<script>
+﻿<svelte:head>
+    <title>Empathy | Tvarkaraštis</title>
+</svelte:head>
+
+<script>
     import WaveImage from "../../atomic/molecules/WaveImage.svelte";
     import ScheduleTable from "../../atomic/organisms/ScheduleTable.svelte";
     import RegisterButton from "../../atomic/atoms/RegisterButton.svelte";

@@ -1,4 +1,8 @@
-﻿<script>
+﻿<svelte:head>
+    <title>Empathy | Apie Mus</title>
+</svelte:head>
+
+<script lang="ts">
     import WaveImage from "../../atomic/molecules/WaveImage.svelte";
     import Heading from "../../atomic/atoms/Text/Heading.svelte";
     import TextContainer from "../../atomic/molecules/TextContainer.svelte";
@@ -16,10 +20,6 @@
     let desktopParagraphSize = 20;
 
 </script>
-
-<style>
-
-</style>
 
 {#if mobileQueryState.isMobile}
     <div class="flex flex-col w-full">

@@ -37,14 +37,14 @@
 
     main.mobile {
         height: auto;
-        margin-top: 9dvh;
-        margin-bottom: -3dvh;
+        margin-top: 3dvh;
+        margin-bottom: -4dvh;
     }
 
     main.mobile.no-scroll {
-        height: 87dvh;
-        margin-top: 10dvh;
-        margin-bottom: 3dvh;
+        height: 95dvh;
+        margin-top: 3dvh;
+        margin-bottom: 2dvh;
         overflow-y: hidden;
     }
 

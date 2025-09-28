@@ -1,4 +1,8 @@
-﻿<script>
+﻿<svelte:head>
+    <title>Empathy | Kontaktai</title>
+</svelte:head>
+
+<script>
     import WaveImage from "../../atomic/molecules/WaveImage.svelte";
     import ContactsList from "../../atomic/molecules/ContactsList.svelte";
     import TextSocialLinks from "../../atomic/molecules/TextSocialLinks.svelte";
@@ -9,7 +13,6 @@
 <style>
     div {
         height: 100%;
-        padding-top: 12vh
     }
 
     div.width-limit {
@@ -25,7 +28,7 @@
         <WaveImage
                 imageUrl="contacts/map.png"
                 aspectRatio="395 / 261"
-                marginTop={-4}
+                marginTop={-5}
                 href="https://maps.app.goo.gl/7QxLv15fd9TiXfL66"/>
 
         <ContactsList size="small" --flex-direction="column"/>

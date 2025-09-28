@@ -13,14 +13,13 @@
     div.container {
         position: absolute;
         width: 100%;
-        height: 90vh;
-        margin-top: -3vh;
-        padding-top: 10vh;
+        height: 96dvh;
+        margin-top: -6dvh;
         background-color: #E5DACF;
 
         transform: translateX(100%);
         transition: 0.5s transform;
-        z-index: 1;
+        z-index: -1;
     }
 
     div.container.visible {
@@ -28,7 +27,7 @@
     }
 </style>
 
-<div class:visible={isOpen} class="container flex flex-col items-center gap-7">
+<div class:visible={isOpen} class="container flex flex-col items-center justify-center gap-4">
     <NavbarLink text="registracija" route="https://docs.google.com/forms/d/e/1FAIpQLScEL6M-bLxUNIufIX8MuHm9402mSsuWmaiHDPRR94OV89lQ2w/viewform"/>
     <NavbarLink text="apie mus" route="./about"/>
     <NavbarLink text="tvarkaraštis" route="./schedule"/>
