@@ -1,6 +1,9 @@
 ﻿name: Deploy PROD
 on:
   workflow_dispatch:
+  push:
+    tags:
+      - '*'
 
 jobs:
   build-and-push-to-ghcr:
