@@ -126,7 +126,7 @@
                         <b>Empathy</b> erdvę įkūriau norėdama pasidalinti savo meile ir pajauta judesio atžvilgiu.
                         Šioje erdvėje ne tik mokau, bet ir pati kiekvieną dieną mokausi iš savo mokinių, juk augimas yra
                         beribis, o
-                        kai augi kartu su bendraminčiais, saugioje aplionkoje šis procesas tampa ypač malonus.
+                        kai augi kartu su bendraminčiais, saugioje aplinkoje šis procesas tampa ypač malonus.
                     </Paragraph>
                 </div>
             </div>

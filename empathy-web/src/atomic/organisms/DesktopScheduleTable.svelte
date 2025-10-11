@@ -88,19 +88,19 @@
             <td>
                 <div class="color-sand">
                     <Label size={bigTextSize} alignment="center">LADIES</Label>
-                    <Label size={smallTextSize} alignment="center">18+ m.</Label>
+                    <Label size={smallTextSize} alignment="center">25+ m.</Label>
                 </div>
             </td>
             <td>
                 <div class="color-gray">
                     <Label size={bigTextSize} alignment="center">KIDS</Label>
-                    <Label size={smallTextSize} alignment="center">7-11 m.</Label>
+                    <Label size={smallTextSize} alignment="center">7-12 m.</Label>
                 </div>
             </td>
             <td>
                 <div class="color-sand">
                     <Label size={bigTextSize} alignment="center">ADULTS</Label>
-                    <Label size={smallTextSize} alignment="center">16+ m.</Label>
+                    <Label size={smallTextSize} alignment="center">14+ m.</Label>
                 </div>
             </td>
         </tr>
@@ -110,10 +110,7 @@
 
             </td>
             <td>
-                <div class="color-sand">
-                    <Label size={bigTextSize} alignment="center">JUNIORS</Label>
-                    <Label size={smallTextSize} alignment="center">12-15 m.</Label>
-                </div>
+
             </td>
             <td>
                 <div class="color-gray">
@@ -127,19 +124,19 @@
             <td>
                 <div class="color-sand">
                     <Label size={bigTextSize} alignment="center">LADIES</Label>
-                    <Label size={smallTextSize} alignment="center">18+ m.</Label>
+                    <Label size={smallTextSize} alignment="center">25+ m.</Label>
                 </div>
             </td>
             <td>
                 <div class="color-gray">
                     <Label size={bigTextSize} alignment="center">KIDS</Label>
-                    <Label size={smallTextSize} alignment="center">7-11 m.</Label>
+                    <Label size={smallTextSize} alignment="center">7-12 m.</Label>
                 </div>
             </td>
             <td>
                 <div class="color-sand">
                     <Label size={bigTextSize} alignment="center">ADULTS</Label>
-                    <Label size={smallTextSize} alignment="center">16+ m.</Label>
+                    <Label size={smallTextSize} alignment="center">14+ m.</Label>
                 </div>
             </td>
         </tr>
@@ -149,10 +146,7 @@
 
             </td>
             <td>
-                <div class="color-sand">
-                    <Label size={bigTextSize} alignment="center">JUNIORS</Label>
-                    <Label size={smallTextSize} alignment="center">12-15 m.</Label>
-                </div>
+
             </td>
             <td>
                 <div class="color-gray">

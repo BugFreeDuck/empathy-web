@@ -51,7 +51,6 @@
             <div>
                 <ul>
                     <li>Pamokos vyksta adresu <b>Eitminų g.20</b></li>
-                    <li>LADY evening vyksta kartą per savaitę, pamoka <b>1.5 val. trukmės</b></li>
                     <li>MINI pamokos trunka <b>45 min.</b></li>
                     <li>Naujiems nariams pirma pamoka <b>NEMOKAMA</b></li>
                 </ul>
