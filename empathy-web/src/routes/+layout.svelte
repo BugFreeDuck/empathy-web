@@ -43,7 +43,7 @@
 
     main.mobile.no-scroll {
         height: 95dvh;
-        margin-top: 3dvh;
+        margin-top: 2dvh;
         margin-bottom: 2dvh;
         overflow-y: hidden;
     }
@@ -54,7 +54,7 @@
         margin-bottom: -60px;
     }
 
-    main.desktop.no-scroll{
+    main.desktop.no-scroll {
         height: 93dvh;
         margin-top: 4dvh;
         margin-bottom: 3dvh;
@@ -62,6 +62,7 @@
 </style>
 
 <MediaQuery query='(max-width: 600px)' bind:matches={mobileQueryState.isMobile}/>
+
 
 {#if mobileQueryState.isMobile}
     <Navbar/>
@@ -86,5 +87,4 @@
 
     <DesktopFooter isFixed={noScroll}/>
 {/if}
-
 

@@ -50,7 +50,7 @@
             <DesktopScheduleTable/>
             <div>
                 <ul>
-                    <li>Pamokos vyksta adresu <b>Eitminų g.20</b></li>
+                    <li>Pamokos vyksta adresu <b>Eitminų g.20</b> (nuo lapkričio mėnesio Gabijos g. 38)</li>
                     <li>MINI pamokos trunka <b>45 min.</b></li>
                     <li>Naujiems nariams pirma pamoka <b>NEMOKAMA</b></li>
                 </ul>

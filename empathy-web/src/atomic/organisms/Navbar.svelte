@@ -19,7 +19,7 @@
 
     div#header {
         aspect-ratio: 784/94;
-        height: 94px;
+        height: 64px;
         width: 100%;
 
         padding-top: 1em;
@@ -28,7 +28,7 @@
         align-items: center;
         justify-content: start;
 
-        background-image: url("/wawe-header.svg");
+        background-image: url("/wave-header.svg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: inherit;

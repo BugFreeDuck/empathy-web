@@ -13,6 +13,7 @@
 <style>
     div {
         height: 100%;
+        padding-top: 89px;
     }
 
     div.width-limit {
