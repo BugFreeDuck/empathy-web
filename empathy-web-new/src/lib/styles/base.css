@@ -1,0 +1,55 @@
+@layer base {
+	html {
+		scroll-behavior: smooth;
+		scroll-padding-top: 0;
+		-webkit-tap-highlight-color: transparent;
+		background-color: var(--color-sand-50);
+	}
+
+	body {
+		background-color: var(--color-sand-50);
+		color: var(--color-bark-900);
+		font-family: var(--font-sans);
+		-webkit-font-smoothing: antialiased;
+		overflow-x: hidden;
+	}
+
+	::selection {
+		background-color: var(--color-ember-200);
+		color: var(--color-bark-900);
+	}
+
+	:focus-visible {
+		outline: 2px solid var(--color-ember-500);
+		outline-offset: 3px;
+		border-radius: 2px;
+	}
+}
+
+@utility text-sunset {
+	background-image: var(--gradient-sunset);
+	background-clip: text;
+	color: transparent;
+}
+
+@utility bg-sunset {
+	background-image: var(--gradient-sunset);
+}
+
+@utility bg-sunset-deep {
+	background-image: var(--gradient-sunset-deep);
+}
+
+@utility bg-dawn {
+	background-image: var(--gradient-dawn);
+}
+
+/* Soft sunset light spilling into a section corner. Sits behind section
+   content, which is why every section using it is also `isolate`. */
+@utility glow {
+	position: absolute;
+	border-radius: 9999px;
+	filter: blur(90px);
+	pointer-events: none;
+	z-index: -1;
+}

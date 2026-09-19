@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Empathy — free Google Maps embeds</title>
+		<style>
+			:root {
+				--sand: #fdf7f3;
+				--sand-200: #f0d9cf;
+				--ink: #3a2424;
+				--mute: #6d4a4a;
+				--ember: #de6262;
+			}
+			* {
+				box-sizing: border-box;
+			}
+			body {
+				margin: 0;
+				font-family: Georgia, 'Times New Roman', serif;
+				background: var(--sand);
+				color: var(--ink);
+			}
+			header {
+				padding: 1.25rem 1.5rem 0.75rem;
+				max-width: 1100px;
+			}
+			h1 {
+				margin: 0;
+				font-size: 1.5rem;
+				font-weight: 500;
+			}
+			.lead {
+				margin: 0.4rem 0 0;
+				color: var(--mute);
+				font-size: 0.95rem;
+				line-height: 1.45;
+			}
+			.note {
+				margin: 0.75rem 0 0;
+				padding: 0.75rem 1rem;
+				border: 1px solid var(--sand-200);
+				border-radius: 0.75rem;
+				background: #fff;
+				font-size: 0.85rem;
+				color: var(--mute);
+				line-height: 1.4;
+			}
+			.note strong {
+				color: var(--ink);
+				font-weight: 600;
+			}
+			.grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 1rem;
+				padding: 0.5rem 1.5rem 2rem;
+				max-width: 1100px;
+			}
+			.card {
+				background: #fff;
+				border: 1px solid var(--sand-200);
+				border-radius: 1.25rem;
+				overflow: hidden;
+			}
+			.card.wide {
+				grid-column: 1 / -1;
+			}
+			.card h2 {
+				margin: 0;
+				padding: 0.85rem 1rem 0.2rem;
+				font-size: 1.05rem;
+				font-weight: 500;
+			}
+			.meta {
+				padding: 0 1rem 0.65rem;
+				font-size: 0.8rem;
+				color: var(--mute);
+				line-height: 1.35;
+			}
+			.frame {
+				position: relative;
+				height: 300px;
+				border-top: 1px solid var(--sand-200);
+			}
+			.frame iframe {
+				display: block;
+				width: 100%;
+				height: 100%;
+				border: 0;
+			}
+			.limits {
+				padding: 0 1.5rem 2rem;
+				max-width: 1100px;
+			}
+			.limits h2 {
+				margin: 0 0 0.5rem;
+				font-size: 1.1rem;
+				font-weight: 500;
+			}
+			.limits ul {
+				margin: 0;
+				padding-left: 1.1rem;
+				color: var(--mute);
+				font-size: 0.9rem;
+				line-height: 1.55;
+			}
+			@media (max-width: 800px) {
+				.grid {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Free Google Maps embeds — Empathy</h1>
+			<p class="lead">
+				No API key. Share → Embed URLs for empathy | space for movement &amp; growth
+				(Eitminų g. 20). Same chrome Google ships — not brandable.
+			</p>
+			<p class="note">
+				<strong>Hard limit:</strong> free iframes are cross-origin. You cannot apply your
+				coral–peach CSS grade, hide POIs, or load the style JSON. Roadmap vs satellite is
+				basically the whole free palette.
+			</p>
+		</header>
+
+		<div class="grid">
+			<article class="card wide">
+				<h2>1. Place — roadmap (already in site.ts)</h2>
+				<div class="meta">
+					Default “Embed a map” from Google · shows Empathy pin, Google UI, nearby businesses
+				</div>
+				<div class="frame">
+					<iframe
+						title="Empathy — Google roadmap embed"
+						loading="eager"
+						referrerpolicy="no-referrer-when-downgrade"
+						allowfullscreen
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2303.3183747637104!2d25.215930313233716!3d54.739203569487714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd91af72194475%3A0x8c1502f3a4ec356f!2sempathy%20%7C%20space%20for%20movement%20%26%20growth!5e0!3m2!1sen!2sus!4v1758888931184!5m2!1sen!2sus"
+					></iframe>
+				</div>
+			</article>
+
+			<article class="card">
+				<h2>2. Place — satellite</h2>
+				<div class="meta">Same embed, <code>!5e0</code> → <code>!5e1</code> (satellite)</div>
+				<div class="frame">
+					<iframe
+						title="Empathy — Google satellite embed"
+						loading="eager"
+						referrerpolicy="no-referrer-when-downgrade"
+						allowfullscreen
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2303.3183747637104!2d25.215930313233716!3d54.739203569487714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd91af72194475%3A0x8c1502f3a4ec356f!2sempathy%20%7C%20space%20for%20movement%20%26%20growth!5e1!3m2!1sen!2sus!4v1758888931184!5m2!1sen!2sus"
+					></iframe>
+				</div>
+			</article>
+
+			<article class="card">
+				<h2>3. Address query embed</h2>
+				<div class="meta">Generic <code>q=</code> + <code>output=embed</code> — no place card styling control</div>
+				<div class="frame">
+					<iframe
+						title="Empathy — address query embed"
+						loading="eager"
+						referrerpolicy="no-referrer-when-downgrade"
+						allowfullscreen
+						src="https://maps.google.com/maps?q=Eitmin%C5%B3%20g.%2020%2C%20Vilnius&z=15&output=embed"
+					></iframe>
+				</div>
+			</article>
+
+			<article class="card">
+				<h2>4. Coordinates pin</h2>
+				<div class="meta">Lat/lng drop pin — Google default marker, not your ember pin</div>
+				<div class="frame">
+					<iframe
+						title="Empathy — coordinates embed"
+						loading="eager"
+						referrerpolicy="no-referrer-when-downgrade"
+						allowfullscreen
+						src="https://maps.google.com/maps?q=54.739203569487714,25.215930313233716&z=16&output=embed"
+					></iframe>
+				</div>
+			</article>
+
+			<article class="card wide">
+				<h2>5. Place card zoomed out</h2>
+				<div class="meta">Wider context (!1d ≈ larger span) — still Google blue/green/POI chrome</div>
+				<div class="frame" style="height: 340px">
+					<iframe
+						title="Empathy — zoomed out embed"
+						loading="eager"
+						referrerpolicy="no-referrer-when-downgrade"
+						allowfullscreen
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4606!2d25.215930313233716!3d54.739203569487714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd91af72194475%3A0x8c1502f3a4ec356f!2sempathy%20%7C%20space%20for%20movement%20%26%20growth!5e0!3m2!1sen!2sus!4v1758888931184!5m2!1sen!2sus"
+					></iframe>
+				</div>
+			</article>
+		</div>
+
+		<section class="limits">
+			<h2>What free embed gives vs what it doesn’t</h2>
+			<ul>
+				<li>Gets: real Empathy place listing, Google marker, Street View pegman, Open in Maps</li>
+				<li>Gets: roadmap or satellite only (flip <code>5e0</code> / <code>5e1</code>)</li>
+				<li>Doesn’t: custom colours, hide POIs, cream water, sand land, brand pin</li>
+				<li>Doesn’t: CSS filter on tiles (iframe is sealed)</li>
+				<li>Styled Maps / Map ID need Maps JavaScript API + billing-enabled key</li>
+			</ul>
+		</section>
+	</body>
+</html>

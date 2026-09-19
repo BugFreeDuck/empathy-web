@@ -14,22 +14,24 @@
     let noScroll = $state(true);
 
     const noScrollPages = [
-        base,
         base + '/prices',
         base + '/schedule',
         base + '/services',
         base + '/contacts',
     ];
 
+    const isHome = $derived(page.route.id === '/');
+
     afterNavigate(() => {
         const currentPage = page.url.pathname.replace(/\/$/, "");
-        noScroll = noScrollPages.includes(currentPage);
+        noScroll = !isHome && noScrollPages.includes(currentPage);
     });
 </script>
 
 <style>
     :global(body), :global(html) {
         position: relative;
+        margin: 0;
         overflow-y: visible;
         overflow-x: hidden;
         background-color: #F3EEEA;
@@ -63,8 +65,9 @@
 
 <MediaQuery query='(max-width: 600px)' bind:matches={mobileQueryState.isMobile}/>
 
-
-{#if mobileQueryState.isMobile}
+{#if isHome}
+    {@render children()}
+{:else if mobileQueryState.isMobile}
     <Navbar/>
 
     <main

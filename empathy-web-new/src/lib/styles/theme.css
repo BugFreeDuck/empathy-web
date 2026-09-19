@@ -1,0 +1,55 @@
+/* Design tokens. Coral → peach accents (#de6262 → #ffb88c) on warm sand. */
+@theme {
+	--font-display: 'Marcellus', ui-serif, Georgia, serif;
+	--font-sans: 'Red Hat Display', ui-sans-serif, system-ui, sans-serif;
+
+	/* Surfaces, lightest first — soft peach-ivory so the coral accent feels at home. */
+	--color-sand-50: #fdf7f3;
+	--color-sand-100: #f8ebe4;
+	--color-sand-200: #f0d9cf;
+	--color-sand-300: #e4c4b6;
+	--color-sand-400: #d0a694;
+
+	/* Accent scale anchored on #de6262 (coral) → #ffb88c (peach) */
+	--color-ember-200: #ffe4d2;
+	--color-ember-300: #ffb88c;
+	--color-ember-400: #f29a7a;
+	--color-ember-500: #e87c6c;
+	--color-ember-600: #de6262;
+	--color-ember-700: #c44e4e;
+
+	/* Text, warmed to sit with the coral palette */
+	--color-bark-900: #3a2424;
+	--color-bark-600: #6d4a4a;
+	--color-bark-400: #8a6868;
+
+	--ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+	--ease-drift: cubic-bezier(0.33, 0, 0.2, 1);
+}
+
+:root {
+	/* Signature fill: coral → peach */
+	--gradient-sunset: linear-gradient(
+		100deg,
+		#de6262 0%,
+		#e87c6c 35%,
+		#f29a7a 70%,
+		#ffb88c 100%
+	);
+
+	/* Button / featured card fill — same pair, a touch more saturated */
+	--gradient-sunset-deep: linear-gradient(
+		140deg,
+		#de6262 0%,
+		#ec7a6a 45%,
+		#ffb88c 100%
+	);
+
+	/* Soft dawn wash for the hero surface */
+	--gradient-dawn: linear-gradient(
+		to bottom,
+		#fff9f5 0%,
+		var(--color-sand-50) 40%,
+		var(--color-sand-100) 100%
+	);
+}
