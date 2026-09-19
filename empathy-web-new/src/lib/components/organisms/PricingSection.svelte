@@ -3,7 +3,21 @@
 	import PriceCard from '$molecules/PriceCard.svelte';
 	import SectionIntro from '$molecules/SectionIntro.svelte';
 	import { reveal } from '$lib/actions/reveal';
-	import { plans, pricingNote } from '$data/pricing';
+	import { planBases } from '$data/pricing';
+	import { i18n } from '$i18n';
+
+	const plans = $derived(
+		planBases.map((base) => {
+			const copy = i18n.m.pricing.plans.find((p) => p.id === base.id)!;
+			return {
+				...base,
+				name: copy.name,
+				unit: copy.unit,
+				summary: copy.summary,
+				perks: copy.perks
+			};
+		})
+	);
 </script>
 
 <section id="kainos" class="relative isolate overflow-hidden py-28 lg:py-40">
@@ -16,14 +30,14 @@
 	<div class="mx-auto flex max-w-7xl flex-col gap-16 px-6 lg:px-10">
 		<SectionIntro
 			align="center"
-			eyebrow="Kainos"
-			title="Paprasta ir be smulkaus šrifto"
-			lead="Rinkis tai, kas atitinka tavo ritmą. Bandomoji pamoka visada nemokama."
+			eyebrow={i18n.m.pricing.eyebrow}
+			title={i18n.m.pricing.title}
+			lead={i18n.m.pricing.lead}
 			from="up"
 		/>
 
 		<div class="grid gap-6 md:grid-cols-3 md:items-center">
-			{#each plans as plan, index (plan.name)}
+			{#each plans as plan, index (plan.id)}
 				<div class={plan.featured ? 'md:-my-6' : ''}>
 					<PriceCard {plan} delay={80 + index * 130} />
 				</div>
@@ -31,7 +45,7 @@
 		</div>
 
 		<p use:reveal={{ delay: 180, from: 'fade' }} class="text-center text-sm text-bark-600">
-			{pricingNote}
+			{i18n.m.pricing.note}
 		</p>
 	</div>
 </section>

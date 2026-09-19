@@ -11,7 +11,8 @@ const config = {
 			$molecules: 'src/lib/components/molecules',
 			$organisms: 'src/lib/components/organisms',
 			$templates: 'src/lib/components/templates',
-			$data: 'src/lib/data'
+			$data: 'src/lib/data',
+			$i18n: 'src/lib/i18n'
 		}
 	}
 };

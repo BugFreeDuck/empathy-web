@@ -4,25 +4,19 @@
 	import Icon from '$atoms/Icon.svelte';
 	import Photo from '$atoms/Photo.svelte';
 	import { parallax } from '$lib/actions/parallax';
-	import { site } from '$data/site';
+	import { i18n } from '$i18n';
+	import { registrationUI } from '$lib/stores/registration.svelte';
 	import { scrollToSection } from '$lib/utils/scroll';
-
-	const highlights = [
-		{ value: '4–60+', label: 'Amžiaus grupės' },
-		{ value: '2×', label: 'Pamokos per savaitę' },
-		{ value: '1-a', label: 'Pamoka nemokama' }
-	];
 </script>
 
 <section
 	id="top"
 	class="bg-dawn relative isolate flex h-[100svh] min-h-[100svh] flex-col overflow-hidden"
 >
-	<!-- Full-bleed hero photo — same frame on every breakpoint. -->
 	<div class="absolute inset-0 -z-10">
 		<div class="enter-fade absolute inset-0" style="--enter-delay: 80ms">
-			<div class="hero-photo parallax absolute inset-0 [--parallax-scale:1.1]" use:parallax={0.04}>
-				<Photo slug="hero-wide" priority sizes="100vw" position="72% center" />
+			<div class="hero-photo parallax absolute [--parallax-scale:1.04]" use:parallax={0.03}>
+				<Photo slug="hero-wide" priority sizes="(min-width: 768px) 55vw, 100vw" position="center 55%" />
 			</div>
 		</div>
 		<div class="hero-scrim absolute inset-0" aria-hidden="true"></div>
@@ -43,42 +37,49 @@
 		class="relative mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-6 pt-24 pb-16 md:pt-32 md:pb-28 lg:px-10"
 	>
 		<p
-			class="enter-fade text-xs tracking-[0.3em] text-ember-600 uppercase"
+			class="enter-fade text-xs tracking-[0.3em] text-ember-700 uppercase"
 			style="--enter-delay: 160ms"
 		>
-			{site.city} · Šiuolaikinis šokis
+			{i18n.m.hero.eyebrow}
 		</p>
 
 		<h1
 			class="enter-fade mt-5 max-w-4xl font-display text-[clamp(2.35rem,9vw,6.5rem)] leading-[0.95] text-balance text-bark-900 md:mt-7"
 			style="--enter-delay: 260ms"
 		>
-			Judesys, ryšys ir <span class="text-sunset italic">sąmoningumas</span>
+			{i18n.m.hero.titleBefore}
+			<span class="hero-accent italic">{i18n.m.hero.titleAccent}</span>
 		</h1>
 
 		<p
 			class="enter-fade mt-5 max-w-lg text-base leading-relaxed text-bark-600 md:mt-8 md:text-lg"
 			style="--enter-delay: 380ms"
 		>
-			Šokio studija vaikams, paaugliams ir suaugusiems. Čia mokomės judėti laisvai, klausytis savęs
-			ir augti kartu — saugioje, empatiškoje erdvėje.
+			{i18n.m.hero.lead}
 		</p>
 
 		<div class="enter-fade mt-7 flex flex-wrap gap-3 md:mt-10 md:gap-4" style="--enter-delay: 500ms">
-			<Button href={site.registrationUrl} external>
-				Registruotis į pamoką
+			<Button onclick={() => registrationUI.show()}>
+				{i18n.m.hero.ctaPrimary}
 				<Icon name="arrow" class="size-4" />
 			</Button>
-			<Button href="#tvarkarastis" variant="outline" onclick={(e) => { e.preventDefault(); scrollToSection('tvarkarastis'); }}>
-				Peržiūrėti tvarkaraštį
+			<Button
+				href="#tvarkarastis"
+				variant="outline"
+				onclick={(e) => {
+					e.preventDefault();
+					scrollToSection('tvarkarastis');
+				}}
+			>
+				{i18n.m.hero.ctaSecondary}
 			</Button>
 		</div>
 
 		<dl
-			class="enter-fade mt-8 flex flex-wrap gap-x-8 gap-y-4 border-t border-sand-300/80 pt-5 md:mt-16 md:gap-x-12 md:pt-8"
+			class="enter-fade mt-8 flex flex-wrap gap-x-8 gap-y-4 pt-5 md:mt-16 md:gap-x-12 md:pt-8"
 			style="--enter-delay: 620ms"
 		>
-			{#each highlights as item (item.label)}
+			{#each i18n.m.hero.highlights as item (item.label)}
 				<div class="flex flex-col gap-1">
 					<dt class="sr-only">{item.label}</dt>
 					<dd class="font-display text-2xl text-bark-900 md:text-3xl">{item.value}</dd>
@@ -99,7 +100,7 @@
 		class="enter-fade absolute inset-x-0 bottom-6 mx-auto flex w-fit flex-col items-center gap-3 text-[0.6rem] tracking-[0.25em] text-bark-400 uppercase md:bottom-8"
 		style="--enter-delay: 760ms"
 	>
-		Slinkite žemyn
+		{i18n.m.hero.scroll}
 		<span class="relative h-10 w-px overflow-hidden bg-sand-300">
 			<span class="absolute inset-x-0 top-1/4 h-5 bg-sunset"></span>
 		</span>
@@ -108,16 +109,67 @@
 
 <style>
 	/*
-	 * Mobile: favour the empty floor (top-left) and wash the copy column solid
-	 * so faces never sit under the type. Desktop keeps dancers on the right.
+	 * ABD_8113 is portrait — a full-bleed cover on wide screens over-magnifies
+	 * and looks grainy. Keep it as a smaller right-side panel instead.
 	 */
+	.hero-photo {
+		top: 0;
+		right: 0;
+		left: auto;
+		width: 72%;
+		height: 100%;
+		transform-origin: top center;
+		-webkit-mask-image: linear-gradient(
+			to right,
+			transparent 0%,
+			rgb(0 0 0 / 0.35) 22%,
+			rgb(0 0 0 / 0.75) 38%,
+			#000 55%
+		);
+		mask-image: linear-gradient(
+			to right,
+			transparent 0%,
+			rgb(0 0 0 / 0.35) 22%,
+			rgb(0 0 0 / 0.75) 38%,
+			#000 55%
+		);
+	}
+
 	.hero-photo :global(img) {
-		object-position: 12% 18%;
+		object-position: center 55%;
 	}
 
 	@media (min-width: 768px) {
+		.hero-photo {
+			width: 58%;
+			-webkit-mask-image: linear-gradient(
+				to right,
+				transparent 0%,
+				rgb(0 0 0 / 0.3) 18%,
+				rgb(0 0 0 / 0.7) 36%,
+				#000 52%
+			);
+			mask-image: linear-gradient(
+				to right,
+				transparent 0%,
+				rgb(0 0 0 / 0.3) 18%,
+				rgb(0 0 0 / 0.7) 36%,
+				#000 52%
+			);
+		}
+
 		.hero-photo :global(img) {
-			object-position: 72% center;
+			object-position: center 52%;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		.hero-photo {
+			width: 52%;
+		}
+
+		.hero-photo :global(img) {
+			object-position: center 50%;
 		}
 	}
 
@@ -125,21 +177,30 @@
 		background:
 			linear-gradient(
 				to right,
-				color-mix(in srgb, var(--color-sand-50) 88%, transparent) 0%,
-				color-mix(in srgb, var(--color-sand-50) 72%, transparent) 38%,
-				color-mix(in srgb, var(--color-sand-50) 35%, transparent) 62%,
-				transparent 88%
+				var(--color-hero-wash) 0%,
+				var(--color-hero-wash) 18%,
+				color-mix(in srgb, var(--color-hero-wash) 82%, transparent) 32%,
+				color-mix(in srgb, var(--color-hero-wash) 48%, transparent) 48%,
+				color-mix(in srgb, var(--color-hero-wash) 18%, transparent) 62%,
+				transparent 78%
+			),
+			linear-gradient(
+				to right,
+				transparent 78%,
+				color-mix(in srgb, var(--color-hero-wash) 40%, transparent) 90%,
+				var(--color-hero-wash) 100%
 			),
 			linear-gradient(
 				to top,
-				color-mix(in srgb, var(--color-sand-50) 75%, transparent) 0%,
-				color-mix(in srgb, var(--color-sand-50) 40%, transparent) 20%,
-				transparent 45%
+				var(--color-hero-wash) 0%,
+				color-mix(in srgb, var(--color-hero-wash) 55%, transparent) 14%,
+				transparent 36%
 			),
 			linear-gradient(
 				to bottom,
-				color-mix(in srgb, var(--color-sand-50) 45%, transparent) 0%,
-				transparent 18%
+				var(--color-hero-wash) 0%,
+				color-mix(in srgb, var(--color-hero-wash) 50%, transparent) 10%,
+				transparent 28%
 			);
 	}
 
@@ -147,13 +208,46 @@
 		.hero-scrim {
 			background:
 				linear-gradient(
-					100deg,
-					var(--color-sand-50) 0%,
-					color-mix(in srgb, var(--color-sand-50) 94%, transparent) 36%,
-					color-mix(in srgb, var(--color-sand-50) 60%, transparent) 56%,
-					transparent 84%
+					to right,
+					var(--color-hero-wash) 0%,
+					var(--color-hero-wash) 28%,
+					color-mix(in srgb, var(--color-hero-wash) 88%, transparent) 40%,
+					color-mix(in srgb, var(--color-hero-wash) 55%, transparent) 52%,
+					color-mix(in srgb, var(--color-hero-wash) 22%, transparent) 66%,
+					transparent 82%
 				),
-				linear-gradient(to top, var(--color-sand-50) 0%, transparent 22%);
+				linear-gradient(
+					105deg,
+					var(--color-hero-wash) 0%,
+					color-mix(in srgb, var(--color-hero-wash) 85%, transparent) 36%,
+					color-mix(in srgb, var(--color-hero-wash) 40%, transparent) 58%,
+					transparent 80%
+				),
+				linear-gradient(
+					to right,
+					transparent 82%,
+					color-mix(in srgb, var(--color-hero-wash) 35%, transparent) 92%,
+					var(--color-hero-wash) 100%
+				),
+				linear-gradient(
+					to top,
+					var(--color-hero-wash) 0%,
+					color-mix(in srgb, var(--color-hero-wash) 50%, transparent) 12%,
+					transparent 28%
+				),
+				linear-gradient(
+					to bottom,
+					var(--color-hero-wash) 0%,
+					color-mix(in srgb, var(--color-hero-wash) 40%, transparent) 8%,
+					transparent 22%
+				);
 		}
+	}
+
+	.hero-accent {
+		background-image: var(--gradient-sunset-text);
+		background-clip: text;
+		color: transparent;
+		filter: drop-shadow(0 1px 0 color-mix(in srgb, var(--color-hero-wash) 70%, transparent));
 	}
 </style>

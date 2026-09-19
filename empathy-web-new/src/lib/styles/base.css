@@ -27,7 +27,7 @@
 }
 
 @utility text-sunset {
-	background-image: var(--gradient-sunset);
+	background-image: var(--gradient-sunset-text);
 	background-clip: text;
 	color: transparent;
 }

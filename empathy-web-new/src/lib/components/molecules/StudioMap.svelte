@@ -2,6 +2,7 @@
 	import { contacts } from '$data/site';
 	import { studioCoords } from '$data/mapStyles';
 	import { reveal } from '$lib/actions/reveal';
+	import { i18n } from '$i18n';
 
 	let visible = $state(false);
 	let mapNode = $state<HTMLDivElement | null>(null);
@@ -25,7 +26,7 @@
 		if (!visible || !mapNode) return;
 
 		let cancelled = false;
-		let map: { remove: () => void; invalidateSize: () => void } | undefined;
+		let map: import('leaflet').Map | undefined;
 
 		// Leaflet touches `window` at import time — load it only in the browser.
 		Promise.all([import('leaflet'), import('leaflet/dist/leaflet.css')]).then(([leaflet]) => {
@@ -81,7 +82,7 @@
 			bind:this={mapNode}
 			class="map-canvas absolute inset-0 h-full w-full"
 			role="img"
-			aria-label="Empathy studijos vieta žemėlapyje"
+			aria-label={i18n.m.contact.mapAria}
 		></div>
 	{/if}
 
@@ -91,7 +92,7 @@
 		rel="noopener noreferrer"
 		class="absolute right-4 bottom-4 z-10 rounded-full bg-sand-50/95 px-5 py-2.5 text-xs tracking-[0.18em] text-bark-900 uppercase shadow-lg backdrop-blur transition hover:text-ember-600"
 	>
-		Atidaryti žemėlapyje
+		{i18n.m.contact.mapOpen}
 	</a>
 </div>
 

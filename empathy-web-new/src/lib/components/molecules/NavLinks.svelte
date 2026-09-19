@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { i18n } from '$i18n';
 	import { sections } from '$data/site';
 	import { scrollToSection } from '$lib/utils/scroll';
 
@@ -10,6 +11,13 @@
 
 	let { active, orientation = 'row', onnavigate }: Props = $props();
 
+	const labels = $derived({
+		apie: i18n.m.nav.about,
+		tvarkarastis: i18n.m.nav.schedule,
+		kainos: i18n.m.nav.pricing,
+		kontaktai: i18n.m.nav.contact
+	});
+
 	function go(event: MouseEvent, id: string) {
 		event.preventDefault();
 		onnavigate?.();
@@ -18,7 +26,7 @@
 </script>
 
 <nav
-	aria-label="Puslapio sekcijos"
+	aria-label={i18n.m.nav.aria}
 	class={orientation === 'row' ? 'flex items-center gap-8' : 'flex flex-col gap-6'}
 >
 	{#each sections as section (section.id)}
@@ -30,7 +38,7 @@
 				{orientation === 'row' ? 'text-sm' : 'font-display text-3xl lowercase'}
 				{active === section.id ? 'text-ember-600' : 'text-bark-900'}"
 		>
-			{section.label}
+			{labels[section.id]}
 			{#if orientation === 'row'}
 				<span
 					aria-hidden="true"

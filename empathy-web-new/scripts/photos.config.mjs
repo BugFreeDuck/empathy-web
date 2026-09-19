@@ -5,7 +5,7 @@
 export const SOURCE_DIR = 'C:/Users/Gabrielius/Documents/Empathy foto/2024 Photoshoot';
 
 export const PHOTOS = [
-	{ slug: 'hero-wide', file: 'ABD_8330.jpg' },
+	{ slug: 'hero-wide', file: 'ABD_8113 copy.jpg' },
 	{ slug: 'hero-tall', file: 'ABD_8615 (1).jpg' },
 	{ slug: 'studio-arches', file: 'ABD_8312.jpg' },
 	{ slug: 'group-profile', file: 'ABD_8218 copy.jpg' },

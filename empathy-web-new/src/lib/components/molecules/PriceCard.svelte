@@ -1,11 +1,19 @@
 <script lang="ts">
 	import Button from '$atoms/Button.svelte';
 	import { reveal } from '$lib/actions/reveal';
-	import { site } from '$data/site';
-	import type { Plan } from '$data/pricing';
+	import type { PlanBase } from '$data/pricing';
+	import { i18n } from '$i18n';
+	import { registrationUI } from '$lib/stores/registration.svelte';
+
+	interface PlanView extends PlanBase {
+		name: string;
+		unit: string;
+		summary: string;
+		perks: string[];
+	}
 
 	interface Props {
-		plan: Plan;
+		plan: PlanView;
 		delay?: number;
 	}
 
@@ -23,7 +31,7 @@
 		<span
 			class="absolute -top-3 left-8 rounded-full border border-ember-300/80 bg-sand-50 px-4 py-1 text-[0.65rem] tracking-[0.2em] text-ember-600 uppercase"
 		>
-			Populiariausia
+			{i18n.m.pricing.featured}
 		</span>
 	{/if}
 
@@ -46,8 +54,12 @@
 	</ul>
 
 	<div class="mt-10 pt-2">
-		<Button href={site.registrationUrl} external variant={plan.featured ? 'solid' : 'outline'} class="w-full">
-			Registruotis
+		<Button
+			onclick={() => registrationUI.show()}
+			variant={plan.featured ? 'solid' : 'outline'}
+			class="w-full"
+		>
+			{i18n.m.pricing.register}
 		</Button>
 	</div>
 </article>

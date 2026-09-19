@@ -45,11 +45,22 @@
 		#ffb88c 100%
 	);
 
-	/* Soft dawn wash for the hero surface */
+	/* Soft dawn wash — matches the peach cream beyond the hero photo */
 	--gradient-dawn: linear-gradient(
 		to bottom,
-		#fff9f5 0%,
-		var(--color-sand-50) 40%,
+		#fdf0e9 0%,
+		#fdf0e9 40%,
 		var(--color-sand-100) 100%
+	);
+
+	/* Hero scrim / edge fill where the photo falls away */
+	--color-hero-wash: #fdf0e9;
+
+	/* Darker coral ramp for gradient text on light photos / sand */
+	--gradient-sunset-text: linear-gradient(
+		100deg,
+		#c44e4e 0%,
+		#de6262 45%,
+		#e87c6c 100%
 	);
 }

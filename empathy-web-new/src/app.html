@@ -19,6 +19,13 @@
 		<script>
 			// Prevent the browser from restoring a mid-page scroll on reload.
 			if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+			// Apply saved language before first paint to avoid a flash of LT.
+			try {
+				var lang = localStorage.getItem('empathy-locale');
+				if (lang === 'en' || lang === 'ru' || lang === 'lt') {
+					document.documentElement.lang = lang;
+				}
+			} catch (e) {}
 		</script>
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>

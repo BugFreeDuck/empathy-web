@@ -32,11 +32,13 @@ export const site = {
 };
 
 export const sections = [
-	{ id: 'apie', label: 'Apie mus' },
-	{ id: 'tvarkarastis', label: 'Tvarkaraštis' },
-	{ id: 'kainos', label: 'Kainos' },
-	{ id: 'kontaktai', label: 'Kontaktai' }
+	{ id: 'apie' },
+	{ id: 'tvarkarastis' },
+	{ id: 'kainos' },
+	{ id: 'kontaktai' }
 ] as const;
+
+export type SectionId = (typeof sections)[number]['id'];
 
 export const contacts = {
 	address: 'Eitminų g. 20, Vilnius',

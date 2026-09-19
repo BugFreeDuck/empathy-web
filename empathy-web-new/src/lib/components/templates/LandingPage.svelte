@@ -3,6 +3,7 @@
 	import ContactSection from '$organisms/ContactSection.svelte';
 	import HeroSection from '$organisms/HeroSection.svelte';
 	import PricingSection from '$organisms/PricingSection.svelte';
+	import RegistrationModal from '$organisms/RegistrationModal.svelte';
 	import ScheduleSection from '$organisms/ScheduleSection.svelte';
 	import SiteFooter from '$organisms/SiteFooter.svelte';
 	import SiteHeader from '$organisms/SiteHeader.svelte';
@@ -19,3 +20,4 @@
 </main>
 
 <SiteFooter />
+<RegistrationModal />

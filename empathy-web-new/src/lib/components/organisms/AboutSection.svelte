@@ -7,7 +7,7 @@
 	import TestimonialMarquee from '$molecules/TestimonialMarquee.svelte';
 	import { reveal } from '$lib/actions/reveal';
 	import { aboutMosaic } from '$data/photos';
-	import { founder, intro, values } from '$data/about';
+	import { i18n } from '$i18n';
 </script>
 
 <section id="apie" class="relative isolate overflow-hidden py-28 lg:py-40">
@@ -15,10 +15,10 @@
 
 	<div class="mx-auto flex max-w-7xl flex-col gap-24 px-6 lg:px-10">
 		<div class="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
-			<SectionIntro eyebrow={intro.eyebrow} title={intro.title} from="left" />
+			<SectionIntro eyebrow={i18n.m.about.eyebrow} title={i18n.m.about.title} from="left" />
 
 			<div class="flex flex-col gap-6">
-				{#each intro.paragraphs as paragraph, index (index)}
+				{#each i18n.m.about.paragraphs as paragraph, index (index)}
 					<p
 						use:reveal={{ delay: 80 + index * 100, from: 'right', x: '1.5rem' }}
 						class="text-lg leading-relaxed text-bark-600 first:text-xl first:text-bark-900"
@@ -45,7 +45,7 @@
 		</div>
 
 		<ul class="grid gap-10 sm:grid-cols-3">
-			{#each values as value, index (value.title)}
+			{#each i18n.m.about.values as value, index (value.title)}
 				<li
 					use:reveal={{ delay: index * 120, from: 'up', y: '2.5rem' }}
 					class="flex flex-col gap-4"
@@ -57,7 +57,6 @@
 			{/each}
 		</ul>
 
-		<!-- Founder -->
 		<div class="grid items-center gap-12 lg:grid-cols-[0.9fr_1fr] lg:gap-20">
 			<PhotoFrame
 				slug="founder"
@@ -70,21 +69,21 @@
 
 			<div class="flex flex-col gap-7">
 				<div use:reveal={{ y: '1rem', from: 'right' }}>
-					<Eyebrow>{founder.eyebrow}</Eyebrow>
+					<Eyebrow>{i18n.m.about.founder.eyebrow}</Eyebrow>
 				</div>
 
 				<div use:reveal={{ delay: 90, from: 'right' }}>
-					<Heading size="md">{founder.name}</Heading>
+					<Heading size="md">{i18n.m.about.founder.name}</Heading>
 				</div>
 
 				<blockquote
 					use:reveal={{ delay: 160, from: 'up', y: '1.25rem' }}
 					class="border-l-2 border-ember-400 pl-6 font-display text-2xl leading-snug text-balance text-bark-900 italic"
 				>
-					{founder.quote}
+					{i18n.m.about.founder.quote}
 				</blockquote>
 
-				{#each founder.paragraphs as paragraph, index (index)}
+				{#each i18n.m.about.founder.paragraphs as paragraph, index (index)}
 					<p
 						use:reveal={{ delay: 240 + index * 90, from: 'fade' }}
 						class="leading-relaxed text-bark-600"
@@ -97,7 +96,7 @@
 
 		<div class="flex flex-col gap-10">
 			<div use:reveal={{ y: '1rem' }} class="flex justify-center">
-				<Eyebrow>Atsiliepimai</Eyebrow>
+				<Eyebrow>{i18n.m.about.testimonialsEyebrow}</Eyebrow>
 			</div>
 			<TestimonialMarquee />
 		</div>

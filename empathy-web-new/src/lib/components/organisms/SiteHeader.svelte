@@ -1,15 +1,17 @@
 <script lang="ts">
 	import Button from '$atoms/Button.svelte';
 	import Wordmark from '$atoms/Wordmark.svelte';
+	import LanguageSwitcher from '$molecules/LanguageSwitcher.svelte';
 	import NavLinks from '$molecules/NavLinks.svelte';
-	import { sections, site } from '$data/site';
+	import { i18n } from '$i18n';
+	import { sections } from '$data/site';
+	import { registrationUI } from '$lib/stores/registration.svelte';
 
 	let scrolled = $state(false);
 	let active = $state<string | undefined>(undefined);
 	let menuOpen = $state(false);
 
 	$effect(() => {
-		// Hysteresis so the tagline doesn't flicker around the threshold.
 		const onScroll = () => {
 			const y = window.scrollY;
 			if (!scrolled && y > 32) scrolled = true;
@@ -20,7 +22,6 @@
 		return () => window.removeEventListener('scroll', onScroll);
 	});
 
-	// Highlights whichever section currently occupies the middle of the viewport.
 	$effect(() => {
 		const observer = new IntersectionObserver(
 			(entries) => {
@@ -63,55 +64,66 @@
 			<Wordmark showTagline={!scrolled && !menuOpen} />
 		</div>
 
-		<div class="hidden items-center gap-10 md:flex">
+		<div class="hidden items-center gap-8 md:flex lg:gap-10">
 			<div class="enter-rise" style="--enter-delay: 220ms">
 				<NavLinks {active} />
 			</div>
-			<div class="enter-rise" style="--enter-delay: 320ms">
-				<Button href={site.registrationUrl} external class="px-6 py-2.5 text-xs">
-					Registruotis
+			<div class="enter-rise flex items-center gap-5" style="--enter-delay: 280ms">
+				<LanguageSwitcher />
+				<Button class="px-6 py-2.5 text-xs" onclick={() => registrationUI.show()}>
+					{i18n.m.nav.register}
 				</Button>
 			</div>
 		</div>
 
-		<button
-			type="button"
-			onclick={() => (menuOpen = !menuOpen)}
-			aria-expanded={menuOpen}
-			aria-controls="mobile-nav"
-			aria-label={menuOpen ? 'Uždaryti meniu' : 'Atidaryti meniu'}
-			class="enter-rise relative z-50 flex size-10 flex-col items-center justify-center gap-1.5 md:hidden"
-			style="--enter-delay: 220ms"
-		>
-			<span
-				class="hamburger-line h-px w-6 origin-center bg-bark-900 {menuOpen
-					? 'translate-y-[3.5px] rotate-45'
-					: ''}"
-			></span>
-			<span
-				class="hamburger-line h-px w-6 origin-center bg-bark-900 {menuOpen
-					? '-translate-y-[3.5px] -rotate-45'
-					: ''}"
-			></span>
-		</button>
+		<div class="flex items-center gap-3 md:hidden">
+			<LanguageSwitcher class="enter-rise" />
+			<button
+				type="button"
+				onclick={() => (menuOpen = !menuOpen)}
+				aria-expanded={menuOpen}
+				aria-controls="mobile-nav"
+				aria-label={menuOpen ? i18n.m.nav.closeMenu : i18n.m.nav.openMenu}
+				class="enter-rise relative z-50 flex size-10 flex-col items-center justify-center gap-1.5"
+				style="--enter-delay: 220ms"
+			>
+				<span
+					class="hamburger-line h-px w-6 origin-center bg-bark-900 {menuOpen
+						? 'translate-y-[3.5px] rotate-45'
+						: ''}"
+				></span>
+				<span
+					class="hamburger-line h-px w-6 origin-center bg-bark-900 {menuOpen
+						? '-translate-y-[3.5px] -rotate-45'
+						: ''}"
+				></span>
+			</button>
+		</div>
 	</div>
 </header>
 
-<!-- Kept mounted so close can animate; inert when shut. -->
 <div
 	id="mobile-nav"
 	class="menu-panel fixed inset-0 z-40 flex flex-col justify-center gap-12 bg-sand-50 px-8 md:hidden
 		{menuOpen ? 'menu-panel--open' : ''}"
 	role="dialog"
 	aria-modal="true"
-	aria-label="Navigacija"
+	aria-label={i18n.m.nav.mobileNav}
 	aria-hidden={!menuOpen}
 	inert={!menuOpen}
 >
 	<div class="menu-content flex flex-col gap-12">
 		<NavLinks {active} orientation="column" onnavigate={() => (menuOpen = false)} />
 		<div class="menu-cta">
-			<Button href={site.registrationUrl} external class="self-start">Registruotis</Button>
+			<Button
+				class="self-start"
+				onclick={() => {
+					menuOpen = false;
+					registrationUI.show();
+				}}
+			>
+				{i18n.m.nav.register}
+			</Button>
 		</div>
 	</div>
 </div>

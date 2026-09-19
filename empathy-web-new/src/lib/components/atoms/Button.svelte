@@ -5,8 +5,11 @@
 		href?: string;
 		variant?: 'solid' | 'outline' | 'quiet';
 		external?: boolean;
+		type?: 'button' | 'submit' | 'reset';
+		form?: string;
 		class?: string;
 		onclick?: (event: MouseEvent) => void;
+		disabled?: boolean;
 		children: Snippet;
 	}
 
@@ -14,8 +17,11 @@
 		href,
 		variant = 'solid',
 		external = false,
+		type = 'button',
+		form,
 		class: className = '',
 		onclick,
+		disabled = false,
 		children
 	}: Props = $props();
 
@@ -41,7 +47,7 @@
 		{@render children()}
 	</a>
 {:else}
-	<button type="button" {onclick} class="{shared} {variants[variant]} {className}">
+	<button {type} {form} {onclick} {disabled} class="{shared} {variants[variant]} {className} disabled:pointer-events-none disabled:opacity-60">
 		{@render children()}
 	</button>
 {/if}

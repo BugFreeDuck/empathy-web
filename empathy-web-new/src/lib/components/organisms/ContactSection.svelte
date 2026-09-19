@@ -6,7 +6,9 @@
 	import SectionIntro from '$molecules/SectionIntro.svelte';
 	import StudioMap from '$molecules/StudioMap.svelte';
 	import { reveal } from '$lib/actions/reveal';
-	import { contacts, site, socials } from '$data/site';
+	import { contacts, socials } from '$data/site';
+	import { i18n } from '$i18n';
+	import { registrationUI } from '$lib/stores/registration.svelte';
 
 	const socialIcons = {
 		Instagram: 'instagram',
@@ -14,22 +16,27 @@
 		YouTube: 'youtube'
 	} as const;
 
-	const rows = [
+	const rows = $derived([
 		{
-			icon: 'pin',
-			label: 'Adresas',
+			icon: 'pin' as const,
+			label: i18n.m.contact.address,
 			value: contacts.address,
 			href: contacts.addressUrl,
 			external: true
 		},
 		{
-			icon: 'phone',
-			label: 'Telefonas',
+			icon: 'phone' as const,
+			label: i18n.m.contact.phone,
 			value: contacts.phone,
 			href: `tel:${contacts.phone.replace(/\s/g, '')}`
 		},
-		{ icon: 'mail', label: 'El. paštas', value: contacts.email, href: `mailto:${contacts.email}` }
-	] as const;
+		{
+			icon: 'mail' as const,
+			label: i18n.m.contact.email,
+			value: contacts.email,
+			href: `mailto:${contacts.email}`
+		}
+	]);
 </script>
 
 <section id="kontaktai" class="relative isolate overflow-hidden bg-sand-100 py-28 lg:py-40">
@@ -38,9 +45,9 @@
 	<div class="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-2 lg:gap-20 lg:px-10">
 		<div class="flex flex-col gap-10">
 			<SectionIntro
-				eyebrow="Kontaktai"
-				title="Užsuk pasisveikinti"
-				lead="Turi klausimų apie grupes ar nori pasitarti, nuo ko pradėti? Parašyk arba paskambink — atsakysime tą pačią dieną."
+				eyebrow={i18n.m.contact.eyebrow}
+				title={i18n.m.contact.title}
+				lead={i18n.m.contact.lead}
 				from="left"
 			/>
 
@@ -54,7 +61,7 @@
 
 			<div use:reveal={{ delay: 200, from: 'fade' }} class="flex flex-col gap-5">
 				<span class="text-[0.65rem] tracking-[0.22em] text-bark-400 uppercase">
-					Socialiniai tinklai
+					{i18n.m.contact.socials}
 				</span>
 				<ul class="flex flex-wrap gap-3">
 					{#each socials as social (social.label)}
@@ -74,8 +81,8 @@
 			</div>
 
 			<div use:reveal={{ delay: 280, from: 'up', y: '1rem' }}>
-				<Button href={site.registrationUrl} external>
-					Registruotis į pamoką
+				<Button onclick={() => registrationUI.show()}>
+					{i18n.m.contact.cta}
 					<Icon name="arrow" class="size-4" />
 				</Button>
 			</div>

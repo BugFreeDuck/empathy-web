@@ -1,4 +1,10 @@
-export type GroupId = 'mini' | 'kids' | 'adults' | 'ladies';
+export type GroupId =
+	| 'mini'
+	| 'kids'
+	| 'juniors'
+	| 'open'
+	| 'ladiesDay'
+	| 'ladiesEvening';
 
 export interface Group {
 	id: GroupId;
@@ -20,29 +26,44 @@ export const groups: Record<GroupId, Group> = {
 	kids: {
 		id: 'kids',
 		name: 'Kids',
-		age: '7–12 m.',
+		age: '7–10 m.',
 		chip: 'bg-ember-200/60 text-ember-700',
 		dot: 'bg-ember-300'
 	},
-	adults: {
-		id: 'adults',
-		name: 'Adults',
-		age: '14+ m.',
+	juniors: {
+		id: 'juniors',
+		name: 'Juniors',
+		age: '11–15 m.',
+		chip: 'bg-ember-300/40 text-ember-700',
+		dot: 'bg-ember-400'
+	},
+	open: {
+		id: 'open',
+		name: 'Open',
+		age: '16+ m.',
 		chip: 'bg-ember-400/25 text-ember-700',
 		dot: 'bg-ember-500'
 	},
-	ladies: {
-		id: 'ladies',
-		name: 'Ladies',
+	ladiesDay: {
+		id: 'ladiesDay',
+		name: 'Ladies day',
 		age: '25+ m.',
 		chip: 'bg-ember-600/15 text-ember-700',
 		dot: 'bg-ember-600'
+	},
+	ladiesEvening: {
+		id: 'ladiesEvening',
+		name: 'Ladies evening',
+		age: '25+ m.',
+		chip: 'bg-ember-600/20 text-ember-700',
+		dot: 'bg-ember-700'
 	}
 };
 
 export interface Lesson {
 	time: string;
 	group: GroupId;
+	teacher: string;
 }
 
 export interface Day {
@@ -51,39 +72,76 @@ export interface Day {
 	lessons: Lesson[];
 }
 
+/** Season 26/27 — days with classes only (no Wednesday). */
 export const week: Day[] = [
 	{
 		name: 'Pirmadienis',
-		short: 'I',
-		lessons: [
-			{ time: '12:00', group: 'ladies' },
-			{ time: '16:00', group: 'kids' },
-			{ time: '17:00', group: 'adults' }
-		]
+		short: 'P',
+		lessons: [{ time: '17:15–18:00', group: 'mini', teacher: 'Emilija' }]
 	},
 	{
 		name: 'Antradienis',
-		short: 'II',
-		lessons: [{ time: '17:00', group: 'mini' }]
-	},
-	{
-		name: 'Trečiadienis',
-		short: 'III',
+		short: 'A',
 		lessons: [
-			{ time: '12:00', group: 'ladies' },
-			{ time: '16:00', group: 'kids' },
-			{ time: '17:00', group: 'adults' }
+			{ time: '12:00–13:00', group: 'ladiesDay', teacher: 'Gabija & Erika' },
+			{ time: '16:00–17:00', group: 'kids', teacher: 'Emilija / Gabija & Erika' },
+			{ time: '17:00–17:45', group: 'juniors', teacher: 'Emilija / Gabija & Erika' }
 		]
 	},
 	{
 		name: 'Ketvirtadienis',
-		short: 'IV',
-		lessons: [{ time: '17:00', group: 'mini' }]
+		short: 'K',
+		lessons: [
+			{ time: '12:00–13:00', group: 'ladiesDay', teacher: 'Gabija & Erika' },
+			{ time: '16:00–17:00', group: 'kids', teacher: 'Emilija / Gabija & Erika' },
+			{ time: '17:00–17:45', group: 'juniors', teacher: 'Emilija / Gabija & Erika' }
+		]
+	},
+	{
+		name: 'Penktadienis',
+		short: 'Pn',
+		lessons: [
+			{ time: '17:15–18:00', group: 'mini', teacher: 'Emilija' },
+			{ time: '18:00–19:30', group: 'open', teacher: 'Emilija' },
+			{ time: '18:00–19:30', group: 'ladiesEvening', teacher: 'Olivija' }
+		]
 	}
 ];
 
 export const scheduleNotes = [
 	'Pamokos vyksta adresu Eitminų g. 20, Vilnius.',
-	'Mini grupės pamoka trunka 45 min., kitų grupių — 60 min.',
+	'Ladies evening startuoja nuo sausio.',
 	'Naujiems nariams pirma pamoka nemokama.'
 ];
+
+/** Weekday markers for the group view (includes empty Wednesday). */
+export const weekdayMarks = ['P', 'A', 'T', 'K', 'Pn'] as const;
+
+export interface GroupSession {
+	dayShort: string;
+	dayName: string;
+	time: string;
+	teacher: string;
+}
+
+export interface GroupSchedule {
+	group: Group;
+	sessions: GroupSession[];
+}
+
+/** Invert `week` into one row per group (source of truth stays day-based above). */
+export const scheduleByGroup: GroupSchedule[] = (Object.keys(groups) as GroupId[]).map((id) => {
+	const sessions: GroupSession[] = [];
+	for (const day of week) {
+		for (const lesson of day.lessons) {
+			if (lesson.group !== id) continue;
+			sessions.push({
+				dayShort: day.short,
+				dayName: day.name,
+				time: lesson.time,
+				teacher: lesson.teacher
+			});
+		}
+	}
+	return { group: groups[id], sessions };
+});

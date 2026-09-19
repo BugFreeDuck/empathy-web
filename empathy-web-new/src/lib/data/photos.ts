@@ -4,7 +4,7 @@ export { photoFiles, type PhotoSlug };
 
 /** Alt text for every graded photograph in `static/photos`. */
 export const photoAlt: Record<PhotoSlug, string> = {
-	'hero-wide': 'Empathy studijos šokėjos guli ratu, susikibusios už rankų',
+	'hero-wide': 'Empathy šokėjos baltose suknelėse kelia rankas studijoje',
 	'hero-tall': 'Šokėja judesyje su baltu skraiste smėlio fone',
 	'studio-arches': 'Šokėjų grupė guli ratu, susikibusios už rankų',
 	'group-profile': 'Jaunosios Empathy šokėjos sėdi eilėje raudonomis pirštinėmis',

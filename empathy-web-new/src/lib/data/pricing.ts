@@ -1,35 +1,12 @@
-export interface Plan {
-	name: string;
+export interface PlanBase {
+	id: 'single' | 'month' | 'private';
 	price: string;
-	unit: string;
-	summary: string;
-	perks: string[];
 	featured?: boolean;
 }
 
-export const plans: Plan[] = [
-	{
-		name: 'Viena pamoka',
-		price: '10',
-		unit: '€ / pamoka',
-		summary: 'Ateik pabandyti be jokių įsipareigojimų.',
-		perks: ['Bandomoji pamoka nemokama', 'Visos amžiaus grupės', 'Rezervacija nebūtina']
-	},
-	{
-		name: 'Mėnuo',
-		price: '60',
-		unit: '€ / mėn.',
-		summary: 'Reguliarus ritmas — čia prasideda tikras augimas.',
-		perks: ['Visos mėnesio pamokos', 'Vieta grupėje išsaugoma', 'Kvietimai į studijos renginius'],
-		featured: true
-	},
-	{
-		name: 'Individuali',
-		price: '40',
-		unit: '€ / pamoka',
-		summary: 'Dėmesys tik tau — arba tau ir tavo porai.',
-		perks: ['1–2 mokiniai', 'Programa pagal tavo tikslus', 'Laikas derinamas individualiai']
-	}
+/** Structural pricing — copy lives in i18n catalogs. */
+export const planBases: PlanBase[] = [
+	{ id: 'single', price: '10' },
+	{ id: 'month', price: '60', featured: true },
+	{ id: 'private', price: '40' }
 ];
-
-export const pricingNote = 'Kainos galioja nuo 2026 m. Turi klausimų? Parašyk — atsakysime tą pačią dieną.';
