@@ -139,9 +139,12 @@
 	animation: marquee var(--marquee-duration, 55s) linear infinite;
 }
 
-.anim-marquee:hover,
-.anim-marquee:focus-within {
-	animation-play-state: paused;
+/* Touch leaves :hover stuck on mobile; only pause for real pointer hover. */
+@media (hover: hover) and (pointer: fine) {
+	.anim-marquee:hover,
+	.anim-marquee:focus-within {
+		animation-play-state: paused;
+	}
 }
 
 .enter-rise {
@@ -211,13 +214,6 @@
 .enter-fade .eyebrow-line {
 	animation: draw-line 0.7s var(--ease-soft) forwards;
 	animation-delay: var(--line-delay, 120ms);
-}
-
-/* Driven by the `parallax` action (inline transform); scale hides edge drift. */
-.parallax {
-	--parallax-scale: 1.2;
-	will-change: transform;
-	backface-visibility: hidden;
 }
 
 [data-reveal] {
@@ -309,9 +305,5 @@
 		transform: none !important;
 		filter: none !important;
 		transition: none !important;
-	}
-
-	.parallax {
-		transform: none !important;
 	}
 }

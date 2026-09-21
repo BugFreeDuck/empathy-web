@@ -8,6 +8,7 @@
 		title: string;
 		lead?: string;
 		align?: 'left' | 'center';
+		size?: 'sm' | 'md' | 'lg' | 'xl';
 		/** How the intro block enters. */
 		from?: RevealFrom;
 		class?: string;
@@ -18,6 +19,7 @@
 		title,
 		lead,
 		align = 'left',
+		size = 'lg',
 		from = 'up',
 		class: className = ''
 	}: Props = $props();
@@ -31,7 +33,7 @@
 	</div>
 
 	<div use:reveal={{ delay: 100, from, y: '1.5rem' }}>
-		<Heading size="lg" class={align === 'center' ? 'mx-auto max-w-3xl' : 'max-w-2xl'}>
+		<Heading {size} class={align === 'center' ? 'mx-auto max-w-3xl' : 'max-w-2xl'}>
 			{title}
 		</Heading>
 	</div>

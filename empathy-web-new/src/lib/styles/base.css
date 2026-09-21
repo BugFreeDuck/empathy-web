@@ -1,7 +1,8 @@
 @layer base {
 	html {
 		scroll-behavior: smooth;
-		scroll-padding-top: 0;
+		/* Match scrolled header (`h-16`) so hash jumps clear the fixed bar. */
+		scroll-padding-top: 4rem;
 		-webkit-tap-highlight-color: transparent;
 		background-color: var(--color-sand-50);
 	}
@@ -23,6 +24,13 @@
 		outline: 2px solid var(--color-ember-500);
 		outline-offset: 3px;
 		border-radius: 2px;
+	}
+
+	#apie,
+	#tvarkarastis,
+	#kainos,
+	#kontaktai {
+		scroll-margin-top: 4rem;
 	}
 }
 

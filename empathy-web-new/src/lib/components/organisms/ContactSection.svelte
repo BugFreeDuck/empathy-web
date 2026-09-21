@@ -39,7 +39,7 @@
 	]);
 </script>
 
-<section id="kontaktai" class="relative isolate overflow-hidden bg-sand-100 py-28 lg:py-40">
+<section id="kontaktai" class="relative isolate overflow-hidden bg-sand-100 py-14 lg:py-20">
 	<Glow class="top-0 right-[-10rem] size-[28rem]" color="var(--color-ember-300)" opacity={0.3} />
 
 	<div class="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-2 lg:gap-20 lg:px-10">

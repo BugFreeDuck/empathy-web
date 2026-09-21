@@ -37,15 +37,9 @@ export const lt = {
 		eyebrow: 'Vilnius · Šiuolaikinis šokis',
 		titleBefore: 'Judesys, ryšys ir',
 		titleAccent: 'sąmoningumas',
-		lead: 'Šokio studija vaikams, paaugliams ir suaugusiems. Čia mokomės judėti laisvai, klausytis savęs ir augti kartu — saugioje, empatiškoje erdvėje.',
 		ctaPrimary: 'Registruotis į pamoką',
 		ctaSecondary: 'Peržiūrėti tvarkaraštį',
-		scroll: 'Slinkite žemyn',
-		highlights: [
-			{ value: '4–60+', label: 'Amžiaus grupės' },
-			{ value: '2×', label: 'Pamokos per savaitę' },
-			{ value: '1-a', label: 'Pamoka nemokama' }
-		]
+		scroll: 'Slinkite žemyn'
 	},
 	about: {
 		eyebrow: 'Apie mus',
@@ -141,30 +135,20 @@ export const lt = {
 		eyebrow: 'Kainos',
 		title: 'Paprasta ir be smulkaus šrifto',
 		lead: 'Rinkis tai, kas atitinka tavo ritmą. Bandomoji pamoka visada nemokama.',
-		featured: 'Populiariausia',
 		register: 'Registruotis',
-		note: 'Kainos galioja nuo 2026 m. Turi klausimų? Parašyk — atsakysime tą pačią dieną.',
+		contact: 'Susisiekite',
 		plans: [
-			{
-				id: 'single',
-				name: 'Viena pamoka',
-				unit: '€ / pamoka',
-				summary: 'Ateik pabandyti be jokių įsipareigojimų.',
-				perks: ['Bandomoji pamoka nemokama', 'Visos amžiaus grupės', 'Rezervacija nebūtina']
-			},
 			{
 				id: 'month',
 				name: 'Mėnuo',
 				unit: '€ / mėn.',
-				summary: 'Reguliarus ritmas — čia prasideda tikras augimas.',
-				perks: ['Visos mėnesio pamokos', 'Vieta grupėje išsaugoma', 'Kvietimai į studijos renginius']
+				summary: 'Reguliarus ritmas — čia prasideda tikras augimas.'
 			},
 			{
 				id: 'private',
 				name: 'Individuali',
 				unit: '€ / pamoka',
-				summary: 'Dėmesys tik tau — arba tau ir tavo porai.',
-				perks: ['1–2 mokiniai', 'Programa pagal tavo tikslus', 'Laikas derinamas individualiai']
+				summary: 'Dėmesys tik tau — arba tau ir tavo porai.'
 			}
 		]
 	},

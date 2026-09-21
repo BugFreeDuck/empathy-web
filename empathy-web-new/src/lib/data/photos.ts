@@ -2,31 +2,63 @@ import { photoFiles, type PhotoSlug } from './photos.generated';
 
 export { photoFiles, type PhotoSlug };
 
+const gallerySlugs = Object.keys(photoFiles).filter((slug): slug is PhotoSlug =>
+	slug.startsWith('gallery-')
+);
+
 /** Alt text for every graded photograph in `static/photos`. */
 export const photoAlt: Record<PhotoSlug, string> = {
 	'hero-wide': 'Empathy šokėjos baltose suknelėse kelia rankas studijoje',
-	'hero-tall': 'Šokėja judesyje su baltu skraiste smėlio fone',
-	'studio-arches': 'Šokėjų grupė guli ratu, susikibusios už rankų',
-	'group-profile': 'Jaunosios Empathy šokėjos sėdi eilėje raudonomis pirštinėmis',
-	'group-stairs': 'Šokėjos guli studijos grindyse raudonais kostiumais',
-	'group-embrace': 'Jaunosios šokėjos guli eilėje, smakrus remdamos į delnus',
-	'group-reach': 'Šokėjų grupė ekspresyviuose judesiuose šviesioje studijoje',
-	'solo-arch': 'Šokėja atsispindi apvaliame veidrodyje smėlio tonų drabužiais',
-	'solo-motion': 'Šokėja su plačia bronzine skraiste žvelgia per petį',
 	founder: 'Studijos įkūrėja Olivija — portretas šviesioje studijoje',
-	hands: 'Šokėjų kojos ir pėdos eilėje baltose studijos kelnėse',
-	blooms: 'Šokėja atsispindi veidrodyje tarp tekančio audinio',
-	'bloom-soft': 'Olivija stovi prie lango bronziniais drabužiais',
-	veil: 'Šokėja išsilenkusi atgal su tekančia balta skraiste'
-};
+	...Object.fromEntries(
+		gallerySlugs.map((slug, index) => [
+			slug,
+			`Empathy studijos akimirka ${index + 1}`
+		])
+	)
+} as Record<PhotoSlug, string>;
 
 /**
- * Two rows of a 12-column grid. Each pair's ratio matches its column span so
- * both tiles in a row land on the same height.
+ * Continuous about-section photo strip (duplicated in the carousel for a seamless loop).
+ * Fixed curated order — interleaves portrait/landscape, spaces greyscale frames apart
+ * (never adjacent), and separates near-duplicate shots so SSR and hydration stay stable.
+ * Founder stays in the dedicated block below.
+ *
+ * Greyscale: gallery-01, 05, 08, 09, 11.
  */
-export const aboutMosaic = [
-	{ slug: 'group-embrace', span: 'md:col-span-7', ratio: 'aspect-[7/5]' },
-	{ slug: 'solo-motion', span: 'md:col-span-5', ratio: 'aspect-square' },
-	{ slug: 'veil', span: 'md:col-span-5', ratio: 'aspect-square' },
-	{ slug: 'studio-arches', span: 'md:col-span-7', ratio: 'aspect-[7/5]' }
-] satisfies { slug: PhotoSlug; span: string; ratio: string }[];
+const aboutCarouselOrder: PhotoSlug[] = [
+	'gallery-07',
+	'gallery-01',
+	'gallery-19',
+	'gallery-04',
+	'gallery-12',
+	'gallery-14',
+	'gallery-08',
+	'gallery-22',
+	'gallery-15',
+	'gallery-03',
+	'gallery-20',
+	'gallery-11',
+	'gallery-23',
+	'gallery-29',
+	'gallery-16',
+	'gallery-05',
+	'gallery-13',
+	'gallery-28',
+	'gallery-17',
+	'gallery-02',
+	'gallery-09',
+	'gallery-24',
+	'gallery-21',
+	'gallery-06',
+	'gallery-10',
+	'gallery-25',
+	'gallery-18',
+	'gallery-26',
+	'gallery-27'
+];
+
+export const aboutCarousel = [
+	...aboutCarouselOrder.filter((slug) => gallerySlugs.includes(slug)),
+	...gallerySlugs.filter((slug) => !aboutCarouselOrder.includes(slug))
+];

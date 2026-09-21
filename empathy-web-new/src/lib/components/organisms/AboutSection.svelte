@@ -2,15 +2,15 @@
 	import Eyebrow from '$atoms/Eyebrow.svelte';
 	import Glow from '$atoms/Glow.svelte';
 	import Heading from '$atoms/Heading.svelte';
+	import PhotoCarousel from '$molecules/PhotoCarousel.svelte';
 	import PhotoFrame from '$molecules/PhotoFrame.svelte';
 	import SectionIntro from '$molecules/SectionIntro.svelte';
 	import TestimonialMarquee from '$molecules/TestimonialMarquee.svelte';
 	import { reveal } from '$lib/actions/reveal';
-	import { aboutMosaic } from '$data/photos';
 	import { i18n } from '$i18n';
 </script>
 
-<section id="apie" class="relative isolate overflow-hidden py-28 lg:py-40">
+<section id="apie" class="relative isolate overflow-hidden py-14 lg:py-20">
 	<Glow class="top-24 left-[-12rem] size-[28rem]" color="var(--color-ember-200)" opacity={0.45} />
 
 	<div class="mx-auto flex max-w-7xl flex-col gap-24 px-6 lg:px-10">
@@ -28,22 +28,13 @@
 				{/each}
 			</div>
 		</div>
+	</div>
 
-		<div class="grid grid-cols-1 gap-5 md:grid-cols-12" data-parallax-group>
-			{#each aboutMosaic as item, index (item.slug)}
-				<PhotoFrame
-					slug={item.slug}
-					ratio={item.ratio}
-					group
-					speed={0.14}
-					delay={index * 90}
-					from="scale"
-					sizes="(min-width: 1280px) 700px, (min-width: 768px) 55vw, 100vw"
-					class={item.span}
-				/>
-			{/each}
-		</div>
+	<div class="mt-24">
+		<PhotoCarousel />
+	</div>
 
+	<div class="mx-auto mt-24 flex max-w-7xl flex-col gap-24 px-6 lg:px-10">
 		<ul class="grid gap-10 sm:grid-cols-3">
 			{#each i18n.m.about.values as value, index (value.title)}
 				<li
@@ -61,7 +52,6 @@
 			<PhotoFrame
 				slug="founder"
 				ratio="aspect-[4/5]"
-				speed={0}
 				from="left"
 				sizes="(min-width: 1024px) 720px, 94vw"
 				position="center"

@@ -4,12 +4,12 @@
 	import type { PlanBase } from '$data/pricing';
 	import { i18n } from '$i18n';
 	import { registrationUI } from '$lib/stores/registration.svelte';
+	import { scrollToSection } from '$lib/utils/scroll';
 
 	interface PlanView extends PlanBase {
 		name: string;
 		unit: string;
 		summary: string;
-		perks: string[];
 	}
 
 	interface Props {
@@ -18,23 +18,14 @@
 	}
 
 	let { plan, delay = 0 }: Props = $props();
+
+	const isPrivate = $derived(plan.id === 'private');
 </script>
 
 <article
 	use:reveal={{ delay, from: 'scale' }}
-	class="group relative flex flex-col rounded-[1.75rem] p-8 transition duration-500 ease-[var(--ease-soft)] hover:-translate-y-2
-		{plan.featured
-		? 'price-card--featured shadow-lg shadow-ember-400/20'
-		: 'border border-sand-300 bg-sand-50 shadow-sm hover:shadow-xl hover:shadow-ember-400/15'}"
+	class="price-card relative flex flex-col rounded-[1.75rem] border border-sand-300 bg-sand-50 p-8 shadow-sm"
 >
-	{#if plan.featured}
-		<span
-			class="absolute -top-3 left-8 rounded-full border border-ember-300/80 bg-sand-50 px-4 py-1 text-[0.65rem] tracking-[0.2em] text-ember-600 uppercase"
-		>
-			{i18n.m.pricing.featured}
-		</span>
-	{/if}
-
 	<h3 class="font-display text-2xl text-bark-900">{plan.name}</h3>
 
 	<p class="mt-6 flex items-baseline gap-2">
@@ -44,31 +35,30 @@
 
 	<p class="mt-4 text-sm leading-relaxed text-bark-600">{plan.summary}</p>
 
-	<ul class="mt-8 flex flex-col gap-3 text-sm">
-		{#each plan.perks as perk (perk)}
-			<li class="flex items-start gap-3">
-				<span aria-hidden="true" class="mt-2 size-1.5 shrink-0 rounded-full bg-ember-400"></span>
-				<span class="text-bark-600">{perk}</span>
-			</li>
-		{/each}
-	</ul>
-
 	<div class="mt-10 pt-2">
 		<Button
-			onclick={() => registrationUI.show()}
-			variant={plan.featured ? 'solid' : 'outline'}
+			onclick={() => (isPrivate ? scrollToSection('kontaktai') : registrationUI.show())}
+			variant="outline"
 			class="w-full"
 		>
-			{i18n.m.pricing.register}
+			{isPrivate ? i18n.m.pricing.contact : i18n.m.pricing.register}
 		</Button>
 	</div>
 </article>
 
 <style>
-	.price-card--featured {
-		border: 2px solid transparent;
-		background:
-			linear-gradient(var(--color-sand-50), var(--color-sand-50)) padding-box,
-			var(--gradient-sunset) border-box;
+	.price-card::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border-radius: inherit;
+		box-shadow: 0 22px 48px -10px var(--color-ember-400);
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.5s ease-in-out;
+	}
+
+	.price-card:hover::after {
+		opacity: 0.55;
 	}
 </style>

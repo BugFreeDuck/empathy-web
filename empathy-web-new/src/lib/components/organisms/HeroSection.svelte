@@ -3,7 +3,6 @@
 	import Glow from '$atoms/Glow.svelte';
 	import Icon from '$atoms/Icon.svelte';
 	import Photo from '$atoms/Photo.svelte';
-	import { parallax } from '$lib/actions/parallax';
 	import { i18n } from '$i18n';
 	import { registrationUI } from '$lib/stores/registration.svelte';
 	import { scrollToSection } from '$lib/utils/scroll';
@@ -15,7 +14,7 @@
 >
 	<div class="absolute inset-0 -z-10">
 		<div class="enter-fade absolute inset-0" style="--enter-delay: 80ms">
-			<div class="hero-photo parallax absolute [--parallax-scale:1.04]" use:parallax={0.03}>
+			<div class="hero-photo absolute inset-0">
 				<Photo slug="hero-wide" priority sizes="(min-width: 768px) 55vw, 100vw" position="center 55%" />
 			</div>
 		</div>
@@ -51,14 +50,7 @@
 			<span class="hero-accent italic">{i18n.m.hero.titleAccent}</span>
 		</h1>
 
-		<p
-			class="enter-fade mt-5 max-w-lg text-base leading-relaxed text-bark-600 md:mt-8 md:text-lg"
-			style="--enter-delay: 380ms"
-		>
-			{i18n.m.hero.lead}
-		</p>
-
-		<div class="enter-fade mt-7 flex flex-wrap gap-3 md:mt-10 md:gap-4" style="--enter-delay: 500ms">
+		<div class="enter-fade mt-7 flex flex-wrap gap-3 md:mt-10 md:gap-4" style="--enter-delay: 380ms">
 			<Button onclick={() => registrationUI.show()}>
 				{i18n.m.hero.ctaPrimary}
 				<Icon name="arrow" class="size-4" />
@@ -74,21 +66,6 @@
 				{i18n.m.hero.ctaSecondary}
 			</Button>
 		</div>
-
-		<dl
-			class="enter-fade mt-8 flex flex-wrap gap-x-8 gap-y-4 pt-5 md:mt-16 md:gap-x-12 md:pt-8"
-			style="--enter-delay: 620ms"
-		>
-			{#each i18n.m.hero.highlights as item (item.label)}
-				<div class="flex flex-col gap-1">
-					<dt class="sr-only">{item.label}</dt>
-					<dd class="font-display text-2xl text-bark-900 md:text-3xl">{item.value}</dd>
-					<p class="text-[0.6rem] tracking-[0.2em] text-bark-400 uppercase md:text-[0.65rem]">
-						{item.label}
-					</p>
-				</div>
-			{/each}
-		</dl>
 	</div>
 
 	<a
@@ -98,7 +75,7 @@
 			scrollToSection('apie');
 		}}
 		class="enter-fade absolute inset-x-0 bottom-6 mx-auto flex w-fit flex-col items-center gap-3 text-[0.6rem] tracking-[0.25em] text-bark-400 uppercase md:bottom-8"
-		style="--enter-delay: 760ms"
+		style="--enter-delay: 620ms"
 	>
 		{i18n.m.hero.scroll}
 		<span class="relative h-10 w-px overflow-hidden bg-sand-300">

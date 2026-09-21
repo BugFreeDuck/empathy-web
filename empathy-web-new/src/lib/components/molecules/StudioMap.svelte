@@ -27,13 +27,15 @@
 
 		let cancelled = false;
 		let map: import('leaflet').Map | undefined;
+		let teardownTouch: (() => void) | undefined;
 
 		// Leaflet touches `window` at import time — load it only in the browser.
 		Promise.all([import('leaflet'), import('leaflet/dist/leaflet.css')]).then(([leaflet]) => {
 			if (cancelled || !mapNode) return;
 			const L = leaflet.default;
+			const container = mapNode;
 
-			map = L.map(mapNode, {
+			map = L.map(container, {
 				center: [studioCoords.lat, studioCoords.lng],
 				zoom: 15,
 				scrollWheelZoom: false,
@@ -61,11 +63,41 @@
 				title: 'Empathy'
 			}).addTo(map);
 
+			/*
+			 * Mobile: one finger scrolls the page; two fingers pan (and pinch-zoom).
+			 * Desktop mouse drag is unchanged. Capture phase so dragging is
+			 * enabled before Leaflet handles the same touchstart.
+			 */
+			if (L.Browser.mobile) {
+				map.dragging.disable();
+
+				const syncDragging = (e: TouchEvent) => {
+					if (e.touches.length >= 2) {
+						map?.dragging.enable();
+					} else {
+						map?.dragging.disable();
+					}
+				};
+
+				const opts: AddEventListenerOptions = { capture: true, passive: true };
+				container.addEventListener('touchstart', syncDragging, opts);
+				container.addEventListener('touchend', syncDragging, opts);
+				container.addEventListener('touchcancel', syncDragging, opts);
+
+				teardownTouch = () => {
+					container.removeEventListener('touchstart', syncDragging, opts);
+					container.removeEventListener('touchend', syncDragging, opts);
+					container.removeEventListener('touchcancel', syncDragging, opts);
+				};
+			}
+
 			requestAnimationFrame(() => map?.invalidateSize());
 		});
 
 		return () => {
 			cancelled = true;
+			teardownTouch?.();
+			teardownTouch = undefined;
 			map?.remove();
 			map = undefined;
 		};
@@ -97,6 +129,14 @@
 </div>
 
 <style>
+	/*
+	 * Let single-finger vertical gestures scroll the page instead of
+	 * being captured by the map. Two-finger pan is handled in JS above.
+	 */
+	.map-canvas :global(.leaflet-container) {
+		touch-action: pan-y;
+	}
+
 	/*
 	 * Sand/beige grade — warm, not green. Calm bright park yellows with
 	 * lower saturate + a slight peach hue (negative), not a cool green shift.

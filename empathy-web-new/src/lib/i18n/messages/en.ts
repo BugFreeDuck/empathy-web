@@ -37,15 +37,9 @@ export const en = {
 		eyebrow: 'Vilnius · Contemporary dance',
 		titleBefore: 'Movement, connection and',
 		titleAccent: 'awareness',
-		lead: 'A dance studio for children, teens and adults. Here we learn to move freely, listen to ourselves and grow together — in a safe, empathetic space.',
 		ctaPrimary: 'Book a class',
 		ctaSecondary: 'View schedule',
-		scroll: 'Scroll down',
-		highlights: [
-			{ value: '4–60+', label: 'Age groups' },
-			{ value: '2×', label: 'Classes per week' },
-			{ value: '1st', label: 'Class is free' }
-		]
+		scroll: 'Scroll down'
 	},
 	about: {
 		eyebrow: 'About us',
@@ -141,30 +135,20 @@ export const en = {
 		eyebrow: 'Pricing',
 		title: 'Simple, with no fine print',
 		lead: 'Choose what fits your rhythm. A trial class is always free.',
-		featured: 'Most popular',
 		register: 'Register',
-		note: 'Prices apply from 2026. Questions? Write to us — we reply the same day.',
+		contact: 'Get in touch',
 		plans: [
-			{
-				id: 'single',
-				name: 'Single class',
-				unit: '€ / class',
-				summary: 'Come try it with no commitments.',
-				perks: ['Trial class free', 'All age groups', 'No reservation required']
-			},
 			{
 				id: 'month',
 				name: 'Month',
 				unit: '€ / mo.',
-				summary: 'A regular rhythm — where real growth begins.',
-				perks: ['All classes that month', 'Your spot in the group is kept', 'Studio event invites']
+				summary: 'A regular rhythm — where real growth begins.'
 			},
 			{
 				id: 'private',
 				name: 'Private',
 				unit: '€ / class',
-				summary: 'Focus only on you — or you and your partner.',
-				perks: ['1–2 students', 'Program tailored to your goals', 'Time arranged individually']
+				summary: 'Focus only on you — or you and your partner.'
 			}
 		]
 	},

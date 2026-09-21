@@ -30,7 +30,7 @@ Other directories:
 
 - `src/lib/styles` — `theme.css` (tokens), `base.css` (element defaults and
   custom utilities), `animations.css` (keyframes and motion classes).
-- `src/lib/actions` — `reveal` (scroll-in fade) and `parallax` (shared rAF loop).
+- `src/lib/actions` — `reveal` (scroll-in fade).
 
 All text lives in `src/lib/data`, so copy changes never require touching a
 component.
@@ -63,4 +63,4 @@ because the lit end of the first one does not carry enough contrast.
 ## Motion
 
 Animations respect `prefers-reduced-motion`: the media query at the bottom of
-`animations.css` disables every keyframe, transition and parallax transform.
+`animations.css` disables every keyframe and transition.

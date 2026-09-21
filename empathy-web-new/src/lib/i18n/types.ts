@@ -28,11 +28,9 @@ export type Messages = {
 		eyebrow: string;
 		titleBefore: string;
 		titleAccent: string;
-		lead: string;
 		ctaPrimary: string;
 		ctaSecondary: string;
 		scroll: string;
-		highlights: { value: string; label: string }[];
 	};
 	about: {
 		eyebrow: string;
@@ -64,15 +62,13 @@ export type Messages = {
 		eyebrow: string;
 		title: string;
 		lead: string;
-		featured: string;
 		register: string;
-		note: string;
+		contact: string;
 		plans: {
-			id: 'single' | 'month' | 'private';
+			id: 'month' | 'private';
 			name: string;
 			unit: string;
 			summary: string;
-			perks: string[];
 		}[];
 	};
 	contact: {

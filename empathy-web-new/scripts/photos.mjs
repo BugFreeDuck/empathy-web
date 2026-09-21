@@ -1,8 +1,8 @@
 import sharp from 'sharp';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { PHOTOS, SOURCE_DIR, WARM_MATRIX, WARM_MODULATE, WIDTHS } from './photos.config.mjs';
+import { PHOTOS, WARM_MATRIX, WARM_MODULATE, WIDTHS } from './photos.config.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const outDir = path.join(root, 'static/photos');
@@ -39,12 +39,18 @@ function focusWindow({ width, height }, { x = 0.5, y = 0.5, zoom = 1, aspect }) 
 	};
 }
 
-async function pipeline(file, focus) {
-	const source = path.join(SOURCE_DIR, file);
+function resolveSource({ file, dir }) {
+	return path.isAbsolute(file) ? file : path.join(dir, file);
+}
+
+async function pipeline(photo) {
+	const source = resolveSource(photo);
 	const meta = await sharp(source).autoOrient().metadata();
 	let image = sharp(source).autoOrient();
-	if (focus) image = image.extract(focusWindow(meta, focus));
-	const cropped = focus ? focusWindow(meta, focus) : { width: meta.width, height: meta.height };
+	if (photo.focus) image = image.extract(focusWindow(meta, photo.focus));
+	const cropped = photo.focus
+		? focusWindow(meta, photo.focus)
+		: { width: meta.width, height: meta.height };
 	return {
 		width: cropped.width,
 		image: image.recomb(WARM_MATRIX).modulate(WARM_MODULATE)
@@ -52,29 +58,36 @@ async function pipeline(file, focus) {
 }
 
 /** Widths above the source resolution are dropped so nothing is upscaled. */
-async function render({ slug, file, focus }) {
-	const { width: srcWidth } = await pipeline(file, focus);
+async function render(photo) {
+	const { width: srcWidth } = await pipeline(photo);
 	const widths = WIDTHS.filter((w) => w <= srcWidth);
 	if (widths.length === 0) widths.push(srcWidth);
 
 	const renders = await Promise.all(
 		widths.map(async (w) => {
-			const { image: frame } = await pipeline(file, focus);
+			const { image: frame } = await pipeline(photo);
 			return frame
 				.resize({ width: w })
 				.webp({ quality: 88, effort: 5 })
-				.toFile(path.join(outDir, `${slug}-${w}.webp`));
+				.toFile(path.join(outDir, `${photo.slug}-${w}.webp`));
 		})
 	);
 
 	const largest = renders.at(-1);
-	return { slug, widths, aspect: +(largest.width / largest.height).toFixed(4) };
+	return { slug: photo.slug, widths, aspect: +(largest.width / largest.height).toFixed(4) };
 }
 
 const entries = [];
 for (const photo of PHOTOS) {
 	entries.push(await render(photo));
 	console.log(`graded ${photo.slug}`);
+}
+
+const keep = new Set(entries.flatMap((e) => e.widths.map((w) => `${e.slug}-${w}.webp`)));
+for (const name of await readdir(outDir)) {
+	if (!name.endsWith('.webp') || keep.has(name)) continue;
+	await rm(path.join(outDir, name));
+	console.log(`removed ${name}`);
 }
 
 const body = entries
