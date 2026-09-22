@@ -138,12 +138,11 @@
 	}
 
 	/*
-	 * Sand/beige grade — warm, not green. Calm bright park yellows with
-	 * lower saturate + a slight peach hue (negative), not a cool green shift.
+	 * Soft ocean-sage grade — cool teal that matches the site palette.
 	 */
 	.map-canvas :global(.leaflet-tile-pane) {
-		filter: grayscale(0.5) sepia(0.18) hue-rotate(-10deg) contrast(1.1) brightness(0.97)
-			saturate(0.78);
+		filter: grayscale(0.35) sepia(0.15) hue-rotate(140deg) contrast(1.04) brightness(0.98)
+			saturate(0.65);
 	}
 
 	.map-canvas :global(.leaflet-control-zoom a) {
@@ -166,6 +165,6 @@
 		background: var(--color-ember-600);
 		box-shadow:
 			0 0 0 3px color-mix(in srgb, var(--color-sand-50) 90%, transparent),
-			0 4px 12px rgb(58 36 36 / 0.25);
+			0 4px 12px color-mix(in srgb, var(--color-bark-900) 28%, transparent);
 	}
 </style>

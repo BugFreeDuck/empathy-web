@@ -1,10 +1,6 @@
 /**
- * Encode Downloads/hero1.mp4 into muted, loop-friendly hero assets.
- *
- * Outputs:
- *   static/videos/hero.mp4   — H.264, no audio, faststart (full source width)
- *   static/videos/hero.webm  — VP9, no audio
- *   static/videos/hero-poster.webp — mid-frame poster
+ * Encode Downloads/hero2.mov into a muted, loop-friendly hero MP4 + poster.
+ * Sized for full-bleed cover without oversized decode cost on resize.
  */
 import { mkdir, access } from 'node:fs/promises';
 import path from 'node:path';
@@ -12,7 +8,7 @@ import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const source = path.resolve('C:/Users/Gabrielius/Downloads/hero1.mp4');
+const source = path.resolve('C:/Users/Gabrielius/Downloads/hero2.mov');
 const outDir = path.join(root, 'static/videos');
 
 async function run(cmd, args) {
@@ -29,11 +25,10 @@ await access(source);
 await mkdir(outDir, { recursive: true });
 
 const mp4 = path.join(outDir, 'hero.mp4');
-const webm = path.join(outDir, 'hero.webm');
 const poster = path.join(outDir, 'hero-poster.webp');
 
-// Keep source resolution (1920×1200) — right-panel hero is large on retina.
-const scale = 'scale=1920:-2';
+// 1280 wide is enough for hero cover on retina; much cheaper to rescale live.
+const scale = "scale=1280:-2:flags=lanczos";
 
 console.log('Encoding hero.mp4…');
 await run('ffmpeg', [
@@ -46,37 +41,18 @@ await run('ffmpeg', [
 	'-c:v',
 	'libx264',
 	'-profile:v',
-	'high',
+	'main',
 	'-pix_fmt',
 	'yuv420p',
 	'-crf',
-	'18',
+	'23',
 	'-preset',
-	'slow',
+	'medium',
 	'-movflags',
 	'+faststart',
+	'-g',
+	'60',
 	mp4
-]);
-
-console.log('Encoding hero.webm…');
-await run('ffmpeg', [
-	'-y',
-	'-i',
-	source,
-	'-an',
-	'-vf',
-	scale,
-	'-c:v',
-	'libvpx-vp9',
-	'-b:v',
-	'0',
-	'-crf',
-	'28',
-	'-cpu-used',
-	'2',
-	'-row-mt',
-	'1',
-	webm
 ]);
 
 console.log('Extracting poster…');
@@ -93,7 +69,7 @@ await run('ffmpeg', [
 	'-c:v',
 	'libwebp',
 	'-quality',
-	'90',
+	'82',
 	poster
 ]);
 

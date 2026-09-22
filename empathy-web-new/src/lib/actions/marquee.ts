@@ -190,15 +190,19 @@ export const marquee: Action<HTMLElement, MarqueeOptions | undefined> = (node, o
 	measure();
 	render();
 
+	let resizeTimer = 0;
 	const resizeObserver = new ResizeObserver(() => {
-		const prev = setWidth;
-		measure();
-		if (prev > 0 && setWidth > 0) {
-			const progress = ((-x % prev) + prev) % prev;
-			x = -((progress / prev) * setWidth);
-			wrap();
-			render();
-		}
+		window.clearTimeout(resizeTimer);
+		resizeTimer = window.setTimeout(() => {
+			const prev = setWidth;
+			measure();
+			if (prev > 0 && setWidth > 0) {
+				const progress = ((-x % prev) + prev) % prev;
+				x = -((progress / prev) * setWidth);
+				wrap();
+				render();
+			}
+		}, 120);
 	});
 	resizeObserver.observe(node);
 
@@ -220,6 +224,7 @@ export const marquee: Action<HTMLElement, MarqueeOptions | undefined> = (node, o
 		},
 		destroy() {
 			cancelAnimationFrame(raf);
+			window.clearTimeout(resizeTimer);
 			resizeObserver.disconnect();
 			motionQuery.removeEventListener('change', onReducedChange);
 			node.removeEventListener('pointerdown', onPointerDown);

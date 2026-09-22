@@ -1,66 +1,69 @@
-/* Design tokens. Coral → peach accents (#de6262 → #ffb88c) on warm sand. */
+/* Design tokens.
+ * Deep Teal · Ocean Sage (primary) · Soft Aqua (secondary) · Pale Mint · Ivory Water
+ */
 @theme {
-	--font-display: 'Marcellus', ui-serif, Georgia, serif;
-	--font-sans: 'Red Hat Display', ui-sans-serif, system-ui, sans-serif;
+	/* Type: Marcellus for section headings · Archivo Black for hero · Red Hat for body */
+	--font-display: 'Marcellus', serif;
+	--font-hero: 'Archivo Black', sans-serif;
+	--font-sans: 'Red Hat Display', sans-serif;
 
-	/* Surfaces, lightest first — soft peach-ivory so the coral accent feels at home. */
-	--color-sand-50: #fdf7f3;
-	--color-sand-100: #f8ebe4;
-	--color-sand-200: #f0d9cf;
-	--color-sand-300: #e4c4b6;
-	--color-sand-400: #d0a694;
+	/* Surfaces — Ivory Water / Pale Mint, easing toward Soft Aqua */
+	--color-sand-50: #f7fbf9; /* Ivory Water */
+	--color-sand-100: #dcebe6; /* Pale Mint */
+	--color-sand-200: #c8ddd8;
+	--color-sand-300: #afcfcb; /* Soft Aqua */
+	--color-sand-400: #96b8b6;
 
-	/* Accent scale anchored on #de6262 (coral) → #ffb88c (peach) */
-	--color-ember-200: #ffe4d2;
-	--color-ember-300: #ffb88c;
-	--color-ember-400: #f29a7a;
-	--color-ember-500: #e87c6c;
-	--color-ember-600: #de6262;
-	--color-ember-700: #c44e4e;
+	/* Accent — Ocean Sage primary, Soft Aqua secondary, Deep Teal depth */
+	--color-ember-200: #dcebe6; /* Pale Mint */
+	--color-ember-300: #afcfcb; /* Soft Aqua (secondary) */
+	--color-ember-400: #98b9b7;
+	--color-ember-500: #7fa3a3; /* Ocean Sage (primary) */
+	--color-ember-600: #7fa3a3; /* Ocean Sage */
+	--color-ember-700: #4e6e70; /* Deep Teal */
 
-	/* Text, warmed to sit with the coral palette */
-	--color-bark-900: #3a2424;
-	--color-bark-600: #6d4a4a;
-	--color-bark-400: #8a6868;
+	/* Text — cool charcoal that sits on ivory / mint */
+	--color-bark-900: #2a3839;
+	--color-bark-600: #4e6e70; /* Deep Teal as muted text */
+	--color-bark-400: #6f8d8e;
 
 	--ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
 	--ease-drift: cubic-bezier(0.33, 0, 0.2, 1);
 }
 
 :root {
-	/* Signature fill: coral → peach */
+	/* Signature fill: Deep Teal → Ocean Sage → Soft Aqua */
 	--gradient-sunset: linear-gradient(
 		100deg,
-		#de6262 0%,
-		#e87c6c 35%,
-		#f29a7a 70%,
-		#ffb88c 100%
+		#4e6e70 0%,
+		#7fa3a3 45%,
+		#afcfcb 100%
 	);
 
-	/* Button / featured card fill — same pair, a touch more saturated */
+	/* Button / featured card — Ocean Sage dominant */
 	--gradient-sunset-deep: linear-gradient(
 		140deg,
-		#de6262 0%,
-		#ec7a6a 45%,
-		#ffb88c 100%
+		#4e6e70 0%,
+		#7fa3a3 55%,
+		#98b9b7 100%
 	);
 
-	/* Soft dawn wash — matches the peach cream beyond the hero photo */
+	/* Soft dawn wash — Ivory Water into Pale Mint */
 	--gradient-dawn: linear-gradient(
 		to bottom,
-		#fdf0e9 0%,
-		#fdf0e9 40%,
+		#f7fbf9 0%,
+		#f7fbf9 40%,
 		var(--color-sand-100) 100%
 	);
 
-	/* Hero scrim / edge fill where the photo falls away */
-	--color-hero-wash: #fdf0e9;
+	/* Hero edge fill — Ivory Water */
+	--color-hero-wash: #f7fbf9;
 
-	/* Darker coral ramp for gradient text on light photos / sand */
+	/* Gradient text — Deep Teal → Ocean Sage */
 	--gradient-sunset-text: linear-gradient(
 		100deg,
-		#c44e4e 0%,
-		#de6262 45%,
-		#e87c6c 100%
+		#4e6e70 0%,
+		#7fa3a3 55%,
+		#98b9b7 100%
 	);
 }

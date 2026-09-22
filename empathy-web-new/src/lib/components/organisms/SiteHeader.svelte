@@ -53,7 +53,7 @@
 	class="enter-fade fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-[var(--ease-soft)]
 		{scrolled
 		? 'border-b border-sand-300/70 bg-sand-50/85 backdrop-blur-xl'
-		: 'border-b border-transparent'}"
+		: 'border-b border-sand-300/25 bg-sand-50/20 backdrop-blur-sm'}"
 	style="--enter-delay: 40ms"
 >
 	<div
