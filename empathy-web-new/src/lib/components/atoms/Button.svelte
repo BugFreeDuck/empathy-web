@@ -30,9 +30,9 @@
 
 	const variants = {
 		solid:
-			'bg-sunset-deep text-bark-900 shadow-lg shadow-ember-400/25 hover:shadow-xl hover:shadow-ember-400/35',
-		outline: 'border border-sand-300 text-bark-900 hover:border-ember-400 hover:text-ember-600',
-		quiet: 'text-bark-600 hover:text-ember-600'
+			'bg-sunset-deep text-sand-50 shadow-lg shadow-ember-600/25 hover:shadow-xl hover:shadow-ember-600/35',
+		outline: 'border border-sand-300 text-bark-900 hover:border-ember-500 hover:text-ember-700',
+		quiet: 'text-bark-600 hover:text-ember-700'
 	};
 </script>
 

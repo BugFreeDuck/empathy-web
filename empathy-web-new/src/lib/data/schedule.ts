@@ -4,7 +4,7 @@ export interface Group {
 	id: GroupId;
 	name: string;
 	age: string;
-	/** Tailwind classes for the group's chip, keyed to the sunset palette. */
+	/** Tailwind classes for the group's chip, keyed to the sage palette. */
 	chip: string;
 	dot: string;
 }

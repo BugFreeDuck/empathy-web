@@ -53,7 +53,7 @@
 	background-image: var(--gradient-dawn);
 }
 
-/* Soft sunset light spilling into a section corner. Sits behind section
+/* Soft sage light spilling into a section corner. Sits behind section
    content, which is why every section using it is also `isolate`. */
 @utility glow {
 	position: absolute;

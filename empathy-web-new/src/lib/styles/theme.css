@@ -1,66 +1,66 @@
-/* Design tokens. Coral → peach accents (#de6262 → #ffb88c) on warm sand. */
+/* Design tokens. Sage accents on cool stone surfaces. */
 @theme {
 	--font-display: 'Marcellus', ui-serif, Georgia, serif;
 	--font-sans: 'Red Hat Display', ui-sans-serif, system-ui, sans-serif;
 
-	/* Surfaces, lightest first — soft peach-ivory so the coral accent feels at home. */
-	--color-sand-50: #fdf7f3;
-	--color-sand-100: #f8ebe4;
-	--color-sand-200: #f0d9cf;
-	--color-sand-300: #e4c4b6;
-	--color-sand-400: #d0a694;
+	/* Surfaces, lightest first — soft sage-tinted stone. */
+	--color-sand-50: #f7f8f5;
+	--color-sand-100: #eef1ea;
+	--color-sand-200: #dde3d8;
+	--color-sand-300: #c5cec0;
+	--color-sand-400: #a3af9c;
 
-	/* Accent scale anchored on #de6262 (coral) → #ffb88c (peach) */
-	--color-ember-200: #ffe4d2;
-	--color-ember-300: #ffb88c;
-	--color-ember-400: #f29a7a;
-	--color-ember-500: #e87c6c;
-	--color-ember-600: #de6262;
-	--color-ember-700: #c44e4e;
+	/* Accent scale — pale mist → deep sage */
+	--color-ember-200: #e4efe6;
+	--color-ember-300: #c5d9c8;
+	--color-ember-400: #9fbfa5;
+	--color-ember-500: #7a9e82;
+	--color-ember-600: #5f8468;
+	--color-ember-700: #486650;
 
-	/* Text, warmed to sit with the coral palette */
-	--color-bark-900: #3a2424;
-	--color-bark-600: #6d4a4a;
-	--color-bark-400: #8a6868;
+	/* Text, cooled to sit with the sage palette */
+	--color-bark-900: #2a322c;
+	--color-bark-600: #4f5a52;
+	--color-bark-400: #738078;
 
 	--ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
 	--ease-drift: cubic-bezier(0.33, 0, 0.2, 1);
 }
 
 :root {
-	/* Signature fill: coral → peach */
+	/* Signature fill: sage mist → leaf */
 	--gradient-sunset: linear-gradient(
 		100deg,
-		#de6262 0%,
-		#e87c6c 35%,
-		#f29a7a 70%,
-		#ffb88c 100%
+		#486650 0%,
+		#5f8468 35%,
+		#7a9e82 70%,
+		#9fbfa5 100%
 	);
 
-	/* Button / featured card fill — same pair, a touch more saturated */
+	/* Button / featured card fill — richer sage */
 	--gradient-sunset-deep: linear-gradient(
 		140deg,
-		#de6262 0%,
-		#ec7a6a 45%,
-		#ffb88c 100%
+		#3d5544 0%,
+		#5f8468 50%,
+		#7a9e82 100%
 	);
 
-	/* Soft dawn wash — matches the peach cream beyond the hero photo */
+	/* Soft dawn wash — cool cream beyond the hero media */
 	--gradient-dawn: linear-gradient(
 		to bottom,
-		#fdf0e9 0%,
-		#fdf0e9 40%,
+		#f3f5f1 0%,
+		#f3f5f1 40%,
 		var(--color-sand-100) 100%
 	);
 
-	/* Hero scrim / edge fill where the photo falls away */
-	--color-hero-wash: #fdf0e9;
+	/* Hero scrim / edge fill where the media falls away */
+	--color-hero-wash: #f3f5f1;
 
-	/* Darker coral ramp for gradient text on light photos / sand */
+	/* Darker sage ramp for gradient text on light surfaces */
 	--gradient-sunset-text: linear-gradient(
 		100deg,
-		#c44e4e 0%,
-		#de6262 45%,
-		#e87c6c 100%
+		#3d5544 0%,
+		#5f8468 45%,
+		#7a9e82 100%
 	);
 }
