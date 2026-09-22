@@ -138,11 +138,11 @@
 	}
 
 	/*
-	 * Soft ocean-sage grade — cool teal that matches the site palette.
+	 * Soft olive-sage grade — earthy green that matches the site palette.
 	 */
 	.map-canvas :global(.leaflet-tile-pane) {
-		filter: grayscale(0.35) sepia(0.15) hue-rotate(140deg) contrast(1.04) brightness(0.98)
-			saturate(0.65);
+		filter: grayscale(0.3) sepia(0.4) hue-rotate(28deg) contrast(1.03) brightness(0.97)
+			saturate(0.7);
 	}
 
 	.map-canvas :global(.leaflet-control-zoom a) {

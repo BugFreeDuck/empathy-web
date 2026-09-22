@@ -6,7 +6,7 @@
 	import { i18n } from '$i18n';
 </script>
 
-<section id="komanda" class="relative isolate overflow-hidden bg-sand-100 py-14 lg:py-20">
+<section id="komanda" class="relative isolate overflow-hidden bg-sand-300 py-14 lg:py-20">
 	<div class="mx-auto flex max-w-7xl flex-col gap-16 px-6 lg:px-10">
 		<SectionIntro
 			eyebrow={i18n.m.team.eyebrow}

@@ -1,5 +1,5 @@
 /* Design tokens.
- * Deep Teal · Ocean Sage (primary) · Soft Aqua (secondary) · Pale Mint · Ivory Water
+ * Linen Cream · Warm Beige · Mushroom Taupe · Olive Sage (accent) · Forest Green
  */
 @theme {
 	/* Type: Marcellus for section headings · Archivo Black for hero · Red Hat for body */
@@ -7,63 +7,63 @@
 	--font-hero: 'Archivo Black', sans-serif;
 	--font-sans: 'Red Hat Display', sans-serif;
 
-	/* Surfaces — Ivory Water / Pale Mint, easing toward Soft Aqua */
-	--color-sand-50: #f7fbf9; /* Ivory Water */
-	--color-sand-100: #dcebe6; /* Pale Mint */
-	--color-sand-200: #c8ddd8;
-	--color-sand-300: #afcfcb; /* Soft Aqua */
-	--color-sand-400: #96b8b6;
+	/* Surfaces — Linen Cream → Warm Beige → Mushroom Taupe */
+	--color-sand-50: #ede5d8; /* Linen Cream */
+	--color-sand-100: #d8c8b4; /* Warm Beige */
+	--color-sand-200: #c4b49a;
+	--color-sand-300: #9b8d7a; /* Mushroom Taupe */
+	--color-sand-400: #7a6f5e;
 
-	/* Accent — Ocean Sage primary, Soft Aqua secondary, Deep Teal depth */
-	--color-ember-200: #dcebe6; /* Pale Mint */
-	--color-ember-300: #afcfcb; /* Soft Aqua (secondary) */
-	--color-ember-400: #98b9b7;
-	--color-ember-500: #7fa3a3; /* Ocean Sage (primary) */
-	--color-ember-600: #7fa3a3; /* Ocean Sage */
-	--color-ember-700: #4e6e70; /* Deep Teal */
+	/* Accent — Olive Sage primary, Forest Green depth */
+	--color-ember-200: #d5dcc8;
+	--color-ember-300: #a8b49a;
+	--color-ember-400: #87967a;
+	--color-ember-500: #6e7c61; /* Olive Sage (primary) */
+	--color-ember-600: #6e7c61; /* Olive Sage */
+	--color-ember-700: #2f4a3a; /* Forest Green */
 
-	/* Text — cool charcoal that sits on ivory / mint */
-	--color-bark-900: #2a3839;
-	--color-bark-600: #4e6e70; /* Deep Teal as muted text */
-	--color-bark-400: #6f8d8e;
+	/* Text — Forest Green with taupe-muted secondary */
+	--color-bark-900: #2f4a3a; /* Forest Green */
+	--color-bark-600: #5a6650;
+	--color-bark-400: #9b8d7a; /* Mushroom Taupe */
 
 	--ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
 	--ease-drift: cubic-bezier(0.33, 0, 0.2, 1);
 }
 
 :root {
-	/* Signature fill: Deep Teal → Ocean Sage → Soft Aqua */
+	/* Signature fill: Forest Green → Olive Sage → soft olive */
 	--gradient-sunset: linear-gradient(
 		100deg,
-		#4e6e70 0%,
-		#7fa3a3 45%,
-		#afcfcb 100%
+		#2f4a3a 0%,
+		#6e7c61 50%,
+		#a8b49a 100%
 	);
 
-	/* Button / featured card — Ocean Sage dominant */
+	/* Button / featured card — Olive Sage dominant */
 	--gradient-sunset-deep: linear-gradient(
 		140deg,
-		#4e6e70 0%,
-		#7fa3a3 55%,
-		#98b9b7 100%
+		#2f4a3a 0%,
+		#6e7c61 55%,
+		#87967a 100%
 	);
 
-	/* Soft dawn wash — Ivory Water into Pale Mint */
+	/* Soft dawn wash — Warm Beige into Linen Cream */
 	--gradient-dawn: linear-gradient(
 		to bottom,
-		#f7fbf9 0%,
-		#f7fbf9 40%,
-		var(--color-sand-100) 100%
+		#d8c8b4 0%,
+		#d8c8b4 40%,
+		var(--color-sand-50) 100%
 	);
 
-	/* Hero edge fill — Ivory Water */
-	--color-hero-wash: #f7fbf9;
+	/* Hero edge fill — Linen Cream */
+	--color-hero-wash: #ede5d8;
 
-	/* Gradient text — Deep Teal → Ocean Sage */
+	/* Gradient text — Forest Green → Olive Sage */
 	--gradient-sunset-text: linear-gradient(
 		100deg,
-		#4e6e70 0%,
-		#7fa3a3 55%,
-		#98b9b7 100%
+		#2f4a3a 0%,
+		#6e7c61 55%,
+		#87967a 100%
 	);
 }

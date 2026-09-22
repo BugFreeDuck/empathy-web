@@ -1,5 +1,5 @@
 <script lang="ts">
-	/** Decorative sunset light bloom, positioned by the parent section. */
+	/** Decorative olive-sage light bloom, positioned by the parent section. */
 	interface Props {
 		class?: string;
 		color?: string;
