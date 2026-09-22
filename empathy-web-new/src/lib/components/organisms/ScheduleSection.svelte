@@ -48,7 +48,7 @@
 				{/each}
 			</ul>
 
-			<Button onclick={() => registrationUI.show()} class="self-start">
+			<Button variant="outline" onclick={() => registrationUI.show()} class="self-start">
 				{i18n.m.schedule.cta}
 			</Button>
 		</div>

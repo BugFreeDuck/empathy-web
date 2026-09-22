@@ -1,69 +1,68 @@
-/* Design tokens.
- * Linen Cream · Warm Beige · Mushroom Taupe · Olive Sage (accent) · Forest Green
- */
+/* Design tokens. Coral → peach accents (#de6262 → #ffb88c) on warm sand. */
 @theme {
 	/* Type: Marcellus for section headings · Archivo Black for hero · Red Hat for body */
-	--font-display: 'Marcellus', serif;
+	--font-display: 'Marcellus', ui-serif, Georgia, serif;
 	--font-hero: 'Archivo Black', sans-serif;
-	--font-sans: 'Red Hat Display', sans-serif;
+	--font-sans: 'Red Hat Display', ui-sans-serif, system-ui, sans-serif;
 
-	/* Surfaces — Linen Cream → Warm Beige → Mushroom Taupe */
-	--color-sand-50: #ede5d8; /* Linen Cream */
-	--color-sand-100: #d8c8b4; /* Warm Beige */
-	--color-sand-200: #c4b49a;
-	--color-sand-300: #9b8d7a; /* Mushroom Taupe */
-	--color-sand-400: #7a6f5e;
+	/* Surfaces, lightest first — soft peach-ivory so the coral accent feels at home. */
+	--color-sand-50: #fdf7f3;
+	--color-sand-100: #f8ebe4;
+	--color-sand-200: #f0d9cf;
+	--color-sand-300: #e4c4b6;
+	--color-sand-400: #d0a694;
 
-	/* Accent — Olive Sage primary, Forest Green depth */
-	--color-ember-200: #d5dcc8;
-	--color-ember-300: #a8b49a;
-	--color-ember-400: #87967a;
-	--color-ember-500: #6e7c61; /* Olive Sage (primary) */
-	--color-ember-600: #6e7c61; /* Olive Sage */
-	--color-ember-700: #2f4a3a; /* Forest Green */
+	/* Accent scale anchored on #de6262 (coral) → #ffb88c (peach) */
+	--color-ember-200: #ffe4d2;
+	--color-ember-300: #ffb88c;
+	--color-ember-400: #f29a7a;
+	--color-ember-500: #e87c6c;
+	--color-ember-600: #de6262;
+	--color-ember-700: #c44e4e;
 
-	/* Text — Forest Green with taupe-muted secondary */
-	--color-bark-900: #2f4a3a; /* Forest Green */
-	--color-bark-600: #5a6650;
-	--color-bark-400: #9b8d7a; /* Mushroom Taupe */
+	/* Text, warmed to sit with the coral palette */
+	--color-bark-900: #3a2424;
+	--color-bark-600: #6d4a4a;
+	--color-bark-400: #8a6868;
 
 	--ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
 	--ease-drift: cubic-bezier(0.33, 0, 0.2, 1);
 }
 
 :root {
-	/* Signature fill: Forest Green → Olive Sage → soft olive */
+	/* Signature fill: coral → peach */
 	--gradient-sunset: linear-gradient(
 		100deg,
-		#2f4a3a 0%,
-		#6e7c61 50%,
-		#a8b49a 100%
+		#de6262 0%,
+		#e87c6c 35%,
+		#f29a7a 70%,
+		#ffb88c 100%
 	);
 
-	/* Button / featured card — Olive Sage dominant */
+	/* Button / featured card fill — same pair, a touch more saturated */
 	--gradient-sunset-deep: linear-gradient(
 		140deg,
-		#2f4a3a 0%,
-		#6e7c61 55%,
-		#87967a 100%
+		#de6262 0%,
+		#ec7a6a 45%,
+		#ffb88c 100%
 	);
 
-	/* Soft dawn wash — Warm Beige into Linen Cream */
+	/* Soft dawn wash — matches the peach cream beyond the hero photo */
 	--gradient-dawn: linear-gradient(
 		to bottom,
-		#d8c8b4 0%,
-		#d8c8b4 40%,
-		var(--color-sand-50) 100%
+		#fdf0e9 0%,
+		#fdf0e9 40%,
+		var(--color-sand-100) 100%
 	);
 
-	/* Hero edge fill — Linen Cream */
-	--color-hero-wash: #ede5d8;
+	/* Hero scrim / edge fill where the photo falls away */
+	--color-hero-wash: #fdf0e9;
 
-	/* Gradient text — Forest Green → Olive Sage */
+	/* Darker coral ramp for gradient text on light photos / sand */
 	--gradient-sunset-text: linear-gradient(
 		100deg,
-		#2f4a3a 0%,
-		#6e7c61 55%,
-		#87967a 100%
+		#c44e4e 0%,
+		#de6262 45%,
+		#e87c6c 100%
 	);
 }

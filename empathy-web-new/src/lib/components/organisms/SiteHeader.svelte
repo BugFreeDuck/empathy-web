@@ -52,8 +52,8 @@
 <header
 	class="enter-fade fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-[var(--ease-soft)]
 		{scrolled
-		? 'border-b border-sand-300/70 bg-sand-50/85 backdrop-blur-xl'
-		: 'border-b border-sand-300/25 bg-sand-50/20 backdrop-blur-sm'}"
+		? 'border-b border-sand-300/70 bg-sand-50'
+		: 'border-b border-transparent'}"
 	style="--enter-delay: 40ms"
 >
 	<div
@@ -70,7 +70,7 @@
 			</div>
 			<div class="enter-rise flex items-center gap-5" style="--enter-delay: 280ms">
 				<LanguageSwitcher />
-				<Button class="px-6 py-2.5 text-xs" onclick={() => registrationUI.show()}>
+				<Button variant="outline" class="px-6 py-2.5 text-xs" onclick={() => registrationUI.show()}>
 					{i18n.m.nav.register}
 				</Button>
 			</div>
@@ -116,6 +116,7 @@
 		<NavLinks {active} orientation="column" onnavigate={() => (menuOpen = false)} />
 		<div class="menu-cta">
 			<Button
+				variant="outline"
 				class="self-start"
 				onclick={() => {
 					menuOpen = false;

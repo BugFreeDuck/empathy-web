@@ -138,11 +138,12 @@
 	}
 
 	/*
-	 * Soft olive-sage grade — earthy green that matches the site palette.
+	 * Sand/beige grade — warm, not green. Calm bright park yellows with
+	 * lower saturate + a slight peach hue (negative), not a cool green shift.
 	 */
 	.map-canvas :global(.leaflet-tile-pane) {
-		filter: grayscale(0.3) sepia(0.4) hue-rotate(28deg) contrast(1.03) brightness(0.97)
-			saturate(0.7);
+		filter: grayscale(0.5) sepia(0.18) hue-rotate(-10deg) contrast(1.1) brightness(0.97)
+			saturate(0.78);
 	}
 
 	.map-canvas :global(.leaflet-control-zoom a) {

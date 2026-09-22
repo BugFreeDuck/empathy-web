@@ -214,14 +214,17 @@
 
 	{#if status !== 'success'}
 		<div class="shrink-0 border-t border-sand-200 bg-sand-50 px-6 pt-4 pb-5 sm:px-8 sm:pb-6">
-			<Button
-				type="submit"
-				form="registration-form"
-				class="w-full"
-				disabled={status === 'submitting'}
-			>
-				{status === 'submitting' ? copy.submitting : copy.submit}
-			</Button>
+			<div class="flex justify-center">
+				<Button
+					type="submit"
+					form="registration-form"
+					variant="outline"
+					class="w-[60%] px-6 py-2.5 text-xs"
+					disabled={status === 'submitting'}
+				>
+					{status === 'submitting' ? copy.submitting : copy.submit}
+				</Button>
+			</div>
 			<p class="mt-3 text-center text-[0.7rem] leading-relaxed text-bark-400">
 				{copy.trialNote}
 			</p>

@@ -4,11 +4,11 @@
 		/* Match scrolled header (`h-16`) so hash jumps clear the fixed bar. */
 		scroll-padding-top: 4rem;
 		-webkit-tap-highlight-color: transparent;
-		background-color: var(--color-sand-100);
+		background-color: var(--color-sand-50);
 	}
 
 	body {
-		background-color: var(--color-sand-100);
+		background-color: var(--color-sand-50);
 		color: var(--color-bark-900);
 		font-family: var(--font-sans);
 		-webkit-font-smoothing: antialiased;
@@ -62,7 +62,7 @@
 	background-image: var(--gradient-dawn);
 }
 
-/* Soft olive-sage light spilling into a section corner. Sits behind section
+/* Soft sunset light spilling into a section corner. Sits behind section
    content, which is why every section using it is also `isolate`. */
 @utility glow {
 	position: absolute;

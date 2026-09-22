@@ -26,14 +26,16 @@
 	}: Props = $props();
 
 	const shared =
-		'inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium tracking-wide uppercase transition duration-300 ease-[var(--ease-soft)] hover:-translate-y-0.5 active:translate-y-0';
+		'group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium tracking-wide uppercase transition duration-300 ease-[var(--ease-soft)]';
 
 	const variants = {
-		solid:
-			'bg-sunset-deep text-sand-50 shadow-lg shadow-ember-600/25 hover:shadow-xl hover:shadow-ember-600/35',
-		outline: 'border border-sand-300 text-bark-900 hover:border-ember-500 hover:text-ember-700',
-		quiet: 'text-bark-600 hover:text-ember-700'
+		solid: 'bg-sunset-deep text-bark-900 shadow-lg shadow-ember-400/25',
+		outline: 'border border-ember-600 text-ember-600 hover:border-ember-700 hover:text-ember-700',
+		quiet: 'text-bark-600 hover:text-ember-600'
 	};
+
+	const label =
+		'inline-flex items-center justify-center gap-2 transition-transform duration-300 ease-[var(--ease-soft)] group-hover:scale-110';
 </script>
 
 {#if href}
@@ -44,10 +46,16 @@
 		target={external ? '_blank' : undefined}
 		rel={external ? 'noopener noreferrer' : undefined}
 	>
-		{@render children()}
+		<span class={label}>{@render children()}</span>
 	</a>
 {:else}
-	<button {type} {form} {onclick} {disabled} class="{shared} {variants[variant]} {className} disabled:pointer-events-none disabled:opacity-60">
-		{@render children()}
+	<button
+		{type}
+		{form}
+		{onclick}
+		{disabled}
+		class="{shared} {variants[variant]} {className} disabled:pointer-events-none disabled:opacity-60"
+	>
+		<span class={label}>{@render children()}</span>
 	</button>
 {/if}

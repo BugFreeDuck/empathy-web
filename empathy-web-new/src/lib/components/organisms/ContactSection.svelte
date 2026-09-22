@@ -70,10 +70,14 @@
 								href={social.href}
 								target="_blank"
 								rel="noopener noreferrer"
-								class="flex items-center gap-2.5 rounded-full border border-sand-300 py-2.5 pr-5 pl-4 text-sm text-bark-900 transition duration-300 hover:-translate-y-0.5 hover:border-ember-400 hover:text-ember-600"
+								class="group flex items-center gap-2.5 rounded-full border border-sand-300 py-2.5 pr-5 pl-4 text-sm text-bark-900 transition duration-300 hover:border-ember-400 hover:text-ember-600"
 							>
-								<Icon name={socialIcons[social.label]} class="size-4" />
-								{social.label}
+								<span
+									class="inline-flex items-center gap-2.5 transition-transform duration-300 ease-[var(--ease-soft)] group-hover:scale-110"
+								>
+									<Icon name={socialIcons[social.label]} class="size-4" />
+									{social.label}
+								</span>
 							</a>
 						</li>
 					{/each}
@@ -81,7 +85,7 @@
 			</div>
 
 			<div use:reveal={{ delay: 280, from: 'up', y: '1rem' }}>
-				<Button onclick={() => registrationUI.show()}>
+				<Button variant="outline" onclick={() => registrationUI.show()}>
 					{i18n.m.contact.cta}
 					<Icon name="arrow" class="size-4" />
 				</Button>

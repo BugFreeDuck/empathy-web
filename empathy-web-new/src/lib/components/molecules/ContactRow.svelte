@@ -19,7 +19,7 @@
 	class="group flex items-center gap-5 border-t border-sand-300 py-5 transition-colors first:border-t-0"
 >
 	<span
-		class="flex size-11 shrink-0 items-center justify-center rounded-full border border-sand-300 text-ember-600 transition duration-300 group-hover:border-ember-500 group-hover:bg-ember-600 group-hover:text-sand-50"
+		class="flex size-11 shrink-0 items-center justify-center rounded-full border border-sand-300 text-ember-600 transition duration-300 group-hover:border-ember-400 group-hover:bg-ember-400 group-hover:text-bark-900"
 	>
 		<Icon name={icon} />
 	</span>
