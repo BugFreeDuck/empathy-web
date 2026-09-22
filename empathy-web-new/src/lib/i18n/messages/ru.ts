@@ -24,6 +24,7 @@ export const ru = {
 	nav: {
 		aria: 'Разделы страницы',
 		about: 'О нас',
+		team: 'Команда',
 		schedule: 'Расписание',
 		pricing: 'Цены',
 		contact: 'Контакты',
@@ -34,11 +35,9 @@ export const ru = {
 		language: 'Язык'
 	},
 	hero: {
-		eyebrow: 'Вильнюс · Современный танец',
-		titleBefore: 'Движение, связь и',
-		titleAccent: 'осознанность',
-		ctaPrimary: 'Записаться на занятие',
-		ctaSecondary: 'Смотреть расписание',
+		title: 'Открой себя через движение',
+		lead: 'Танцевальные занятия в Вильнюсе для детей и взрослых',
+		cta: 'Регистрация',
 		scroll: 'Листайте вниз'
 	},
 	about: {
@@ -105,6 +104,24 @@ export const ru = {
 			}
 		]
 	},
+	team: {
+		eyebrow: 'Команда',
+		title: 'Педагоги, с которыми вы будете расти',
+		members: {
+			emilija: {
+				name: 'Эмилия',
+				bio: 'Ведёт Mini, Kids и Juniors. Спокойная, внимательная и любит расти вместе с учениками.'
+			},
+			erika: {
+				name: 'Эрика',
+				bio: 'Преподаёт Kids, Juniors и Ladies day. В движении ищет свободу, ритм и тёплую связь.'
+			},
+			gabija: {
+				name: 'Габия',
+				bio: 'Ведёт Kids, Juniors и Ladies day. Создаёт безопасное пространство пробовать, ошибаться и открывать.'
+			}
+		}
+	},
 	schedule: {
 		eyebrow: 'Расписание',
 		title: 'Выбери группу и время',
@@ -114,7 +131,6 @@ export const ru = {
 			mini: { age: '4–6 лет' },
 			kids: { age: '7–10 лет' },
 			juniors: { age: '11–15 лет' },
-			open: { age: '16+ лет' },
 			ladiesDay: { age: '25+ лет' },
 			ladiesEvening: { age: '25+ лет · с января' }
 		},
@@ -231,12 +247,6 @@ export const ru = {
 				value: 'JUNIORS (11 - 15 m.) | šiuolaikinis/gatvės',
 				label: 'JUNIORS (11–15 лет)',
 				hint: 'современный / street',
-				section: 'youth'
-			},
-			{
-				value: 'OPEN (16+) / nauja choreografija kiekvieną pamoką | kartą per savaitę',
-				label: 'OPEN (16+)',
-				hint: 'новая хореография каждое занятие · раз в неделю',
 				section: 'youth'
 			},
 			{

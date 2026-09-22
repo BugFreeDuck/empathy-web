@@ -6,6 +6,8 @@
  */
 export const SOURCE_DIR = 'C:/Users/Gabrielius/Documents/Empathy foto/2024 Photoshoot';
 export const GALLERY_DIR = 'C:/Users/Gabrielius/Downloads/Smash';
+export const TEAM_DIR =
+	'C:/Users/Gabrielius/Documents/Empathy foto/2026-team photoshoot/High resolution';
 
 const galleryFiles = [
 	'671222270_18010962977850041_7516351511973824887_n.jpg',
@@ -43,10 +45,28 @@ export const PHOTOS = [
 	{ slug: 'hero-wide', file: 'ABD_8113 copy.jpg', dir: SOURCE_DIR },
 	{
 		slug: 'founder',
-		file: 'ABD_7919 copy.jpg',
-		dir: SOURCE_DIR,
-		// 4:5 portrait centred on Olivija — modest zoom so more of the frame shows.
-		focus: { x: 0.52, y: 0.36, zoom: 2.2, aspect: 4 / 5 }
+		file: 'P11304094.jpg',
+		dir: TEAM_DIR,
+		// 4:5 frame unchanged — crop centred on Olivija.
+		focus: { x: 0.48, y: 0.5, zoom: 1.88, aspect: 4 / 5 }
+	},
+	{
+		slug: 'teacher-emilija',
+		file: 'P11301684.jpg',
+		dir: TEAM_DIR,
+		focus: { x: 0.5, y: 0.42, zoom: 2.25, aspect: 3 / 4 }
+	},
+	{
+		slug: 'teacher-erika',
+		file: 'P11301704.jpg',
+		dir: TEAM_DIR,
+		focus: { x: 0.43, y: 0.32, zoom: 1.7, aspect: 3 / 4 }
+	},
+	{
+		slug: 'teacher-gabija',
+		file: 'P11302363.jpg',
+		dir: TEAM_DIR,
+		focus: { x: 0.48, y: 0.34, zoom: 2.05, aspect: 3 / 4 }
 	},
 	...galleryFiles.map((file, index) => ({
 		slug: `gallery-${String(index + 1).padStart(2, '0')}`,

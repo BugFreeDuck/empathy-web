@@ -7,6 +7,7 @@
 	import ScheduleSection from '$organisms/ScheduleSection.svelte';
 	import SiteFooter from '$organisms/SiteFooter.svelte';
 	import SiteHeader from '$organisms/SiteHeader.svelte';
+	import TeamSection from '$organisms/TeamSection.svelte';
 </script>
 
 <SiteHeader />
@@ -14,6 +15,7 @@
 <main>
 	<HeroSection />
 	<AboutSection />
+	<TeamSection />
 	<ScheduleSection />
 	<PricingSection />
 	<ContactSection />

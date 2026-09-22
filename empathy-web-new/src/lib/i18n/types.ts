@@ -15,6 +15,7 @@ export type Messages = {
 	nav: {
 		aria: string;
 		about: string;
+		team: string;
 		schedule: string;
 		pricing: string;
 		contact: string;
@@ -25,11 +26,9 @@ export type Messages = {
 		language: string;
 	};
 	hero: {
-		eyebrow: string;
-		titleBefore: string;
-		titleAccent: string;
-		ctaPrimary: string;
-		ctaSecondary: string;
+		title: string;
+		lead: string;
+		cta: string;
 		scroll: string;
 	};
 	about: {
@@ -46,13 +45,21 @@ export type Messages = {
 		};
 		testimonials: { quote: string; name: string; role: string }[];
 	};
+	team: {
+		eyebrow: string;
+		title: string;
+		members: Record<
+			'emilija' | 'erika' | 'gabija',
+			{ name: string; bio: string }
+		>;
+	};
 	schedule: {
 		eyebrow: string;
 		title: string;
 		cta: string;
 		daysAria: string;
 		groups: Record<
-			'mini' | 'kids' | 'juniors' | 'open' | 'ladiesDay' | 'ladiesEvening',
+			'mini' | 'kids' | 'juniors' | 'ladiesDay' | 'ladiesEvening',
 			{ age: string }
 		>;
 		dayNames: Record<'P' | 'A' | 'T' | 'K' | 'Pn', string>;

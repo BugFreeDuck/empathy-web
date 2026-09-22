@@ -1,10 +1,4 @@
-export type GroupId =
-	| 'mini'
-	| 'kids'
-	| 'juniors'
-	| 'open'
-	| 'ladiesDay'
-	| 'ladiesEvening';
+export type GroupId = 'mini' | 'kids' | 'juniors' | 'ladiesDay' | 'ladiesEvening';
 
 export interface Group {
 	id: GroupId;
@@ -36,13 +30,6 @@ export const groups: Record<GroupId, Group> = {
 		age: '11–15 m.',
 		chip: 'bg-ember-300/40 text-ember-700',
 		dot: 'bg-ember-400'
-	},
-	open: {
-		id: 'open',
-		name: 'Open',
-		age: '16+ m.',
-		chip: 'bg-ember-400/25 text-ember-700',
-		dot: 'bg-ember-500'
 	},
 	ladiesDay: {
 		id: 'ladiesDay',
@@ -102,7 +89,6 @@ export const week: Day[] = [
 		short: 'Pn',
 		lessons: [
 			{ time: '17:15–18:00', group: 'mini', teacher: 'Emilija' },
-			{ time: '18:00–19:30', group: 'open', teacher: 'Emilija' },
 			{ time: '18:00–19:30', group: 'ladiesEvening', teacher: 'Olivija' }
 		]
 	}

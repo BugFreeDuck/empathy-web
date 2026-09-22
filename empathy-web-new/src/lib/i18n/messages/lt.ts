@@ -24,6 +24,7 @@ export const lt = {
 	nav: {
 		aria: 'Puslapio sekcijos',
 		about: 'Apie mus',
+		team: 'Komanda',
 		schedule: 'Tvarkaraštis',
 		pricing: 'Kainos',
 		contact: 'Kontaktai',
@@ -34,11 +35,9 @@ export const lt = {
 		language: 'Kalba'
 	},
 	hero: {
-		eyebrow: 'Vilnius · Šiuolaikinis šokis',
-		titleBefore: 'Judesys, ryšys ir',
-		titleAccent: 'sąmoningumas',
-		ctaPrimary: 'Registruotis į pamoką',
-		ctaSecondary: 'Peržiūrėti tvarkaraštį',
+		title: 'Atrask save per judesį',
+		lead: 'Šokio užsiėmimai Vilniuje vaikams ir suaugusiems',
+		cta: 'Registracija',
 		scroll: 'Slinkite žemyn'
 	},
 	about: {
@@ -105,6 +104,24 @@ export const lt = {
 			}
 		]
 	},
+	team: {
+		eyebrow: 'Komanda',
+		title: 'Mokytojos, su kuriomis augsite',
+		members: {
+			emilija: {
+				name: 'Emilija',
+				bio: 'Veda Mini, Kids ir Juniors grupes. Rami, dėmesinga ir mėgstanti augti kartu su mokiniais.'
+			},
+			erika: {
+				name: 'Erika',
+				bio: 'Moko Kids, Juniors ir Ladies day. Judesyje ieško laisvės, ritmo ir šilto ryšio.'
+			},
+			gabija: {
+				name: 'Gabija',
+				bio: 'Veda Kids, Juniors ir Ladies day. Kuria saugią erdvę bandyti, klysti ir atrasti.'
+			}
+		}
+	},
 	schedule: {
 		eyebrow: 'Tvarkaraštis',
 		title: 'Pasirink savo grupę ir laiką',
@@ -114,7 +131,6 @@ export const lt = {
 			mini: { age: '4–6 m.' },
 			kids: { age: '7–10 m.' },
 			juniors: { age: '11–15 m.' },
-			open: { age: '16+ m.' },
 			ladiesDay: { age: '25+ m.' },
 			ladiesEvening: { age: '25+ m. · nuo sausio' }
 		},
@@ -232,12 +248,6 @@ export const lt = {
 				value: 'JUNIORS (11 - 15 m.) | šiuolaikinis/gatvės',
 				label: 'JUNIORS (11–15 m.)',
 				hint: 'šiuolaikinis / gatvės',
-				section: 'youth'
-			},
-			{
-				value: 'OPEN (16+) / nauja choreografija kiekvieną pamoką | kartą per savaitę',
-				label: 'OPEN (16+)',
-				hint: 'nauja choreografija kiekvieną pamoką · kartą per savaitę',
 				section: 'youth'
 			},
 			{

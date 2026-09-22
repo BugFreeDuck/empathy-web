@@ -175,8 +175,11 @@
 	.menu-panel--open .menu-content :global(a:nth-child(4)) {
 		transition-delay: 240ms;
 	}
-	.menu-panel--open .menu-cta {
+	.menu-panel--open .menu-content :global(a:nth-child(5)) {
 		transition-delay: 290ms;
+	}
+	.menu-panel--open .menu-cta {
+		transition-delay: 340ms;
 	}
 
 	@media (prefers-reduced-motion: reduce) {

@@ -16,7 +16,7 @@ export const site = {
 		description:
 			'Empathy — šiuolaikinio šokio studija Vilniuje, Lietuvoje. Pamokos pradedantiesiems ir patyrusiems šokėjams. Empatija ir savivertė — studijos pagrindas.',
 		ogTitle: 'Empathy — šiuolaikinio šokio studija Vilniuje',
-		ogImage: 'https://www.empathy-studio.lt/photos/hero-wide-1600.webp',
+		ogImage: 'https://www.empathy-studio.lt/videos/hero-poster.webp',
 		ogImageAlt: 'Empathy šokio studijos erdvė Vilniuje — šiuolaikinis šokis',
 		locale: 'lt_LT',
 		keywords: [
@@ -33,6 +33,7 @@ export const site = {
 
 export const sections = [
 	{ id: 'apie' },
+	{ id: 'komanda' },
 	{ id: 'tvarkarastis' },
 	{ id: 'kainos' },
 	{ id: 'kontaktai' }

@@ -10,6 +10,9 @@ const gallerySlugs = Object.keys(photoFiles).filter((slug): slug is PhotoSlug =>
 export const photoAlt: Record<PhotoSlug, string> = {
 	'hero-wide': 'Empathy šokėjos baltose suknelėse kelia rankas studijoje',
 	founder: 'Studijos įkūrėja Olivija — portretas šviesioje studijoje',
+	'teacher-emilija': 'Mokytoja Emilija — portretas Empathy studijoje',
+	'teacher-erika': 'Mokytoja Erika — portretas Empathy studijoje',
+	'teacher-gabija': 'Mokytoja Gabija — portretas Empathy studijoje',
 	...Object.fromEntries(
 		gallerySlugs.map((slug, index) => [
 			slug,

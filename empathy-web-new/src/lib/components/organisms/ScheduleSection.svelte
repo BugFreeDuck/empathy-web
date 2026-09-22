@@ -9,7 +9,7 @@
 	import { registrationUI } from '$lib/stores/registration.svelte';
 </script>
 
-<section id="tvarkarastis" class="relative isolate overflow-hidden bg-sand-100 py-14 lg:py-20">
+<section id="tvarkarastis" class="relative isolate overflow-hidden py-14 lg:py-20">
 	<Glow class="right-[-10rem] bottom-0 size-[30rem]" color="var(--color-ember-200)" opacity={0.5} />
 
 	<div

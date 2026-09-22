@@ -13,6 +13,7 @@
 
 	const labels = $derived({
 		apie: i18n.m.nav.about,
+		komanda: i18n.m.nav.team,
 		tvarkarastis: i18n.m.nav.schedule,
 		kainos: i18n.m.nav.pricing,
 		kontaktai: i18n.m.nav.contact

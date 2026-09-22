@@ -24,6 +24,7 @@ export const en = {
 	nav: {
 		aria: 'Page sections',
 		about: 'About',
+		team: 'Team',
 		schedule: 'Schedule',
 		pricing: 'Pricing',
 		contact: 'Contact',
@@ -34,11 +35,9 @@ export const en = {
 		language: 'Language'
 	},
 	hero: {
-		eyebrow: 'Vilnius · Contemporary dance',
-		titleBefore: 'Movement, connection and',
-		titleAccent: 'awareness',
-		ctaPrimary: 'Book a class',
-		ctaSecondary: 'View schedule',
+		title: 'Discover yourself through movement',
+		lead: 'Dance classes in Vilnius for children and adults',
+		cta: 'Registration',
 		scroll: 'Scroll down'
 	},
 	about: {
@@ -105,6 +104,24 @@ export const en = {
 			}
 		]
 	},
+	team: {
+		eyebrow: 'Team',
+		title: 'Teachers you will grow with',
+		members: {
+			emilija: {
+				name: 'Emilija',
+				bio: 'Leads Mini, Kids and Juniors. Calm, attentive, and happy to grow alongside her students.'
+			},
+			erika: {
+				name: 'Erika',
+				bio: 'Teaches Kids, Juniors and Ladies day. In movement she looks for freedom, rhythm and warm connection.'
+			},
+			gabija: {
+				name: 'Gabija',
+				bio: 'Leads Kids, Juniors and Ladies day. Builds a safe space to try, err and discover.'
+			}
+		}
+	},
 	schedule: {
 		eyebrow: 'Schedule',
 		title: 'Choose your group and time',
@@ -114,7 +131,6 @@ export const en = {
 			mini: { age: 'ages 4–6' },
 			kids: { age: 'ages 7–10' },
 			juniors: { age: 'ages 11–15' },
-			open: { age: 'ages 16+' },
 			ladiesDay: { age: 'ages 25+' },
 			ladiesEvening: { age: 'ages 25+ · from January' }
 		},
@@ -231,12 +247,6 @@ export const en = {
 				value: 'JUNIORS (11 - 15 m.) | šiuolaikinis/gatvės',
 				label: 'JUNIORS (ages 11–15)',
 				hint: 'contemporary / street',
-				section: 'youth'
-			},
-			{
-				value: 'OPEN (16+) / nauja choreografija kiekvieną pamoką | kartą per savaitę',
-				label: 'OPEN (16+)',
-				hint: 'new choreography every class · once a week',
 				section: 'youth'
 			},
 			{
