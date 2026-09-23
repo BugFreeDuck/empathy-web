@@ -25,6 +25,7 @@ export const en = {
 		aria: 'Page sections',
 		about: 'About',
 		team: 'Team',
+		works: 'Our work',
 		schedule: 'Schedule',
 		pricing: 'Pricing',
 		contact: 'Contact',
@@ -63,15 +64,11 @@ export const en = {
 			}
 		],
 		testimonialsEyebrow: 'Testimonials',
-		founder: {
-			eyebrow: 'Founder and teacher',
-			name: 'Olivija Kazakevičienė',
-			quote: 'I founded Empathy to share my love and feeling for movement.',
-			paragraphs: [
-				'I have danced since I was seven and am convinced that dance — and the environment I danced in — shaped me deeply. It was never only physical activity: it was a way to work with emotions, and a companion in building endurance, persistence and independence.',
-				'In this space I do not only teach — I learn from my students every day. Growth has no limits, and when you grow with like-minded people in a safe environment, the process becomes especially joyful.'
-			]
-		},
+		videosEyebrow: 'Our work',
+		videosAria: 'Empathy work gallery',
+		videoPlay: 'Play video',
+		videoClose: 'Close',
+		videoPlayerTitle: 'YouTube video',
 		testimonials: [
 			{
 				quote:
@@ -107,6 +104,15 @@ export const en = {
 	team: {
 		eyebrow: 'Team',
 		title: 'Teachers you will grow with',
+		founder: {
+			eyebrow: 'Founder and teacher',
+			name: 'Olivija Kazakevičienė',
+			quote: 'I founded Empathy to share my love and feeling for movement.',
+			paragraphs: [
+				'I have danced since I was seven and am convinced that dance — and the environment I danced in — shaped me deeply. It was never only physical activity: it was a way to work with emotions, and a companion in building endurance, persistence and independence.',
+				'In this space I do not only teach — I learn from my students every day. Growth has no limits, and when you grow with like-minded people in a safe environment, the process becomes especially joyful.'
+			]
+		},
 		members: {
 			emilija: {
 				name: 'Emilija',

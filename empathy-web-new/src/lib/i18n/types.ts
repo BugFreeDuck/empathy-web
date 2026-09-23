@@ -16,6 +16,7 @@ export type Messages = {
 		aria: string;
 		about: string;
 		team: string;
+		works: string;
 		schedule: string;
 		pricing: string;
 		contact: string;
@@ -37,17 +38,22 @@ export type Messages = {
 		paragraphs: string[];
 		values: { title: string; body: string }[];
 		testimonialsEyebrow: string;
+		videosEyebrow: string;
+		videosAria: string;
+		videoPlay: string;
+		videoClose: string;
+		videoPlayerTitle: string;
+		testimonials: { quote: string; name: string; role: string }[];
+	};
+	team: {
+		eyebrow: string;
+		title: string;
 		founder: {
 			eyebrow: string;
 			name: string;
 			quote: string;
 			paragraphs: string[];
 		};
-		testimonials: { quote: string; name: string; role: string }[];
-	};
-	team: {
-		eyebrow: string;
-		title: string;
 		members: Record<
 			'emilija' | 'erika' | 'gabija',
 			{ name: string; bio: string }

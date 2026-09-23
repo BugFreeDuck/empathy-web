@@ -5,10 +5,18 @@
 		level?: 1 | 2 | 3;
 		size?: 'sm' | 'md' | 'lg' | 'xl';
 		class?: string;
+		/** Marks this heading as the nav scroll-spy anchor for its section. */
+		navHeading?: boolean;
 		children: Snippet;
 	}
 
-	let { level = 2, size = 'lg', class: className = '', children }: Props = $props();
+	let {
+		level = 2,
+		size = 'lg',
+		class: className = '',
+		navHeading = false,
+		children
+	}: Props = $props();
 
 	const sizes = {
 		sm: 'text-2xl sm:text-3xl',
@@ -22,6 +30,6 @@
 	);
 </script>
 
-<svelte:element this={`h${level}`} class={classes}>
+<svelte:element this={`h${level}`} class={classes} data-nav-heading={navHeading ? '' : undefined}>
 	{@render children()}
 </svelte:element>

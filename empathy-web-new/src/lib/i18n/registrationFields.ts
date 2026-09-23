@@ -2,12 +2,46 @@ import {
 	SOURCE_OTHER,
 	experienceValues,
 	sourceValues,
+	type GroupOptionValue,
 	type RegistrationField
 } from '$data/registration';
+import { scheduleByGroup, type GroupId } from '$data/schedule';
 import type { Messages } from '$i18n';
 
+/** Map Google Form group values → schedule group ids. */
+const groupValueToId: Record<GroupOptionValue, GroupId> = {
+	'MINI (4 - 6 m.) | šiuolaikinis/gatvės': 'mini',
+	'KIDS (7 - 10 m.) | šiuolaikinis/gatvės': 'kids',
+	'JUNIORS (11 - 15 m.) | šiuolaikinis/gatvės': 'juniors',
+	'LADIES day (25+) | moteriška plastika': 'ladiesDay',
+	'nuo sausio - LADIES evening (25+) | moteriška plastika | kartą per savaitę': 'ladiesEvening'
+};
+
+function formatGroupSchedule(
+	groupId: GroupId,
+	dayNames: Messages['schedule']['dayNames']
+): string | undefined {
+	const entry = scheduleByGroup.find((row) => row.group.id === groupId);
+	if (!entry?.sessions.length) return undefined;
+
+	const days = [
+		...new Set(
+			entry.sessions.map(
+				(session) =>
+					dayNames[session.dayShort as keyof typeof dayNames] ?? session.dayName
+			)
+		)
+	];
+	const times = [...new Set(entry.sessions.map((session) => session.time))];
+
+	return `${days.join(' · ')} · ${times.join(', ')}`;
+}
+
 /** Build locale-aware field descriptors; Google Form values stay Lithuanian. */
-export function buildRegistrationFields(m: Messages['registration']): readonly RegistrationField[] {
+export function buildRegistrationFields(
+	m: Messages['registration'],
+	dayNames: Messages['schedule']['dayNames']
+): readonly RegistrationField[] {
 	const f = m.fields;
 	const groups = m.groupOptions;
 
@@ -47,7 +81,12 @@ export function buildRegistrationFields(m: Messages['registration']): readonly R
 			key: 'group',
 			label: f.group.label,
 			required: true,
-			options: groups.map(({ value, label, hint }) => ({ value, label, hint })),
+			options: groups.map(({ value, label, hint }) => ({
+				value,
+				label,
+				hint,
+				schedule: formatGroupSchedule(groupValueToId[value as GroupOptionValue], dayNames)
+			})),
 			sections: [
 				{
 					id: 'youth',

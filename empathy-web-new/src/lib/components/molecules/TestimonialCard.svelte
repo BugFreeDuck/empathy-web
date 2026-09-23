@@ -9,7 +9,7 @@
 </script>
 
 <figure
-	class="flex w-[19rem] shrink-0 flex-col justify-between gap-6 rounded-[1.5rem] border border-sand-300 bg-sand-50 p-7 sm:w-[23rem]"
+	class="flex h-full w-[19rem] shrink-0 flex-col justify-between gap-6 rounded-[1.5rem] border border-sand-300 bg-sand-50 p-7 sm:w-[23rem]"
 >
 	<blockquote class="text-base leading-relaxed text-bark-600">
 		<span class="font-display text-3xl leading-none text-ember-300" aria-hidden="true">“</span>

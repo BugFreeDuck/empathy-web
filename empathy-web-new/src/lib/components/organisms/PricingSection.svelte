@@ -18,10 +18,10 @@
 	);
 </script>
 
-<section id="kainos" class="relative isolate overflow-hidden bg-sand-100 py-14 lg:py-20">
+<section id="kainos" class="relative isolate overflow-hidden bg-sand-50 py-14 lg:py-20">
 	<div class="mx-auto flex max-w-7xl flex-col gap-16 px-6 lg:px-10">
 		<div use:reveal={{ y: '1rem', from: 'left' }}>
-			<Eyebrow>{i18n.m.pricing.eyebrow}</Eyebrow>
+			<Eyebrow navHeading>{i18n.m.pricing.eyebrow}</Eyebrow>
 		</div>
 
 		<div class="mx-auto grid w-full max-w-3xl gap-6 md:grid-cols-2">

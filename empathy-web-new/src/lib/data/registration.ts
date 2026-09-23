@@ -74,6 +74,8 @@ export type RegistrationChoiceOption = {
 	value: string;
 	label: string;
 	hint?: string;
+	/** Localized weekday + hours line for group options. */
+	schedule?: string;
 };
 
 export type RegistrationFieldBase = {

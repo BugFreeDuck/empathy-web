@@ -1,8 +1,9 @@
 /* Design tokens. Coral → peach accents (#de6262 → #ffb88c) on warm sand. */
 @theme {
-	/* Type: Marcellus for section headings · Archivo Black for hero · Red Hat for body */
+	/* Type: Marcellus for section headings · Archivo Black for hero · Montserrat Black for Cyrillic hero · Red Hat for body */
 	--font-display: 'Marcellus', ui-serif, Georgia, serif;
 	--font-hero: 'Archivo Black', sans-serif;
+	--font-hero-cyrillic: 'Montserrat', sans-serif;
 	--font-sans: 'Red Hat Display', ui-sans-serif, system-ui, sans-serif;
 
 	/* Surfaces, lightest first — soft peach-ivory so the coral accent feels at home. */

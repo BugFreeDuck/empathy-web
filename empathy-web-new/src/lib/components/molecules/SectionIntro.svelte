@@ -33,7 +33,11 @@
 	</div>
 
 	<div use:reveal={{ delay: 100, from, y: '1.5rem' }}>
-		<Heading {size} class={align === 'center' ? 'mx-auto max-w-3xl' : 'max-w-2xl'}>
+		<Heading
+			{size}
+			class={align === 'center' ? 'mx-auto max-w-3xl' : 'max-w-2xl'}
+			navHeading
+		>
 			{title}
 		</Heading>
 	</div>

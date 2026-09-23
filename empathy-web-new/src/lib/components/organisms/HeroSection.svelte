@@ -57,6 +57,12 @@
 		filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.55)) drop-shadow(0 3px 6px rgb(0 0 0 / 0.45));
 	}
 
+	/* Archivo Black has no Cyrillic — use Montserrat Black so RU stays weighty. */
+	:global(html[lang='ru']) .hero-title {
+		font-family: var(--font-hero-cyrillic);
+		font-weight: 900;
+	}
+
 	.hero-lead {
 		filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.55)) drop-shadow(0 3px 6px rgb(0 0 0 / 0.45));
 	}

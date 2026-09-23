@@ -80,6 +80,9 @@
 						{#if option.hint}
 							<span class="option-hint">{option.hint}</span>
 						{/if}
+						{#if option.schedule}
+							<span class="option-schedule">{option.schedule}</span>
+						{/if}
 					</span>
 				</label>
 			{/each}
@@ -212,6 +215,16 @@
 		margin-top: 0.15rem;
 		font-size: 0.75rem;
 		color: var(--color-bark-400);
+	}
+
+	.option-schedule {
+		display: block;
+		margin-top: 0.35rem;
+		font-size: 0.78rem;
+		font-variant-numeric: tabular-nums;
+		letter-spacing: 0.01em;
+		color: var(--color-ember-700);
+		line-height: 1.35;
 	}
 
 	.field-input {

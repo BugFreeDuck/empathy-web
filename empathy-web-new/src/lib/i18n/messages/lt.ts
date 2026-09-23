@@ -25,6 +25,7 @@ export const lt = {
 		aria: 'Puslapio sekcijos',
 		about: 'Apie mus',
 		team: 'Komanda',
+		works: 'Mūsų kūryba',
 		schedule: 'Tvarkaraštis',
 		pricing: 'Kainos',
 		contact: 'Kontaktai',
@@ -63,15 +64,11 @@ export const lt = {
 			}
 		],
 		testimonialsEyebrow: 'Atsiliepimai',
-		founder: {
-			eyebrow: 'Įkūrėja ir mokytoja',
-			name: 'Olivija Kazakevičienė',
-			quote: 'Empathy erdvę įkūriau norėdama pasidalinti savo meile ir pajauta judesio atžvilgiu.',
-			paragraphs: [
-				'Šoku nuo septynerių metų ir esu įsitikinusi, kad šokis bei aplinka, kurioje šokau, turėjo didelę įtaką mano asmenybės formavimosi periode. Tai buvo ne vien fizinė veikla — tai buvo įrankis išmokti tvarkytis su savo emocijomis, pagalbininkas ugdant ištvermę, atkaklumą ir savarankiškumą.',
-				'Šioje erdvėje ne tik mokau, bet ir pati kiekvieną dieną mokausi iš savo mokinių. Augimas yra beribis, o kai augi kartu su bendraminčiais saugioje aplinkoje, šis procesas tampa ypač malonus.'
-			]
-		},
+		videosEyebrow: 'Mūsų kūryba',
+		videosAria: 'Empathy kūrybos galerija',
+		videoPlay: 'Paleisti vaizdo įrašą',
+		videoClose: 'Uždaryti',
+		videoPlayerTitle: 'YouTube vaizdo įrašas',
 		testimonials: [
 			{
 				quote:
@@ -107,6 +104,15 @@ export const lt = {
 	team: {
 		eyebrow: 'Komanda',
 		title: 'Mokytojos, su kuriomis augsite',
+		founder: {
+			eyebrow: 'Įkūrėja ir mokytoja',
+			name: 'Olivija Kazakevičienė',
+			quote: 'Empathy erdvę įkūriau norėdama pasidalinti savo meile ir pajauta judesio atžvilgiu.',
+			paragraphs: [
+				'Šoku nuo septynerių metų ir esu įsitikinusi, kad šokis bei aplinka, kurioje šokau, turėjo didelę įtaką mano asmenybės formavimosi periode. Tai buvo ne vien fizinė veikla — tai buvo įrankis išmokti tvarkytis su savo emocijomis, pagalbininkas ugdant ištvermę, atkaklumą ir savarankiškumą.',
+				'Šioje erdvėje ne tik mokau, bet ir pati kiekvieną dieną mokausi iš savo mokinių. Augimas yra beribis, o kai augi kartu su bendraminčiais saugioje aplinkoje, šis procesas tampa ypač malonus.'
+			]
+		},
 		members: {
 			emilija: {
 				name: 'Emilija',

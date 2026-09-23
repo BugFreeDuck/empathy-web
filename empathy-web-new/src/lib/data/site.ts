@@ -34,6 +34,7 @@ export const site = {
 export const sections = [
 	{ id: 'apie' },
 	{ id: 'komanda' },
+	{ id: 'darbai' },
 	{ id: 'tvarkarastis' },
 	{ id: 'kainos' },
 	{ id: 'kontaktai' }

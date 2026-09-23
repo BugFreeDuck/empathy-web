@@ -11,32 +11,66 @@
 	let active = $state<string | undefined>(undefined);
 	let menuOpen = $state(false);
 
+	/** Match compact header used by `scrollToSection` — avoids flicker when the bar shrinks. */
+	const ACTIVE_MARKER_PX = 64;
+	const ACTIVE_HYSTERESIS_PX = 36;
+
+	let lastScrollY = 0;
+	let activeLockUntil = 0;
+	let syncRaf = 0;
+
+	function lockActive(id: string, ms = 900) {
+		active = id;
+		activeLockUntil = performance.now() + ms;
+	}
+
+	function syncActiveFromScroll() {
+		if (performance.now() < activeLockUntil) return;
+
+		const y = window.scrollY;
+		const goingDown = y >= lastScrollY;
+		lastScrollY = y;
+
+		const threshold = goingDown ? ACTIVE_MARKER_PX : ACTIVE_MARKER_PX + ACTIVE_HYSTERESIS_PX;
+
+		let current: string | undefined;
+		for (const { id } of sections) {
+			const section = document.getElementById(id);
+			if (!section) continue;
+			if (section.getBoundingClientRect().top <= threshold) current = id;
+		}
+
+		const doc = document.documentElement;
+		const atBottom = window.innerHeight + y >= doc.scrollHeight - 4;
+		if (atBottom) current = sections[sections.length - 1]?.id;
+
+		if (current && current !== active) active = current;
+	}
+
+	function scheduleActiveSync() {
+		if (syncRaf) return;
+		syncRaf = requestAnimationFrame(() => {
+			syncRaf = 0;
+			syncActiveFromScroll();
+		});
+	}
+
 	$effect(() => {
 		const onScroll = () => {
 			const y = window.scrollY;
 			if (!scrolled && y > 32) scrolled = true;
 			else if (scrolled && y < 12) scrolled = false;
+			scheduleActiveSync();
 		};
+		lastScrollY = window.scrollY;
 		onScroll();
 		window.addEventListener('scroll', onScroll, { passive: true });
-		return () => window.removeEventListener('scroll', onScroll);
-	});
-
-	$effect(() => {
-		const observer = new IntersectionObserver(
-			(entries) => {
-				const visible = entries.filter((e) => e.isIntersecting);
-				if (visible.length) active = visible[0].target.id;
-			},
-			{ rootMargin: '-45% 0px -45% 0px' }
-		);
-
-		for (const { id } of sections) {
-			const el = document.getElementById(id);
-			if (el) observer.observe(el);
-		}
-
-		return () => observer.disconnect();
+		window.addEventListener('resize', scheduleActiveSync, { passive: true });
+		return () => {
+			window.removeEventListener('scroll', onScroll);
+			window.removeEventListener('resize', scheduleActiveSync);
+			if (syncRaf) cancelAnimationFrame(syncRaf);
+		};
 	});
 
 	$effect(() => {
@@ -66,7 +100,7 @@
 
 		<div class="hidden items-center gap-8 md:flex lg:gap-10">
 			<div class="enter-rise" style="--enter-delay: 220ms">
-				<NavLinks {active} />
+				<NavLinks {active} onselect={lockActive} />
 			</div>
 			<div class="enter-rise flex items-center gap-5" style="--enter-delay: 280ms">
 				<LanguageSwitcher />
@@ -113,7 +147,12 @@
 	inert={!menuOpen}
 >
 	<div class="menu-content flex flex-col gap-12">
-		<NavLinks {active} orientation="column" onnavigate={() => (menuOpen = false)} />
+		<NavLinks
+			{active}
+			orientation="column"
+			onselect={lockActive}
+			onnavigate={() => (menuOpen = false)}
+		/>
 		<div class="menu-cta">
 			<Button
 				variant="outline"

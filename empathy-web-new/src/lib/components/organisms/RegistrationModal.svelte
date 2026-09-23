@@ -25,7 +25,7 @@
 	let submitError = $state(false);
 
 	const copy = $derived(i18n.m.registration);
-	const fields = $derived(buildRegistrationFields(copy));
+	const fields = $derived(buildRegistrationFields(copy, i18n.m.schedule.dayNames));
 
 	$effect(() => {
 		const dialog = dialogEl;

@@ -12,9 +12,9 @@
 	use:reveal={{ from: 'fade', delay: 80 }}
 	class="relative overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]"
 >
-	<ul use:marquee class="flex w-max gap-5 py-2">
+	<ul use:marquee class="flex w-max items-stretch gap-5 py-2">
 		{#each track as item, index (index)}
-			<li aria-hidden={index >= count}>
+			<li class="flex" aria-hidden={index >= count}>
 				<TestimonialCard {...item} />
 			</li>
 		{/each}
