@@ -7,7 +7,7 @@ on:
 
 defaults:
   run:
-    working-directory: ./empathy-web
+    working-directory: ./empathy-web-new
 
 jobs:
   build_site:
@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: 22.16
           cache: npm
-          cache-dependency-path: './empathy-web/package.json'
+          cache-dependency-path: './empathy-web-new/package.json'
 
       - name: Install dependencies
         run: npm install
@@ -35,7 +35,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
       # this should match the `pages` option in your adapter-static options
-          path: './empathy-web/build/'
+          path: './empathy-web-new/build/'
 
   deploy:
     needs: build_site

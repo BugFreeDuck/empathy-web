@@ -5,7 +5,16 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 const config = {
 	preprocess: vitePreprocess(),
 	kit: {
-		adapter: adapter({ fallback: '404.html' }),
+		adapter: adapter({
+			pages: 'build',
+			assets: 'build',
+			fallback: '404.html',
+			precompress: false,
+			strict: true
+		}),
+		paths: {
+			base: process.env.BASE_PATH ?? ''
+		},
 		alias: {
 			$atoms: 'src/lib/components/atoms',
 			$molecules: 'src/lib/components/molecules',
