@@ -43,24 +43,24 @@ export const en = {
 	},
 	about: {
 		eyebrow: 'About us',
-		title: 'A space where movement begins with listening',
+		title: 'EMPATHY space',
 		paragraphs: [
-			'This is a space rooted in movement, connection and awareness. We do not focus on a single dance style — we learn to move in different ways, drawing on foundations from many styles.',
-			'We pay close attention to the relationship with ourselves and our surroundings: we improvise, work creatively in groups, pairs and alone. We also dedicate time to strengthening the body through pilates and classical training basics.',
-			'And of course, everything happens in a safe, empathetic environment where respect for yourself and those beside you is encouraged.'
+			'Movement, connection and awareness are the values and inspiration of our space. Here we learn not only to dance, but also to know our body better — its possibilities and what we can express through movement. Classes bring together street, contemporary and show dance styles, so we encourage discovering different ways of moving and your unique relationship with dance.',
+			'A large part of what we do is improvisation and creation — we move individually, in pairs and in groups, learning to listen to ourselves, sense others and build connection through movement.',
+			'Here we learn, make mistakes, grow and support each other, creating an environment grounded in respect for yourself, your body and the person beside you.'
 		],
 		values: [
 			{
 				title: 'Movement',
-				body: 'Foundations of contemporary and modern dance, improvisation and body conditioning in every class.'
+				body: 'We get to know our body, discover different ways of moving and our unique relationship with dance.'
 			},
 			{
 				title: 'Connection',
-				body: 'We work in pairs and groups — learning to hear ourselves and each other without pressure to compete.'
+				body: 'We work in pairs and groups — learning to hear ourselves and each other, and to build connection and friendship.'
 			},
 			{
 				title: 'Awareness',
-				body: 'We talk about the body, emotions and boundaries. Mistakes are safe here, and growth is joyful.'
+				body: 'We learn to be mindful of our body, feelings and surroundings, accepting ourselves and growing together.'
 			}
 		],
 		testimonialsEyebrow: 'Testimonials',
@@ -107,24 +107,24 @@ export const en = {
 		founder: {
 			eyebrow: 'Founder and teacher',
 			name: 'Olivija Kazakevičienė',
-			quote: 'I founded Empathy to share my love and feeling for movement.',
+			quote: 'I founded the Empathy space to share my love of movement and my feel for it.',
 			paragraphs: [
-				'I have danced since I was seven and am convinced that dance — and the environment I danced in — shaped me deeply. It was never only physical activity: it was a way to work with emotions, and a companion in building endurance, persistence and independence.',
-				'In this space I do not only teach — I learn from my students every day. Growth has no limits, and when you grow with like-minded people in a safe environment, the process becomes especially joyful.'
+				'I have danced since I was seven and am convinced that dance — and the environment I danced in — shaped who I became. It was never only physical activity: dance became a way to learn to manage emotions and to build endurance, persistence and independence.',
+				'In this space I do not only teach — I learn from my students every day. Growth has no limits, and when you grow with like-minded people in a safe environment, the process becomes even more meaningful and pleasant.'
 			]
 		},
 		members: {
 			emilija: {
 				name: 'Emilija',
-				bio: 'Leads Mini, Kids and Juniors. Calm, attentive, and happy to grow alongside her students.'
+				bio: 'Emilija grew up with Empathy — from student to teacher. For her, dance is freedom, self-expression and a way to tell what cannot always be put into words. In teaching, she aims to pass on to her students the same feeling she found in dance — the courage to be yourself, to trust your body and not to be afraid of discovering new sides of yourself.'
 			},
 			erika: {
 				name: 'Erika',
-				bio: 'Teaches Kids, Juniors and Ladies day. In movement she looks for freedom, rhythm and warm connection.'
+				bio: 'For Erika, teaching is first and foremost about the person — their growth, emotions and self-confidence. She sees teaching as a chance to share what brings her joy and to stand beside each student on their journey. Her greatest inspiration comes in moments when she sees a student’s progress, joy and pride in what they have achieved.'
 			},
 			gabija: {
 				name: 'Gabija',
-				bio: 'Leads Kids, Juniors and Ladies day. Builds a safe space to try, err and discover.'
+				bio: 'For Gabija, dance goes hand in hand with steady work, growth and the courage to try. She wants students not to fear making mistakes, because real improvement comes through them. Her classes bring together discipline, respect and freedom to move, and the greatest reward is seeing students grow stronger not only as dancers but as people.'
 			}
 		}
 	},
@@ -138,7 +138,7 @@ export const en = {
 			kids: { age: 'ages 7–10' },
 			juniors: { age: 'ages 11–15' },
 			ladiesDay: { age: 'ages 25+' },
-			ladiesEvening: { age: 'ages 25+ · from January' }
+			ladiesEvening: { age: 'ages 25+\nfrom January' }
 		},
 		dayNames: {
 			P: 'Monday',
@@ -148,9 +148,9 @@ export const en = {
 			Pn: 'Friday'
 		},
 		notes: [
-			'Classes take place at Eitminų g. 20, Vilnius.',
-			'Ladies evening starts in January.',
-			'The first class is free for new members.'
+			'All group classes take place at Eitminų g. 20.',
+			'MINI group classes last 45 minutes.',
+			'LADIES evening group classes last 90 minutes.'
 		]
 	},
 	pricing: {
@@ -161,23 +161,30 @@ export const en = {
 		contact: 'Get in touch',
 		plans: [
 			{
+				id: 'intro',
+				name: 'Introduction',
+				priceAmount: 'FREE',
+				unit: '',
+				summary: 'First class for new members'
+			},
+			{
 				id: 'month',
 				name: 'Month',
 				unit: '€ / mo.',
-				summary: 'A regular rhythm — where real growth begins.'
+				summary: 'Fixed monthly group fee'
 			},
 			{
 				id: 'private',
 				name: 'Private',
 				unit: '€ / class',
-				summary: 'Focus only on you — or you and your partner.'
+				summary: '1–2 students'
 			}
 		]
 	},
 	contact: {
 		eyebrow: 'Contact',
-		title: 'Come say hello',
-		lead: 'Questions about groups, or unsure where to start? Write or call — we reply the same day.',
+		title: 'Discover our space',
+		lead: 'Have questions? Write or call — we are happy to answer anything that comes up.',
 		address: 'Address',
 		phone: 'Phone',
 		email: 'Email',

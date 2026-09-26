@@ -35,11 +35,16 @@
 			{#each i18n.m.about.values as value, index (value.title)}
 				<li
 					use:reveal={{ delay: index * 120, from: 'up', y: '2.5rem' }}
-					class="flex flex-col gap-4"
+					class="flex items-start gap-3"
 				>
-					<span class="font-display text-sm text-ember-500">0{index + 1}</span>
-					<h3 class="font-display text-2xl text-bark-900">{value.title}</h3>
-					<p class="text-base leading-relaxed text-bark-600">{value.body}</p>
+					<span
+						class="mt-[0.7rem] size-2 shrink-0 rounded-full border border-ember-500"
+						aria-hidden="true"
+					></span>
+					<div class="flex min-w-0 flex-col gap-4">
+						<h3 class="font-display text-2xl text-bark-900">{value.title}</h3>
+						<p class="text-base leading-relaxed text-bark-600">{value.body}</p>
+					</div>
 				</li>
 			{/each}
 		</ul>

@@ -41,7 +41,9 @@
 			<ul class="flex flex-col gap-1.5">
 				{#each i18n.m.schedule.notes as note (note)}
 					<li class="flex items-start gap-3 text-sm leading-snug text-bark-600">
-						<span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-ember-400" aria-hidden="true"
+						<span
+							class="mt-1.5 size-1.5 shrink-0 rounded-full border border-ember-400"
+							aria-hidden="true"
 						></span>
 						{note}
 					</li>

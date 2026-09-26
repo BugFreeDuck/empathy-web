@@ -43,24 +43,24 @@ export const lt = {
 	},
 	about: {
 		eyebrow: 'Apie mus',
-		title: 'Erdvė, kurioje judesys prasideda nuo klausymosi',
+		title: 'EMPATHY erdvė',
 		paragraphs: [
-			'Tai erdvė, kurios pagrindiniai atspirties taškai yra judesys, ryšys ir sąmoningumas. Čia nesikoncentruojame į vieną konkretų šokio stilių — mokomės judėti skirtingai, remdamiesi įvairių šokio stilių bazėmis.',
-			'Didelį dėmesį skiriame ryšiui su savimi ir su aplinka: improvizuojame, kūrybiškai dirbame grupėse, porose ir pavieniui. Nemažai laiko skiriame kūno stiprinimui, remdamiesi pilateso ir klasikinio trenažo pagrindais.',
-			'Ir, žinoma, viskas vyksta saugioje, empatiškoje aplinkoje, kur skatinama pagarba tiek sau, tiek šalia esančiam.'
+			'Judesys, ryšys ir sąmoningumas – mūsų erdvės vertybės ir įkvėpimas. Čia mokomės ne tik šokti, bet ir geriau pažinti savo kūną, jo galimybes bei tai, ką galime išreikšti judesiu. Užsiėmimuose susitinka gatvės, šiuolaikinio ir šou šokio stiliai, todėl skatiname atrasti skirtingus judėjimo būdus ir savo unikalų santykį su šokiu.',
+			'Didelę dalį mūsų veiklos sudaro improvizacija ir kūryba – judame individualiai, porose ir grupėse, mokomės klausytis savęs, pajausti kitą ir kurti ryšį per judesį.',
+			'Čia mokomės, klystame, augame ir palaikome vieni kitus, kurdami aplinką, paremtą pagarba sau, savo kūnui ir žmogui šalia.'
 		],
 		values: [
 			{
 				title: 'Judesys',
-				body: 'Šiuolaikinio ir modernaus šokio pagrindai, improvizacija ir kūno stiprinimas kiekvienoje pamokoje.'
+				body: 'Pažįstame savo kūną, atrandame skirtingus judėjimo būdus ir savo unikalų santykį su šokiu.'
 			},
 			{
 				title: 'Ryšys',
-				body: 'Dirbame porose ir grupėse — mokomės girdėti save ir šalia esantį be spaudimo lenktyniauti.'
+				body: 'Dirbame porose ir grupėse — mokomės girdėti save ir šalia esantį, kurti ryšį bei draugystę.'
 			},
 			{
 				title: 'Sąmoningumas',
-				body: 'Kalbame apie kūną, emocijas ir ribas. Klysti čia saugu, o augti — smagu.'
+				body: 'Mokomės būti sąmoningi savo kūnui, jausmams ir aplinkai, priimdami save ir augdami kartu.'
 			}
 		],
 		testimonialsEyebrow: 'Atsiliepimai',
@@ -107,24 +107,24 @@ export const lt = {
 		founder: {
 			eyebrow: 'Įkūrėja ir mokytoja',
 			name: 'Olivija Kazakevičienė',
-			quote: 'Empathy erdvę įkūriau norėdama pasidalinti savo meile ir pajauta judesio atžvilgiu.',
+			quote: '„Empathy“ erdvę įkūriau norėdama pasidalinti savo meile judesiui ir jo pajauta.',
 			paragraphs: [
-				'Šoku nuo septynerių metų ir esu įsitikinusi, kad šokis bei aplinka, kurioje šokau, turėjo didelę įtaką mano asmenybės formavimosi periode. Tai buvo ne vien fizinė veikla — tai buvo įrankis išmokti tvarkytis su savo emocijomis, pagalbininkas ugdant ištvermę, atkaklumą ir savarankiškumą.',
-				'Šioje erdvėje ne tik mokau, bet ir pati kiekvieną dieną mokausi iš savo mokinių. Augimas yra beribis, o kai augi kartu su bendraminčiais saugioje aplinkoje, šis procesas tampa ypač malonus.'
+				'Šoku nuo septynerių metų ir esu įsitikinusi, kad šokis bei aplinka, kurioje šokau, turėjo didelę įtaką mano asmenybės formavimuisi. Tai buvo ne vien fizinė veikla – šokis tapo įrankiu mokytis valdyti savo emocijas, ugdyti ištvermę, atkaklumą ir savarankiškumą.',
+				'Šioje erdvėje ne tik mokau, bet ir pati kiekvieną dieną mokausi iš savo mokinių. Augimas yra beribis, o kai augi kartu su bendraminčiais saugioje aplinkoje, šis procesas tampa dar prasmingesnis ir malonesnis.'
 			]
 		},
 		members: {
 			emilija: {
 				name: 'Emilija',
-				bio: 'Veda Mini, Kids ir Juniors grupes. Rami, dėmesinga ir mėgstanti augti kartu su mokiniais.'
+				bio: 'Emilija užaugo kartu su „Empathy“ – nuo mokinės iki mokytojos. Jai šokis yra laisvė, saviraiška ir būdas papasakoti tai, ko ne visada įmanoma išreikšti žodžiais. Mokydama ji siekia perduoti mokiniams tą patį jausmą, kurį pati atrado šokyje – drąsą būti savimi, pasitikėti savo kūnu ir nebijoti atrasti naujas savo puses.'
 			},
 			erika: {
 				name: 'Erika',
-				bio: 'Moko Kids, Juniors ir Ladies day. Judesyje ieško laisvės, ritmo ir šilto ryšio.'
+				bio: 'Erikai mokytojos darbas pirmiausia yra apie žmogų – jo augimą, emocijas ir pasitikėjimą savimi. Ji į mokymą žiūri kaip į galimybę pasidalinti tuo, kas pačiai teikia daug džiaugsmo, ir būti šalia mokinio jo kelionėje. Didžiausią įkvėpimą ji atranda akimirkomis, kai pamato mokinio progresą, džiaugsmą ir pasididžiavimą savo pasiekimais.'
 			},
 			gabija: {
 				name: 'Gabija',
-				bio: 'Veda Kids, Juniors ir Ladies day. Kuria saugią erdvę bandyti, klysti ir atrasti.'
+				bio: 'Gabijai šokis neatsiejamas nuo nuoseklaus darbo, augimo ir drąsos bandyti. Ji siekia, kad mokiniai nebijotų klysti, nes būtent per klaidas gimsta tikras tobulėjimas. Jos treniruotėse susitinka disciplina, pagarba ir laisvė judėti, o didžiausias atlygis – matyti, kaip mokiniai stiprėja ne tik kaip šokėjai, bet ir kaip asmenybės.'
 			}
 		}
 	},
@@ -138,7 +138,7 @@ export const lt = {
 			kids: { age: '7–10 m.' },
 			juniors: { age: '11–15 m.' },
 			ladiesDay: { age: '25+ m.' },
-			ladiesEvening: { age: '25+ m. · nuo sausio' }
+			ladiesEvening: { age: '25+ m.\nnuo sausio' }
 		},
 		dayNames: {
 			P: 'Pirmadienis',
@@ -148,9 +148,9 @@ export const lt = {
 			Pn: 'Penktadienis'
 		},
 		notes: [
-			'Pamokos vyksta adresu Eitminų g. 20, Vilnius.',
-			'Ladies evening startuoja nuo sausio.',
-			'Naujiems nariams pirma pamoka nemokama.'
+			'visų grupių pamokos vyksta adresu Eitminų g. 20',
+			'MINI grupės pamokos trunka 45 min.',
+			'LADIES evening grupės pamokos trunka 90 min.'
 		]
 	},
 	pricing: {
@@ -161,23 +161,30 @@ export const lt = {
 		contact: 'Susisiekite',
 		plans: [
 			{
+				id: 'intro',
+				name: 'Susipažinimas',
+				priceAmount: 'NEMOKAMA',
+				unit: '',
+				summary: 'Pirmoji pamoka naujiems nariams'
+			},
+			{
 				id: 'month',
 				name: 'Mėnuo',
 				unit: '€ / mėn.',
-				summary: 'Reguliarus ritmas — čia prasideda tikras augimas.'
+				summary: 'Fiksuotas mėnesinis mokestis grupėje'
 			},
 			{
 				id: 'private',
 				name: 'Individuali',
 				unit: '€ / pamoka',
-				summary: 'Dėmesys tik tau — arba tau ir tavo porai.'
+				summary: '1–2 mokiniai'
 			}
 		]
 	},
 	contact: {
 		eyebrow: 'Kontaktai',
-		title: 'Užsuk pasisveikinti',
-		lead: 'Turi klausimų apie grupes ar nori pasitarti, nuo ko pradėti? Parašyk arba paskambink — atsakysime tą pačią dieną.',
+		title: 'Atrask mūsų erdvę',
+		lead: 'Turi klausimų? Parašyk arba paskambink – mielai atsakysime į visus kilusius klausimus.',
 		address: 'Adresas',
 		phone: 'Telefonas',
 		email: 'El. paštas',

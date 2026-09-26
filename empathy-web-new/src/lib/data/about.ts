@@ -1,35 +1,35 @@
 export const intro = {
 	eyebrow: 'Apie mus',
-	title: 'Erdvė, kurioje judesys prasideda nuo klausymosi',
+	title: 'EMPATHY erdvė',
 	paragraphs: [
-		'Tai erdvė, kurios pagrindiniai atspirties taškai yra judesys, ryšys ir sąmoningumas. Čia nesikoncentruojame į vieną konkretų šokio stilių — mokomės judėti skirtingai, remdamiesi įvairių šokio stilių bazėmis.',
-		'Didelį dėmesį skiriame ryšiui su savimi ir su aplinka: improvizuojame, kūrybiškai dirbame grupėse, porose ir pavieniui. Nemažai laiko skiriame kūno stiprinimui, remdamiesi pilateso ir klasikinio trenažo pagrindais.',
-		'Ir, žinoma, viskas vyksta saugioje, empatiškoje aplinkoje, kur skatinama pagarba tiek sau, tiek šalia esančiam.'
+		'Judesys, ryšys ir sąmoningumas – mūsų erdvės vertybės ir įkvėpimas. Čia mokomės ne tik šokti, bet ir geriau pažinti savo kūną, jo galimybes bei tai, ką galime išreikšti judesiu. Užsiėmimuose susitinka gatvės, šiuolaikinio ir šou šokio stiliai, todėl skatiname atrasti skirtingus judėjimo būdus ir savo unikalų santykį su šokiu.',
+		'Didelę dalį mūsų veiklos sudaro improvizacija ir kūryba – judame individualiai, porose ir grupėse, mokomės klausytis savęs, pajausti kitą ir kurti ryšį per judesį.',
+		'Čia mokomės, klystame, augame ir palaikome vieni kitus, kurdami aplinką, paremtą pagarba sau, savo kūnui ir žmogui šalia.'
 	]
 };
 
 export const values = [
 	{
 		title: 'Judesys',
-		body: 'Šiuolaikinio ir modernaus šokio pagrindai, improvizacija ir kūno stiprinimas kiekvienoje pamokoje.'
+		body: 'Pažįstame savo kūną, atrandame skirtingus judėjimo būdus ir savo unikalų santykį su šokiu.'
 	},
 	{
 		title: 'Ryšys',
-		body: 'Dirbame porose ir grupėse — mokomės girdėti save ir šalia esantį be spaudimo lenktyniauti.'
+		body: 'Dirbame porose ir grupėse — mokomės girdėti save ir šalia esantį, kurti ryšį bei draugystę.'
 	},
 	{
 		title: 'Sąmoningumas',
-		body: 'Kalbame apie kūną, emocijas ir ribas. Klysti čia saugu, o augti — smagu.'
+		body: 'Mokomės būti sąmoningi savo kūnui, jausmams ir aplinkai, priimdami save ir augdami kartu.'
 	}
 ];
 
 export const founder = {
 	eyebrow: 'Įkūrėja ir mokytoja',
 	name: 'Olivija Kazakevičienė',
-	quote: 'Empathy erdvę įkūriau norėdama pasidalinti savo meile ir pajauta judesio atžvilgiu.',
+	quote: '„Empathy“ erdvę įkūriau norėdama pasidalinti savo meile judesiui ir jo pajauta.',
 	paragraphs: [
-		'Šoku nuo septynerių metų ir esu įsitikinusi, kad šokis bei aplinka, kurioje šokau, turėjo didelę įtaką mano asmenybės formavimosi periode. Tai buvo ne vien fizinė veikla — tai buvo įrankis išmokti tvarkytis su savo emocijomis, pagalbininkas ugdant ištvermę, atkaklumą ir savarankiškumą.',
-		'Šioje erdvėje ne tik mokau, bet ir pati kiekvieną dieną mokausi iš savo mokinių. Augimas yra beribis, o kai augi kartu su bendraminčiais saugioje aplinkoje, šis procesas tampa ypač malonus.'
+		'Šoku nuo septynerių metų ir esu įsitikinusi, kad šokis bei aplinka, kurioje šokau, turėjo didelę įtaką mano asmenybės formavimuisi. Tai buvo ne vien fizinė veikla – šokis tapo įrankiu mokytis valdyti savo emocijas, ugdyti ištvermę, atkaklumą ir savarankiškumą.',
+		'Šioje erdvėje ne tik mokau, bet ir pati kiekvieną dieną mokausi iš savo mokinių. Augimas yra beribis, o kai augi kartu su bendraminčiais saugioje aplinkoje, šis procesas tampa dar prasmingesnis ir malonesnis.'
 	]
 };
 

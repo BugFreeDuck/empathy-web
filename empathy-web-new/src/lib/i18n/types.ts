@@ -78,8 +78,10 @@ export type Messages = {
 		register: string;
 		contact: string;
 		plans: {
-			id: 'month' | 'private';
+			id: 'intro' | 'month' | 'private';
 			name: string;
+			/** Shown instead of structural price when set (e.g. free trial). */
+			priceAmount?: string;
 			unit: string;
 			summary: string;
 		}[];

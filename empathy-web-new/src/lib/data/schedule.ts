@@ -95,9 +95,9 @@ export const week: Day[] = [
 ];
 
 export const scheduleNotes = [
-	'Pamokos vyksta adresu Eitminų g. 20, Vilnius.',
-	'Ladies evening startuoja nuo sausio.',
-	'Naujiems nariams pirma pamoka nemokama.'
+	'visų grupių pamokos vyksta adresu Eitminų g. 20',
+	'MINI grupės pamokos trunka 45 min.',
+	'LADIES evening grupės pamokos trunka 90 min.'
 ];
 
 /** Weekday markers for the group view (includes empty Wednesday). */

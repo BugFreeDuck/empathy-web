@@ -11,6 +11,7 @@
 			return {
 				...base,
 				name: copy.name,
+				price: copy.priceAmount ?? base.price ?? '',
 				unit: copy.unit,
 				summary: copy.summary
 			};
@@ -24,7 +25,7 @@
 			<Eyebrow navHeading>{i18n.m.pricing.eyebrow}</Eyebrow>
 		</div>
 
-		<div class="mx-auto grid w-full max-w-3xl gap-6 md:grid-cols-2">
+		<div class="mx-auto grid w-full max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-3">
 			{#each plans as plan, index (plan.id)}
 				<PriceCard {plan} delay={80 + index * 130} />
 			{/each}

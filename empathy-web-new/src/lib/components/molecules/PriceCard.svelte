@@ -8,6 +8,7 @@
 
 	interface PlanView extends PlanBase {
 		name: string;
+		price: string;
 		unit: string;
 		summary: string;
 	}
@@ -20,22 +21,25 @@
 	let { plan, delay = 0 }: Props = $props();
 
 	const isPrivate = $derived(plan.id === 'private');
+	const priceSize = $derived(plan.id === 'intro' ? 'text-3xl sm:text-4xl' : 'text-6xl');
 </script>
 
 <article
 	use:reveal={{ delay, from: 'scale' }}
-	class="price-card relative flex flex-col rounded-[1.75rem] border border-sand-300 bg-sand-50 p-8 shadow-sm"
+	class="price-card relative flex h-full flex-col rounded-[1.75rem] border border-sand-300 bg-sand-50 p-8 shadow-sm"
 >
 	<h3 class="font-display text-2xl text-bark-900">{plan.name}</h3>
 
 	<p class="mt-6 flex items-baseline gap-2">
-		<span class="font-display text-6xl leading-none text-bark-900">{plan.price}</span>
-		<span class="text-sm text-bark-600">{plan.unit}</span>
+		<span class="font-display leading-none text-bark-900 {priceSize}">{plan.price}</span>
+		{#if plan.unit}
+			<span class="text-sm text-bark-600">{plan.unit}</span>
+		{/if}
 	</p>
 
 	<p class="mt-4 text-sm leading-relaxed text-bark-600">{plan.summary}</p>
 
-	<div class="mt-10 pt-2">
+	<div class="mt-auto pt-10">
 		<Button
 			onclick={() => (isPrivate ? scrollToSection('kontaktai') : registrationUI.show())}
 			variant="outline"
