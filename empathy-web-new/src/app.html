@@ -28,6 +28,25 @@
 		gtag('js', new Date());
 
 		gtag('config', 'G-ZD0EVFQHXX');
+		gtag('config', 'AW-18480618282');
+	</script>
+
+	<!-- Google Ads lead-form conversion -->
+	<script>
+		function gtag_report_conversion(url) {
+			var callback = function () {
+				if (typeof url != 'undefined') {
+					window.location = url;
+				}
+			};
+			gtag('event', 'conversion', {
+				send_to: 'AW-18480618282/BwCkCNyXpYkdEKq2n-xE',
+				value: 1.0,
+				currency: 'EUR',
+				event_callback: callback
+			});
+			return false;
+		}
 	</script>
 
 	<body data-sveltekit-preload-data="hover">

@@ -12,6 +12,7 @@
 	import { i18n } from '$i18n';
 	import { buildRegistrationFields } from '$i18n/registrationFields';
 	import { registrationUI } from '$lib/stores/registration.svelte';
+	import { reportLeadConversion } from '$lib/utils/gtag';
 	import { submitRegistration } from '$lib/utils/registration';
 
 	type Status = 'idle' | 'submitting' | 'success' | 'error';
@@ -116,6 +117,7 @@
 		status = 'submitting';
 		try {
 			await submitRegistration(values);
+			reportLeadConversion();
 			status = 'success';
 			fieldErrors = {};
 		} catch {
