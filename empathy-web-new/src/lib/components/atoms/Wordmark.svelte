@@ -27,7 +27,9 @@
 		class:tagline-clip--open={showTagline}
 		aria-hidden={!showTagline}
 	>
-		<span class="tagline-text block text-[0.6rem] tracking-[0.22em] text-bark-400 uppercase">
+		<span
+			class="tagline-text block whitespace-nowrap text-[0.55rem] tracking-[0.14em] text-bark-400 uppercase sm:text-[0.6rem] sm:tracking-[0.22em]"
+		>
 			{site.tagline}
 		</span>
 	</span>
@@ -49,7 +51,7 @@
 	}
 
 	.tagline-clip--open {
-		height: 0.7rem;
+		height: 0.85rem;
 		margin-top: 0.25rem;
 	}
 

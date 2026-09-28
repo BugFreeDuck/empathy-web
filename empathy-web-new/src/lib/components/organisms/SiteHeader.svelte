@@ -109,7 +109,7 @@
 			class="nav-bar relative flex min-w-0 items-center justify-between gap-3 px-4 sm:px-5 lg:px-8
 				{scrolled ? 'h-16' : 'h-20'}"
 		>
-			<div class="enter-rise flex min-w-0 shrink items-center" style="--enter-delay: 120ms">
+			<div class="enter-rise flex shrink-0 items-center" style="--enter-delay: 120ms">
 				<Wordmark
 					showTagline={!scrolled && !menuOpen}
 					class={scrolled ? '' : 'text-sand-300 [&_.tagline-text]:text-sand-400'}
