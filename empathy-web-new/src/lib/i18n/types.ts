@@ -65,7 +65,7 @@ export type Messages = {
 		cta: string;
 		daysAria: string;
 		groups: Record<
-			'mini' | 'kids' | 'juniors' | 'ladiesDay' | 'ladiesEvening',
+			'mini' | 'kids' | 'juniors' | 'kpop' | 'ladiesDay' | 'ladiesEvening',
 			{ age: string }
 		>;
 		dayNames: Record<'P' | 'A' | 'T' | 'K' | 'Pn', string>;
