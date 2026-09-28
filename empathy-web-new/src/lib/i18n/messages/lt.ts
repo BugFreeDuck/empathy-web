@@ -137,6 +137,7 @@ export const lt = {
 			mini: { age: '4–6 m.' },
 			kids: { age: '7–10 m.' },
 			juniors: { age: '11–15 m.' },
+			kpop: { age: '12+ m.' },
 			ladiesDay: { age: '25+ m.' },
 			ladiesEvening: { age: '25+ m.\nnuo sausio' }
 		},
@@ -261,6 +262,12 @@ export const lt = {
 				value: 'JUNIORS (11 - 15 m.) | šiuolaikinis/gatvės',
 				label: 'JUNIORS (11–15 m.)',
 				hint: 'šiuolaikinis / gatvės',
+				section: 'youth'
+			},
+			{
+				value: 'K-POP (12+ m.)',
+				label: 'K-POP (12+ m.)',
+				hint: 'K-pop',
 				section: 'youth'
 			},
 			{

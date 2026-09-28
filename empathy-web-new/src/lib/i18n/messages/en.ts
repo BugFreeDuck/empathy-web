@@ -137,6 +137,7 @@ export const en = {
 			mini: { age: 'ages 4–6' },
 			kids: { age: 'ages 7–10' },
 			juniors: { age: 'ages 11–15' },
+			kpop: { age: 'ages 12+' },
 			ladiesDay: { age: 'ages 25+' },
 			ladiesEvening: { age: 'ages 25+\nfrom January' }
 		},
@@ -260,6 +261,12 @@ export const en = {
 				value: 'JUNIORS (11 - 15 m.) | šiuolaikinis/gatvės',
 				label: 'JUNIORS (ages 11–15)',
 				hint: 'contemporary / street',
+				section: 'youth'
+			},
+			{
+				value: 'K-POP (12+ m.)',
+				label: 'K-POP (ages 12+)',
+				hint: 'K-pop',
 				section: 'youth'
 			},
 			{

@@ -32,6 +32,7 @@ export type GroupOptionValue =
 	| 'MINI (4 - 6 m.) | šiuolaikinis/gatvės'
 	| 'KIDS (7 - 10 m.) | šiuolaikinis/gatvės'
 	| 'JUNIORS (11 - 15 m.) | šiuolaikinis/gatvės'
+	| 'K-POP (12+ m.)'
 	| 'LADIES day (25+) | moteriška plastika'
 	| 'nuo sausio - LADIES evening (25+) | moteriška plastika | kartą per savaitę';
 

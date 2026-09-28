@@ -13,6 +13,7 @@ const groupValueToId: Record<GroupOptionValue, GroupId> = {
 	'MINI (4 - 6 m.) | šiuolaikinis/gatvės': 'mini',
 	'KIDS (7 - 10 m.) | šiuolaikinis/gatvės': 'kids',
 	'JUNIORS (11 - 15 m.) | šiuolaikinis/gatvės': 'juniors',
+	'K-POP (12+ m.)': 'kpop',
 	'LADIES day (25+) | moteriška plastika': 'ladiesDay',
 	'nuo sausio - LADIES evening (25+) | moteriška plastika | kartą per savaitę': 'ladiesEvening'
 };
