@@ -28,16 +28,17 @@
 	use:reveal={{ delay, from: 'scale' }}
 	class="price-card relative flex h-full flex-col rounded-[1.75rem] border border-sand-300 bg-sand-50 p-8 shadow-sm"
 >
-	<h3 class="font-display text-2xl text-bark-900">{plan.name}</h3>
+	<h3 class="min-h-[2rem] font-display text-2xl leading-tight text-bark-900">{plan.name}</h3>
 
-	<p class="mt-6 flex items-baseline gap-2">
+	<!-- Fixed band so numeric prices and NEMOKAMA share the same baseline row -->
+	<div class="mt-6 flex min-h-[3.75rem] items-end gap-2">
 		<span class="font-display leading-none text-bark-900 {priceSize}">{plan.price}</span>
 		{#if plan.unit}
-			<span class="text-sm text-bark-600">{plan.unit}</span>
+			<span class="pb-1 text-sm text-bark-600">{plan.unit}</span>
 		{/if}
-	</p>
+	</div>
 
-	<p class="mt-4 text-sm leading-relaxed text-bark-600">{plan.summary}</p>
+	<p class="mt-4 min-h-[2.75rem] text-sm leading-relaxed text-bark-600">{plan.summary}</p>
 
 	<div class="mt-auto pt-10">
 		<Button

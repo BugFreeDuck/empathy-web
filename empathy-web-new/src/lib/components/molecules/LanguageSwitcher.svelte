@@ -4,19 +4,21 @@
 	interface Props {
 		/** Compact inline switcher for the header. */
 		class?: string;
+		onDark?: boolean;
 	}
 
-	let { class: className = '' }: Props = $props();
+	let { class: className = '', onDark = false }: Props = $props();
 </script>
 
 <div
-	class="flex items-center gap-1 text-[0.65rem] tracking-[0.14em] text-bark-400 uppercase {className}"
+	class="flex items-center gap-1 text-[0.65rem] tracking-[0.14em] uppercase {className}
+		{onDark ? 'text-sand-400' : 'text-bark-400'}"
 	role="group"
 	aria-label={i18n.m.nav.language}
 >
 	{#each i18n.locales as code, index (code)}
 		{#if index > 0}
-			<span class="text-sand-300" aria-hidden="true">/</span>
+			<span class="{onDark ? 'text-sand-500' : 'text-sand-300'}" aria-hidden="true">/</span>
 		{/if}
 		<button
 			type="button"
@@ -24,8 +26,12 @@
 			aria-pressed={i18n.locale === code}
 			class="rounded px-1.5 py-0.5 transition-colors
 				{i18n.locale === code
-				? 'text-bark-900'
-				: 'hover:text-ember-600'}"
+				? onDark
+					? 'text-sand-50'
+					: 'text-bark-900'
+				: onDark
+					? 'hover:text-sand-50'
+					: 'hover:text-ember-600'}"
 		>
 			{localeMeta[code].label}
 		</button>

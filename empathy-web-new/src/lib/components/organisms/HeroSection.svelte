@@ -1,6 +1,8 @@
 <script lang="ts">
+	import Button from '$atoms/Button.svelte';
 	import HeroVideo from '$atoms/HeroVideo.svelte';
 	import { i18n } from '$i18n';
+	import { registrationUI } from '$lib/stores/registration.svelte';
 	import { scrollToSection } from '$lib/utils/scroll';
 </script>
 
@@ -28,6 +30,15 @@
 		>
 			{i18n.m.hero.lead}
 		</p>
+
+		<div class="enter-rise mt-8 md:mt-10" style="--enter-delay: 420ms">
+			<Button
+				class="!border-[var(--color-sand-300)] !bg-[var(--color-sand-300)] ![background-image:none] !px-9 !py-4 !text-base !font-bold !tracking-wider !text-bark-900 !shadow-none hover:!border-sand-50 hover:!bg-sand-50"
+				onclick={() => registrationUI.show()}
+			>
+				{i18n.m.hero.cta}
+			</Button>
+		</div>
 	</div>
 
 	<a
@@ -36,12 +47,12 @@
 			e.preventDefault();
 			scrollToSection('apie');
 		}}
-		class="hero-scroll enter-fade absolute inset-x-0 bottom-6 z-10 mx-auto flex w-fit flex-col items-center gap-3 text-[0.6rem] tracking-[0.25em] text-sand-300/80 uppercase md:bottom-8"
-		style="--enter-delay: 520ms"
+		class="hero-scroll enter-fade absolute inset-x-0 bottom-6 z-10 mx-auto flex w-fit flex-col items-center gap-3 text-[0.7rem] font-medium tracking-[0.25em] text-sand-50 uppercase md:bottom-8"
+		style="--enter-delay: 560ms"
 	>
 		{i18n.m.hero.scroll}
-		<span class="relative h-10 w-px overflow-hidden bg-sand-50/30">
-			<span class="absolute inset-x-0 top-1/4 h-5 bg-sunset"></span>
+		<span class="relative h-11 w-px overflow-hidden bg-sand-50/55">
+			<span class="absolute inset-x-0 top-1/4 h-6 bg-sunset shadow-[0_0_8px_var(--color-sunset)]"></span>
 		</span>
 	</a>
 </section>
@@ -68,6 +79,6 @@
 	}
 
 	.hero-scroll {
-		filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.45));
+		filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.7)) drop-shadow(0 2px 8px rgb(0 0 0 / 0.45));
 	}
 </style>
