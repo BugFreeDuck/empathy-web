@@ -79,7 +79,7 @@ export const structuredData = {
 			description: site.seo.description,
 			url: site.url,
 			image: site.seo.ogImage,
-			logo: `${site.url}/favicon.svg`,
+			logo: `${site.url}/favicon-192x192.png`,
 			telephone: contacts.phone,
 			email: contacts.email,
 			slogan: site.tagline,
