@@ -1,5 +1,8 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
+	import { page } from '$app/state';
 	import { site } from '$data/site';
+	import { i18n } from '$i18n';
 	import { scrollToSection } from '$lib/utils/scroll';
 
 	interface Props {
@@ -8,14 +11,21 @@
 	}
 
 	let { showTagline = false, class: className = '' }: Props = $props();
+
+	const homeHref = $derived(resolve(`/${i18n.locale}/`));
+
+	function onHomeClick(e: MouseEvent) {
+		// Same-locale home link scrolls to top instead of a full reload.
+		if (page.url.pathname === homeHref || page.url.pathname === `/${i18n.locale}/`) {
+			e.preventDefault();
+			scrollToSection('top');
+		}
+	}
 </script>
 
 <a
-	href="#top"
-	onclick={(e) => {
-		e.preventDefault();
-		scrollToSection('top');
-	}}
+	href={homeHref}
+	onclick={onHomeClick}
 	class="group inline-flex flex-col justify-center leading-none {className}"
 	aria-label={site.name}
 >

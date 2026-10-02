@@ -3,36 +3,29 @@ import { catalogs } from './messages';
 import {
 	defaultLocale,
 	isLocale,
+	LOCALE_STORAGE_KEY,
 	localeMeta,
 	locales,
 	type Locale
 } from './locales';
 import type { Messages } from './types';
 
-const STORAGE_KEY = 'empathy-locale';
-
-function readStoredLocale(): Locale {
-	if (!browser) return defaultLocale;
-	try {
-		const stored = localStorage.getItem(STORAGE_KEY);
-		if (stored && isLocale(stored)) return stored;
-	} catch {
-		/* private mode / blocked storage */
-	}
-	return defaultLocale;
-}
-
 function applyDocumentLang(next: Locale) {
 	if (!browser) return;
 	document.documentElement.lang = localeMeta[next].htmlLang;
 }
 
-let locale = $state<Locale>(defaultLocale);
-
-if (browser) {
-	locale = readStoredLocale();
-	applyDocumentLang(locale);
+function persistLocale(next: Locale) {
+	if (!browser) return;
+	try {
+		localStorage.setItem(LOCALE_STORAGE_KEY, next);
+	} catch {
+		/* ignore */
+	}
 }
+
+/** Active catalog follows the URL (`/[locale]/`). Preference is remembered in localStorage. */
+let locale = $state<Locale>(defaultLocale);
 
 /** Reactive i18n API. Use `i18n.m` for the active catalog. */
 export const i18n = {
@@ -48,18 +41,25 @@ export const i18n = {
 	meta(code: Locale = locale) {
 		return localeMeta[code];
 	},
+	/** Sync catalog to the route locale (SSR load + client navigation). */
 	setLocale(next: Locale) {
-		if (next === locale) return;
-		locale = next;
-		applyDocumentLang(next);
-		if (!browser) return;
-		try {
-			localStorage.setItem(STORAGE_KEY, next);
-		} catch {
-			/* ignore */
+		if (!isLocale(next)) return;
+		if (next !== locale) {
+			locale = next;
+			applyDocumentLang(next);
 		}
+		persistLocale(next);
 	}
 };
 
 export type { Locale, Messages };
-export { catalogs, defaultLocale, isLocale, localeMeta, locales };
+export { catalogs };
+export {
+	defaultLocale,
+	isLocale,
+	LOCALE_STORAGE_KEY,
+	localeMeta,
+	locales,
+	localeFromLanguageTags,
+	resolvePreferredLocale
+} from './locales';

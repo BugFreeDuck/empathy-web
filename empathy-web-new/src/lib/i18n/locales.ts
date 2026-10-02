@@ -5,6 +5,9 @@ export type Locale = (typeof locales)[number];
 
 export const defaultLocale: Locale = 'lt';
 
+/** Persisted when the user visits or switches to a locale URL. */
+export const LOCALE_STORAGE_KEY = 'empathy-locale';
+
 export const localeMeta: Record<
 	Locale,
 	{ label: string; htmlLang: string; ogLocale: string }
@@ -16,4 +19,35 @@ export const localeMeta: Record<
 
 export function isLocale(value: string): value is Locale {
 	return (locales as readonly string[]).includes(value);
+}
+
+/** Match Accept-Language / navigator tags (e.g. en-US → en). */
+export function localeFromLanguageTags(tags: readonly string[]): Locale | null {
+	for (const raw of tags) {
+		const primary = raw.trim().toLowerCase().split('-')[0];
+		if (primary && isLocale(primary)) return primary;
+	}
+	return null;
+}
+
+/**
+ * Last chosen locale (localStorage), else browser preference, else Lithuanian.
+ * Call only in the browser.
+ */
+export function resolvePreferredLocale(): Locale {
+	try {
+		const stored = localStorage.getItem(LOCALE_STORAGE_KEY);
+		if (stored && isLocale(stored)) return stored;
+	} catch {
+		/* private mode / blocked storage */
+	}
+
+	const tags =
+		typeof navigator !== 'undefined' && navigator.languages?.length
+			? navigator.languages
+			: typeof navigator !== 'undefined' && navigator.language
+				? [navigator.language]
+				: [];
+
+	return localeFromLanguageTags(tags) ?? defaultLocale;
 }
