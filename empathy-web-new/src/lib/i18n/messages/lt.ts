@@ -148,6 +148,13 @@ export const lt = {
 			K: 'Ketvirtadienis',
 			Pn: 'Penktadienis'
 		},
+		dayShorts: {
+			P: 'P',
+			A: 'A',
+			T: 'T',
+			K: 'K',
+			Pn: 'Pn'
+		},
 		notes: [
 			'visų grupių pamokos vyksta adresu Eitminų g. 20',
 			'MINI grupės pamokos trunka 45 min.',
@@ -203,6 +210,9 @@ export const lt = {
 		lead: 'Kviečiame prisijungti prie EMPATHY šokio bendruomenės ir patirti šokio kelionę kartu!',
 		submit: 'Pateikti',
 		submitting: 'Siunčiama…',
+		next: 'Toliau',
+		back: 'Atgal',
+		stepOf: '{current} / {total}',
 		successTitle: 'Registracija gauta',
 		successBody:
 			'Ačiū! Susisieksime dėl užsiėmimų pradžios el. paštu arba telefonu. Jei laiško nematai — patikrink SPAM aplanką.',
@@ -211,6 +221,14 @@ export const lt = {
 		youthSection: 'Užsiėmimai vaikams ir jaunimui',
 		ladiesSection: 'Užsiėmimai moterims',
 		trialNote: 'Pirma bandomoji pamoka naujiems nariams — nemokama.',
+		steps: {
+			group: 'Pasirink grupę',
+			experience: 'Šokio patirtis',
+			identity: 'Apie tave',
+			health: 'Sveikatos pastabos',
+			source: 'Iš kur apie mus sužinojai?',
+			comments: 'Papildomi komentarai'
+		},
 		fields: {
 			studentName: { label: 'Mokinio(ės) vardas ir pavardė' },
 			birthAge: {

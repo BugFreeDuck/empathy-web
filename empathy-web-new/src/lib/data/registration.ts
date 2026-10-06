@@ -173,6 +173,23 @@ export function validateRegistration(
 	return errors;
 }
 
+/** Validate only the fields belonging to the current wizard step. */
+export function validateRegistrationStep(
+	keys: readonly (keyof RegistrationFormValues)[],
+	values: RegistrationFormValues,
+	copy: RegistrationErrorCopy
+): RegistrationFieldErrors {
+	const all = validateRegistration(values, copy);
+	const allowed = new Set<keyof RegistrationFormValues>(keys);
+	if (allowed.has('source')) allowed.add('sourceOther');
+
+	const errors: RegistrationFieldErrors = {};
+	for (const key of Object.keys(all) as (keyof RegistrationFormValues)[]) {
+		if (allowed.has(key)) errors[key] = all[key];
+	}
+	return errors;
+}
+
 export function isRegistrationComplete(
 	values: RegistrationFormValues,
 	copy: RegistrationErrorCopy

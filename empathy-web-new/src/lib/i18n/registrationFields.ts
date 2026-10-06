@@ -1,9 +1,9 @@
+import type { RegistrationField, RegistrationFormValues } from '$data/registration';
 import {
 	SOURCE_OTHER,
 	experienceValues,
 	sourceValues,
-	type GroupOptionValue,
-	type RegistrationField
+	type GroupOptionValue
 } from '$data/registration';
 import { scheduleByGroup, type GroupId } from '$data/schedule';
 import type { Messages } from '$i18n';
@@ -38,6 +38,33 @@ function formatGroupSchedule(
 	return `${days.join(' · ')} · ${times.join(', ')}`;
 }
 
+export type RegistrationStepId =
+	| 'group'
+	| 'experience'
+	| 'identity'
+	| 'health'
+	| 'source'
+	| 'comments';
+
+export type RegistrationStepDef = {
+	id: RegistrationStepId;
+	/** Form value keys shown (and validated) on this step. */
+	keys: readonly (keyof RegistrationFormValues)[];
+};
+
+/**
+ * Wizard order. Contact fields (guardian / phone / email) live on the identity
+ * step so submission stays complete without an extra dedicated contact step.
+ */
+export const registrationSteps: readonly RegistrationStepDef[] = [
+	{ id: 'group', keys: ['group'] },
+	{ id: 'experience', keys: ['experience'] },
+	{ id: 'identity', keys: ['studentName', 'birthAge', 'guardianName', 'phone', 'email'] },
+	{ id: 'health', keys: ['health'] },
+	{ id: 'source', keys: ['source', 'sourceOther'] },
+	{ id: 'comments', keys: ['comments'] }
+];
+
 /** Build locale-aware field descriptors; Google Form values stay Lithuanian. */
 export function buildRegistrationFields(
 	m: Messages['registration'],
@@ -47,6 +74,28 @@ export function buildRegistrationFields(
 	const groups = m.groupOptions;
 
 	return [
+		{
+			kind: 'radio',
+			key: 'group',
+			label: f.group.label,
+			required: true,
+			options: groups.map(({ value, label, hint }) => ({
+				value,
+				label,
+				hint,
+				schedule: formatGroupSchedule(groupValueToId[value as GroupOptionValue], dayNames)
+			}))
+		},
+		{
+			kind: 'radio',
+			key: 'experience',
+			label: f.experience.label,
+			required: true,
+			options: experienceValues.map((value, i) => ({
+				value,
+				label: m.experienceOptions[i] ?? value
+			}))
+		},
 		{
 			kind: 'text',
 			key: 'studentName',
@@ -62,44 +111,10 @@ export function buildRegistrationFields(
 			required: true
 		},
 		{
-			kind: 'radio',
-			key: 'experience',
-			label: f.experience.label,
-			required: true,
-			options: experienceValues.map((value, i) => ({
-				value,
-				label: m.experienceOptions[i] ?? value
-			}))
-		},
-		{
 			kind: 'text',
 			key: 'guardianName',
 			label: f.guardianName.label,
 			hint: f.guardianName.hint
-		},
-		{
-			kind: 'radio',
-			key: 'group',
-			label: f.group.label,
-			required: true,
-			options: groups.map(({ value, label, hint }) => ({
-				value,
-				label,
-				hint,
-				schedule: formatGroupSchedule(groupValueToId[value as GroupOptionValue], dayNames)
-			})),
-			sections: [
-				{
-					id: 'youth',
-					label: m.youthSection,
-					values: groups.filter((g) => g.section === 'youth').map((g) => g.value)
-				},
-				{
-					id: 'ladies',
-					label: m.ladiesSection,
-					values: groups.filter((g) => g.section === 'ladies').map((g) => g.value)
-				}
-			]
 		},
 		{
 			kind: 'tel',
@@ -122,7 +137,7 @@ export function buildRegistrationFields(
 			key: 'health',
 			label: f.health.label,
 			hint: f.health.hint,
-			rows: 3
+			rows: 4
 		},
 		{
 			kind: 'radio-other',
@@ -142,7 +157,15 @@ export function buildRegistrationFields(
 			kind: 'textarea',
 			key: 'comments',
 			label: f.comments.label,
-			rows: 3
+			rows: 4
 		}
 	];
+}
+
+export function fieldsForStep(
+	fields: readonly RegistrationField[],
+	step: RegistrationStepDef
+): RegistrationField[] {
+	const keySet = new Set(step.keys);
+	return fields.filter((field) => keySet.has(field.key));
 }

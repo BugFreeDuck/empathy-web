@@ -148,6 +148,13 @@ export const en = {
 			K: 'Thursday',
 			Pn: 'Friday'
 		},
+		dayShorts: {
+			P: 'M',
+			A: 'T',
+			T: 'W',
+			K: 'Th',
+			Pn: 'F'
+		},
 		notes: [
 			'All group classes take place at Eitminų g. 20.',
 			'MINI group classes last 45 minutes.',
@@ -203,6 +210,9 @@ export const en = {
 		lead: 'Join the EMPATHY dance community and share the journey with us!',
 		submit: 'Submit',
 		submitting: 'Sending…',
+		next: 'Continue',
+		back: 'Back',
+		stepOf: '{current} / {total}',
 		successTitle: 'Registration received',
 		successBody:
 			'Thank you! We will contact you about starting classes by email or phone. If you do not see our message — check your spam folder.',
@@ -211,6 +221,14 @@ export const en = {
 		youthSection: 'Classes for children and youth',
 		ladiesSection: 'Classes for women',
 		trialNote: 'The first trial class is free for new members.',
+		steps: {
+			group: 'Choose a group',
+			experience: 'Dance experience',
+			identity: 'About you',
+			health: 'Health notes',
+			source: 'How did you find us?',
+			comments: 'Additional comments'
+		},
 		fields: {
 			studentName: { label: 'Student full name' },
 			birthAge: {

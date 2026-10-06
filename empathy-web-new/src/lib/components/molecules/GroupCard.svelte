@@ -47,12 +47,12 @@
 		{#each weekdayMarks as mark (mark)}
 			{@const on = activeDays.has(mark)}
 			<li
-				class="flex size-6 shrink-0 items-center justify-center rounded-full text-[0.6rem] tracking-wide uppercase
+				class="flex size-6 shrink-0 items-center justify-center rounded-full text-[0.6rem] tracking-wide
 					sm:size-7 sm:text-[0.65rem]
 					{on ? 'bg-ember-500 text-sand-50' : 'bg-sand-200/80 text-bark-400'}"
 				aria-hidden={!on}
 			>
-				{mark}
+				{i18n.m.schedule.dayShorts[mark]}
 			</li>
 		{/each}
 	</ul>

@@ -68,7 +68,10 @@ export type Messages = {
 			'mini' | 'kids' | 'juniors' | 'kpop' | 'ladiesDay' | 'ladiesEvening',
 			{ age: string }
 		>;
+		/** Full weekday names (aria, registration schedule lines). */
 		dayNames: Record<'P' | 'A' | 'T' | 'K' | 'Pn', string>;
+		/** Short labels shown in schedule day bubbles. */
+		dayShorts: Record<'P' | 'A' | 'T' | 'K' | 'Pn', string>;
 		notes: string[];
 	};
 	pricing: {
@@ -107,6 +110,9 @@ export type Messages = {
 		lead: string;
 		submit: string;
 		submitting: string;
+		next: string;
+		back: string;
+		stepOf: string;
 		successTitle: string;
 		successBody: string;
 		errorBody: string;
@@ -114,6 +120,14 @@ export type Messages = {
 		youthSection: string;
 		ladiesSection: string;
 		trialNote: string;
+		steps: {
+			group: string;
+			experience: string;
+			identity: string;
+			health: string;
+			source: string;
+			comments: string;
+		};
 		fields: {
 			studentName: { label: string };
 			birthAge: { label: string; placeholder: string };

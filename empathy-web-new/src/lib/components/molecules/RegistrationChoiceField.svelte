@@ -11,6 +11,9 @@
 		otherValue?: string;
 		error?: string;
 		otherError?: string;
+		/** `grid` = 3-column fill layout (group step). */
+		layout?: 'stack' | 'grid';
+		class?: string;
 		onchange: (value: string) => void;
 		onotherinput?: (value: string) => void;
 	}
@@ -21,6 +24,8 @@
 		otherValue = '',
 		error = '',
 		otherError = '',
+		layout = 'stack',
+		class: className = '',
 		onchange,
 		onotherinput
 	}: Props = $props();
@@ -44,16 +49,28 @@
 	const errorId = $derived(`${field.key}-error`);
 	const otherErrorId = $derived(`${field.key}-other-error`);
 	const hasError = $derived(Boolean(error) || Boolean(otherError));
+	const isGrid = $derived(layout === 'grid');
 </script>
 
-<fieldset class="field" class:field--error={hasError}>
-	<legend class="field-label">
-		{field.label}
-		{#if field.required}
-			<span class="req" aria-hidden="true">*</span>
-		{/if}
-	</legend>
-	{#if field.hint}
+<fieldset
+	class="field {className}"
+	class:field--error={hasError}
+	class:field--grid={isGrid}
+>
+	{#if !isGrid}
+		<legend class="field-label">
+			{field.label}
+			{#if field.required}
+				<span class="req" aria-hidden="true">*</span>
+			{/if}
+		</legend>
+	{:else}
+		<legend class="sr-only">
+			{field.label}
+			{#if field.required}*{/if}
+		</legend>
+	{/if}
+	{#if field.hint && !isGrid}
 		<span class="field-hint">{field.hint}</span>
 	{/if}
 
@@ -62,20 +79,27 @@
 	{/if}
 
 	{#each sections as section, index (section.id)}
-		{#if section.label}
+		{#if section.label && !isGrid}
 			<p class="section-label" class:mt={index > 0}>{section.label}</p>
 		{/if}
-		<div class="option-stack" class:mb={Boolean(section.label) && index < sections.length - 1}>
+		<div
+			class={isGrid ? 'option-grid' : 'option-stack'}
+			class:mb={!isGrid && Boolean(section.label) && index < sections.length - 1}
+		>
 			{#each section.options as option (option.value)}
-				<label class="option">
+				<label class="option" class:option--grid={isGrid}>
 					<input
 						type="radio"
 						name={field.key}
 						value={option.value}
 						checked={value === option.value}
 						onchange={() => onchange(option.value)}
+						onclick={() => {
+							// Re-selecting the active option has no `change` — still allow advance.
+							if (value === option.value) onchange(option.value);
+						}}
 					/>
-					<span>
+					<span class="option-body">
 						<span class="option-title">{option.label}</span>
 						{#if option.hint}
 							<span class="option-hint">{option.hint}</span>
@@ -97,6 +121,9 @@
 				value={field.otherValue}
 				checked={value === field.otherValue}
 				onchange={() => onchange(field.otherValue)}
+				onclick={() => {
+					if (value === field.otherValue) onchange(field.otherValue);
+				}}
 			/>
 			<span class="option-title">{field.otherLabel}</span>
 		</label>
@@ -127,6 +154,19 @@
 		padding: 0;
 		margin: 0;
 		min-inline-size: 0;
+	}
+
+	.field--grid {
+		gap: 0;
+	}
+
+	@media (min-width: 768px) {
+		.field--grid {
+			flex: 1 1 auto;
+			min-height: 0;
+			height: 100%;
+			gap: 0.75rem;
+		}
 	}
 
 	.field-label {
@@ -175,6 +215,27 @@
 		margin-bottom: 1rem;
 	}
 
+	.option-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-auto-rows: auto;
+		gap: 0.65rem;
+		flex: 0 0 auto;
+		min-height: 0;
+		align-content: start;
+	}
+
+	@media (min-width: 768px) {
+		.option-grid {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			grid-auto-rows: 1fr;
+			gap: 0.65rem;
+			flex: 1 1 auto;
+			height: 100%;
+			align-content: stretch;
+		}
+	}
+
 	.option {
 		display: flex;
 		align-items: flex-start;
@@ -186,7 +247,120 @@
 		cursor: pointer;
 		transition:
 			border-color 200ms var(--ease-soft),
-			background-color 200ms var(--ease-soft);
+			background-color 200ms var(--ease-soft),
+			box-shadow 200ms var(--ease-soft),
+			transform 200ms var(--ease-soft);
+	}
+
+	@media (hover: hover) {
+		.option:hover {
+			border-color: var(--color-ember-300);
+			background: color-mix(in srgb, var(--color-ember-200) 18%, var(--color-sand-50));
+			box-shadow: 0 4px 14px -6px rgb(58 36 36 / 0.12);
+		}
+
+		.option--grid:hover {
+			transform: translateY(-1px);
+		}
+	}
+
+	.option:has(input:checked):hover {
+		border-color: var(--color-ember-500);
+		background: color-mix(in srgb, var(--color-ember-200) 40%, var(--color-sand-50));
+	}
+
+	.option--grid {
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: center;
+		gap: 0;
+		height: auto;
+		min-height: 4.75rem;
+		padding: 0.95rem 1rem;
+		text-align: left;
+		overflow: hidden;
+	}
+
+	@media (min-width: 768px) {
+		.option--grid {
+			height: 100%;
+			min-height: 0;
+			padding: 0.85rem 0.75rem;
+			text-align: center;
+		}
+	}
+
+	.option--grid input {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
+	.option--grid .option-body {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		gap: 0.2rem;
+		min-width: 0;
+		min-height: 0;
+		width: 100%;
+		overflow: hidden;
+	}
+
+	@media (min-width: 768px) {
+		.option--grid .option-body {
+			align-items: center;
+			height: 100%;
+		}
+	}
+
+	.option--grid .option-title {
+		font-size: 1rem;
+		font-weight: 500;
+		line-height: 1.3;
+		overflow-wrap: anywhere;
+		word-break: break-word;
+	}
+
+	.option--grid .option-hint {
+		margin-top: 0;
+		font-size: 0.85rem;
+		line-height: 1.35;
+		overflow-wrap: anywhere;
+		word-break: break-word;
+	}
+
+	.option--grid .option-schedule {
+		margin-top: 0.2rem;
+		font-size: 0.8rem;
+		line-height: 1.35;
+		overflow-wrap: anywhere;
+		word-break: break-word;
+	}
+
+	@media (min-width: 768px) {
+		.option--grid .option-title {
+			font-size: clamp(0.78rem, 1.4vw, 0.95rem);
+			line-height: 1.25;
+		}
+
+		.option--grid .option-hint {
+			font-size: clamp(0.68rem, 1.2vw, 0.75rem);
+			line-height: 1.3;
+		}
+
+		.option--grid .option-schedule {
+			margin-top: 0.25rem;
+			font-size: clamp(0.65rem, 1.1vw, 0.72rem);
+			line-height: 1.3;
+		}
 	}
 
 	.field--error .option {
